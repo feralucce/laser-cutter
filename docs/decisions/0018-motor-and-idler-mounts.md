@@ -27,8 +27,10 @@ T-nut position before tightening, no dedicated bracket part needed.
   [0011](0011-x-axis-dual-motor.md)) with 2 spares.
 - **Idler mount**: bolt-on-T-nut approach (M5 socket-head bolt + washers/
   spacers for height + T-nut), no separate bracket product.
-- **Idler pulley**: user has sourced their own part directly; link to be
-  added once available. Requirement: smooth-riding (teeth not required),
+- **Idler pulley**: [DiGiYes GT2 Timing Belt Idler Pulley, 20-toothless
+  (smooth), 5mm bore, for 6mm belt width](https://www.amazon.com/gp/product/B0BSPC7D9S/).
+  User-sourced. Matches requirement: smooth-riding (teeth not required, and
+  this part is genuinely toothless rather than a repurposed drive pulley),
   5mm bore (matches M5 bolt and the [0017](0017-stepper-motor-selection.md)
   motor's shaft size for hardware consistency), sized for the 6mm GT2 belt
   ([0015](0015-x-axis-motor-system.md)).
@@ -43,4 +45,6 @@ Category: all off-the-shelf components.
   dedicated adjustable-slot bracket mechanism — simple but requires loosening
   and re-tightening the bolt to adjust tension, rather than a quick-adjust
   slot.
-- Idler pulley part/link still open — to be filled in once sourced.
+- Idler pulley now sourced — motor-side pulley hardware list
+  ([0017](0017-stepper-motor-selection.md), [0019](0019-drive-pulley-selection.md),
+  this ADR) is complete.

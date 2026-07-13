@@ -42,6 +42,20 @@ Ortur's V-slot wheels).
   surface, with the ~3.5" (89mm) actual dimension running vertically as the
   joist height. Any frame feet/rail supports on the 800mm axis need to work
   with this ~38mm-wide mounting surface.
-- Still need: total table length (for the flexible 1.2m axis), table height,
-  and the current machine's measured outer frame width on the 800mm axis —
-  flagged as open for the next design step.
+- The flexible axis has a hard ceiling regardless: **must not exceed 4 feet
+  (1219mm)**.
+- Estimated (not yet measured) current frame footprint on the fixed 800mm
+  axis: base Ortur LM2 S2 published overall frame dimension on this axis is
+  ~500-550mm (two published sources: 570x550x175mm and 540x500x150mm
+  overall W x D x H, against a 400x430mm work area — the ~500-550mm figure
+  is the frame dimension on the axis matching the ~400-430mm work-area
+  component). The 800mm extension kit adds ~400mm of travel on this axis,
+  so estimated current overall frame footprint ≈ **900-950mm**. This is an
+  estimate from published base-machine specs (which vary ~50mm across
+  sources) plus the kit's known extension — a direct measurement of the
+  actual current machine is still needed to confirm before finalizing new
+  frame dimensions.
+- Still need: total table length (informational only, since the flexible
+  axis is capped at 1219mm regardless), table height, and a direct
+  measurement of the current machine's outer frame width on the 800mm axis
+  to confirm the estimate above.

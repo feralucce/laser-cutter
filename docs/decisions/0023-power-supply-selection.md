@@ -1,4 +1,4 @@
-# 0023. Power supply: Mean Well LRS-350-24 for motors/controller/air pump
+# 0023. Power supply: Mean Well LRS-350-24 for motors and controller
 
 Date: 2026-07-13
 Status: Accepted (corrected 2026-07-13 — see note below)
@@ -17,18 +17,22 @@ Since the K40 comes with its own adapter and matching input cable clearly
 designed to plug straight in, the simplest approach is to use it as-is for
 the laser, rather than discarding it to fold the K40 into a shared rail.
 
-That leaves the **main machine PSU** to cover only the steppers, controller
-board, and air pump:
+The AquaMiracle air pump ([0005](0005-air-assist-pump-update.md)) will
+also be powered externally (its own wall power), not from the machine's
+main PSU — it's a standalone aquarium-style pump with its own plug, no
+reason to integrate it into the machine's DC rail.
+
+That leaves the **main machine PSU** to cover only the steppers and
+controller board:
 
 - 3x NEMA17 steppers ([0017](0017-stepper-motor-selection.md)): ~144W
   generous worst-case (2A/phase x 24V x 3 motors, accounting for
   simultaneous multi-axis moves)
 - Controller board ([0022](0022-controller-board-selection.md)) + logic/
   limit switches: ~10W
-- AquaMiracle air pump ([0005](0005-air-assist-pump-update.md)): 35W
-- **Total: ~189W**
+- **Total: ~154W**
 
-With standard 25-30% headroom for reliability/longevity, target ~245-250W
+With standard 25-30% headroom for reliability/longevity, target ~193-200W
 minimum.
 
 ## Decision
@@ -36,19 +40,26 @@ minimum.
 **Mean Well LRS-350-24**: 350W, 24V, 14.6A output, enclosed metal case,
 built-in cooling fan. ~$29-37 depending on retailer.
 
-Powers all steppers, the controller board, and the air pump. The K40 uses
-its own included 24V/8A adapter independently, not this rail.
+Powers all steppers and the controller board only. The K40 uses its own
+included 24V/8A adapter, and the air pump uses its own external power —
+neither draws from this rail.
+
+Even though calculated load (~154W) is now well under this PSU's capacity,
+keeping the 350W unit rather than downsizing further: the cost difference
+between common Mean Well sizes is small, and the extra headroom is cheap
+insurance for any future addition (lighting, exhaust fan, etc.) without
+needing a PSU swap.
 
 Category: off-the-shelf.
 
 ## Consequences
 
-- Two separate power supplies (this one + the K40's included adapter)
-  rather than one shared rail — slightly more wiring than a fully
-  consolidated approach, but avoids discarding a perfectly good included
-  adapter and its matching input cable.
-- ~100-160W headroom over calculated worst-case load — comfortable margin
-  without being oversized.
+- Two independent power paths in the shop (this PSU + K40's adapter + air
+  pump's own plug) rather than one shared rail — more wall outlets/wiring
+  runs, but each stays simple and independent, and avoids discarding
+  perfectly good included/dedicated power hardware.
+- ~196W headroom over calculated load — generous margin, deliberately kept
+  even though a smaller PSU would technically suffice.
 - Mean Well is a well-established, reliable brand standard in the CNC/3D
   printer community — low risk choice for a component every other system
   depends on.
@@ -62,4 +73,6 @@ Category: off-the-shelf.
 The original version of this ADR sized a single 450W supply intended to
 also power the K40, based on a mistaken belief the module shipped without
 its own supply. Corrected after the user shared the K40's actual box
-contents photo showing an included 24V/8A adapter.
+contents photo showing an included 24V/8A adapter. Further corrected to
+remove the air pump's load, which is powered externally rather than from
+this rail.

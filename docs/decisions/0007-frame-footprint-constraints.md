@@ -37,6 +37,11 @@ Ortur's V-slot wheels).
   rail system is chosen, the frame (and required floor space) could shrink
   below 1.2m without losing capability, since that axis was originally sized
   around the Ortur's V-slot wheel gantry, not a hard structural requirement.
-- We still need exact downdraft table structural measurements (mounting
-  points/edges the frame will rest on) before finalizing frame dimensions —
+- Downdraft table framing is 2x4 dimensional lumber, oriented on the narrow
+  face — the machine frame rests on the ~1.5" (38mm) actual-width top
+  surface, with the ~3.5" (89mm) actual dimension running vertically as the
+  joist height. Any frame feet/rail supports on the 800mm axis need to work
+  with this ~38mm-wide mounting surface.
+- Still need: total table length (for the flexible 1.2m axis), table height,
+  and the current machine's measured outer frame width on the 800mm axis —
   flagged as open for the next design step.

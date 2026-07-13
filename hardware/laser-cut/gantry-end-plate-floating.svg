@@ -42,6 +42,11 @@
     <circle cx="35" cy="29" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="15" cy="11" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="35" cy="11" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <!-- Belt clamp mounting holes: M4 clearance (4.5mm dia), one per belt end,
+         positioned in the left/right margins beside the carriage-mount holes.
+         3DMAN 9x40mm clamp, single center hole. See ADR 0020. -->
+    <circle cx="6" cy="65" r="2.25" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="44" cy="65" r="2.25" fill="none" stroke="#000000" stroke-width="0.1" />
   </g>
 
   <!-- Scale bar for import verification: 100mm x 10mm -->

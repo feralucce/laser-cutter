@@ -1,7 +1,7 @@
 # 0007. Frame footprint constraint: 800mm axis fixed by downdraft table
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0009](0009-frame-dimensions-final.md)
 
 ## Context
 

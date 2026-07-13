@@ -6,8 +6,9 @@ Status: Accepted
 ## Context
 
 The gantry crossbeam (2040, per [0010](0010-extrusion-profile-2040.md)) needs
-to attach to the two Y-axis MGN12 carriage blocks
-([0008](0008-motion-system-mgn12-rails.md)) at each end. Both mounting
+to attach to the two X-axis MGN12 carriage blocks
+([0008](0008-motion-system-mgn12-rails.md), [0014](0014-axis-naming-convention.md))
+at each end. Both mounting
 interfaces are flat faces, which allows a single flat laser-cut plate rather
 than a bent/welded bracket:
 
@@ -44,3 +45,10 @@ Category: laser cut ([0003](0003-parts-sourcing-constraint.md)).
 - Two of these plates needed per machine (one per side of the gantry).
 - All future laser-cut SVGs for this project include a 100mm x 10mm scale
   bar for import verification, per standing convention.
+- **Open issue**: the gantry beam (Y-axis, spans the fixed 800mm axis) must
+  be shorter than 800mm — it spans between the two carriages, which sit
+  inboard of the X-axis rails (mounted on the extrusion's inward-facing
+  wide face). Exact beam length = 800mm minus the X-rail extrusion width,
+  MGN12 rail/carriage offset, and this end plate's thickness, on both
+  sides. Not yet calculated — needs final rail offset and plate material
+  thickness before cutting the beam to length.

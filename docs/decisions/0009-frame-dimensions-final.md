@@ -39,8 +39,10 @@ Frame and gantry rail lengths are set directly to **800mm x 1200mm**:
 
 ## Note: mapping to axis naming
 
-Per [0014](0014-axis-naming-convention.md): the **800mm figure is the
-Y-axis guide rails' own length** (each of the two fixed rails the whole
-gantry travels along), and the **1200mm figure is the spacing between
-those two rails**, which the gantry beam spans — this is the X-axis
-(carriage travel distance along the beam).
+Per [0014](0014-axis-naming-convention.md) (topology finalized): the
+**1200mm figure is the X-axis guide rails' own length** (each of the two
+fixed rails the whole gantry travels along), and the **800mm figure is the
+spacing between those two rails**, which the gantry beam spans — this is
+the Y-axis (carriage travel distance along the beam). This mapping
+reverses an earlier version of this note — see
+[0014](0014-axis-naming-convention.md)'s correction history for why.

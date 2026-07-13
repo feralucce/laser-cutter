@@ -38,6 +38,22 @@ Bracket hardware dimensions vary across listings (~19-20mm leg length, M5
 set screw, sized for a 6mm-wide/5.5mm-deep slot channel) — working numbers
 used below, **not yet verified against the specific bracket purchased**.
 
+This plate connects the **Y-axis gantry beam** (800mm, [0014](0014-axis-naming-convention.md))
+to the carriage riding the **X-axis guide rails** (1200mm, dual motor,
+[0011](0011-x-axis-dual-motor.md)) — two of these plates, one per side.
+
+**Orientation note**: the X-axis guide rail extrusion is mounted
+wide-face-vertical (narrow face up), per the earlier rigidity decision to
+use the stronger bending axis. That means the carriage's usable mounting
+face ends up vertical/side-facing in the finished assembly, not horizontal.
+This plate's 2D shape doesn't need to change for that — it's still a flat
+laminated plate with the same two hole/slot groups — but it gets **installed
+rotated 90° from a flat "shelf" orientation**: the carriage-mount holes end
+up facing sideways (toward the carriage, which projects inward from the
+rail), not facing down onto a horizontal carriage top. This wasn't stated
+explicitly in the original version of this ADR, which caused confusion —
+noting it here so the installation orientation isn't ambiguous.
+
 ## Decision
 
 Two end plates, each built from two laminated layers (working material

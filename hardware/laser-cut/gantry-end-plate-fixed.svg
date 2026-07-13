@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="280mm" height="140mm" viewBox="0 0 280 140">
-  <!-- Fixed/reference gantry end plate (Y-axis carriage side). Two laminated layers. -->
+  <!-- Fixed/reference gantry end plate: joins the Y-axis beam to the X-axis
+       carriage. Two laminated layers. X-rail is mounted wide-face-vertical
+       (narrow face up) for rigidity, so this plate installs rotated 90° from
+       a flat "shelf" orientation -- carriage-mount holes face sideways
+       toward the carriage, not straight down. See ADR 0016. -->
   <!-- Inner layer: faces the beam/L-brackets. Beam end is precision-cut to butt flush
        against the top edge, so no wide flared opening is needed here (unlike the
        floating plate) -- just the two narrow slots replicating the extrusion's

@@ -1,7 +1,7 @@
 # 0008. Motion system: MGN12 linear rails on both axes
 
 Date: 2026-07-13
-Status: Accepted (axis naming/mechanical roles corrected 2026-07-13, see [0014](0014-axis-naming-convention.md))
+Status: Accepted (axis naming/topology corrected 2026-07-13, see [0014](0014-axis-naming-convention.md))
 
 ## Context
 
@@ -31,11 +31,11 @@ constraint.
 ## Decision
 
 Use **MGN12 linear rail** (rail + carriage block) for both axes, per
-[0014](0014-axis-naming-convention.md)'s corrected naming:
+[0014](0014-axis-naming-convention.md)'s finalized topology:
 
-- **Y-axis** (fixed 800mm axis): two rails, one per side — the whole gantry
-  (crossbeam + X-rail + carriage) travels along these.
-- **X-axis** (long/flexible axis): one rail mounted on the gantry beam
+- **X-axis** (long axis, 1200mm): two rails, one per side — the whole
+  gantry (beam + Y-rail + carriage) travels along these.
+- **Y-axis** (fixed 800mm axis): one rail mounted on the gantry beam
   itself — the laser carriage travels along this.
 
 Mounted to the extrusion via T-nuts. Category: off-the-shelf component.
@@ -49,6 +49,6 @@ Mounted to the extrusion via T-nuts. Category: off-the-shelf component.
   commonly available, including 3D-printable ones).
 - Rail mounting holes are on a fixed pitch (typically 50mm), so T-nut
   placement in the extrusion slot needs to match that pitch.
-- Two rails + two carriage blocks needed on the **Y-axis** (one per side) to
-  keep the gantry square, plus one rail + block on the **X-axis** for the
-  laser carriage.
+- Two rails + two carriage blocks needed on the **X-axis** (one per side)
+  to keep the gantry square, plus one rail + block on the **Y-axis** for
+  the laser carriage.

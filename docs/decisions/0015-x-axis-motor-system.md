@@ -1,11 +1,11 @@
-# 0015. Y-axis motor system: fixed motors, GT2 belt, off-the-shelf mounts
+# 0015. X-axis motor system: fixed motors, GT2 belt, off-the-shelf mounts
 
 Date: 2026-07-13
-Status: Accepted
+Status: Accepted (topology finalized 2026-07-13, see [0014](0014-axis-naming-convention.md))
 
 ## Context
 
-The Y-axis (fixed 800mm axis, dual motors per [0011](0011-y-axis-dual-motor.md))
+The X-axis (long 1200mm axis, dual motors per [0011](0011-x-axis-dual-motor.md))
 needs an actual drive mechanism — the MGN12 carriage itself has no motor,
 it just rides the rail passively.
 
@@ -19,9 +19,9 @@ Two belt topologies were considered:
 
 Ortur's approach minimizes gantry weight and BOM for a light engraving
 machine, but doesn't fit this build: it would add each motor's own mass
-(~200-350g) onto the already-loaded Y-carriages (which carry the 2040 beam,
-X-rail, and eventual K40 + carriage), doubled since we use two motors
-([0011](0011-y-axis-dual-motor.md)) — working against the reason dual
+(~200-350g) onto the already-loaded X-carriages (which carry the 2040 beam,
+Y-rail, and eventual K40 + carriage), doubled since we use two motors
+([0011](0011-x-axis-dual-motor.md)) — working against the reason dual
 motors were chosen (more torque for a heavier gantry, not more weight added
 to it). It also requires motor wiring to flex with the moving gantry
 (added to the drag chain alongside the laser's own wiring) and needs extra
@@ -37,8 +37,8 @@ very heavy/fast gantries. Our estimated moving mass is well under threshold.
 ## Decision
 
 - **Topology**: fixed motor + fixed idler, closed-loop belt, belt clamped to
-  the carriage. Two full sets (one per Y-rail).
-- **Motor**: standard NEMA17 stepper, two total (per [0011](0011-y-axis-dual-motor.md)).
+  the carriage. Two full sets (one per X-rail).
+- **Motor**: standard NEMA17 stepper, two total (per [0011](0011-x-axis-dual-motor.md)).
 - **Belt**: 6mm GT2 timing belt, closed loop.
 - **Pulleys**: GT2 20-tooth, 5mm bore (NEMA17 shaft) on the motor side; a
   matching idler pulley (bearing, no teeth needed) at the far end of each
@@ -56,7 +56,7 @@ Category: all off-the-shelf components.
 - Motor and idler mounts are both bolted to the frame — no wiring needs to
   flex with the gantry except the laser module's own power/PWM leads.
 - Two belt loops, two motor mounts, two idler mounts, four pulleys (2
-  driven + 2 idler) needed total for the Y-axis.
+  driven + 2 idler) needed total for the X-axis.
 - Still open: the belt clamp/clip that anchors the belt to each carriage —
   not yet designed (was going to be part of the now-deleted gantry end
   plate, [0013](0013-gantry-end-plate-design.md), which is being reworked).

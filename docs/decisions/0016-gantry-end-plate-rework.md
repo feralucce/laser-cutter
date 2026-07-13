@@ -59,6 +59,15 @@ assumption: 6mm ply/acrylic per layer):
 - Both plates: 50mm x 95mm overall, 4x M3 clearance holes (20x20mm pattern)
   for the MGN12H carriage block, same as [0013](0013-gantry-end-plate-design.md)'s
   original design.
+- **Set screw access holes**: a 5mm dia hole through both layers, centered
+  on each slot's depth (floating plate: y=29; fixed plate: y=11, in each
+  plate's local coordinates), so an Allen key can reach and tighten each
+  bracket's set screw after the beam is seated — without these the brackets
+  would be captured but unfastenable once assembled. The shared outer layer
+  is cut with both hole-position sets (since it's reused for either plate),
+  so each physical outer-layer piece has two unused access holes depending
+  on which plate it's paired with — a minor, harmless simplification in
+  exchange for keeping a single shared outer-layer design.
 
 Design files:
 [hardware/laser-cut/gantry-end-plate-floating.svg](../../hardware/laser-cut/gantry-end-plate-floating.svg),
@@ -78,7 +87,9 @@ Category: laser cut ([0003](0003-parts-sourcing-constraint.md)).
   pins/dowels designed in yet, worth considering if glue-up proves fiddly.
 - Slot/opening dimensions are working estimates and **must be checked
   against the actual bracket hardware purchased** before cutting — bracket
-  leg length and set screw position vary by seller.
+  leg length and set screw position vary by seller. The access hole
+  position (slot midpoint) is a placeholder for the same reason — should be
+  adjusted to the real set screw location once the bracket is in hand.
 - Corner radii were omitted from the inner-layer polygons (complex
   multi-point shapes) for simplicity — can be added in vector software
   before cutting if desired, not required for function.

@@ -19,6 +19,9 @@
     <circle cx="35" cy="65" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="15" cy="85" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="35" cy="85" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <!-- L-bracket set screw access holes: centered in each slot's depth -->
+    <circle cx="15" cy="29" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="35" cy="29" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
   </g>
 
   <!-- OUTER LAYER (shared design, used for both fixed and floating plates) -->
@@ -29,6 +32,12 @@
     <circle cx="35" cy="65" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="15" cy="85" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="35" cy="85" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <!-- L-bracket set screw access holes (floating-plate position; shared outer
+         layer is cut with both hole sets since it's reused for the fixed plate too) -->
+    <circle cx="15" cy="29" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="35" cy="29" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="15" cy="11" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="35" cy="11" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
   </g>
 
   <!-- Scale bar for import verification: 100mm x 10mm -->

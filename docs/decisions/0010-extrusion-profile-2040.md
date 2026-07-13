@@ -37,3 +37,23 @@ component.
 - T-slot/T-nut mounting hardware and MGN12 rail attachment method are
   unaffected — 2040 uses the same slot/T-nut standard as 2020 in this
   extrusion family.
+
+## Addendum: 2060 considered and rejected
+
+2060 (20x60mm) was evaluated as a stiffer alternative — published moment of
+inertia (Ix, wide face vertical) is 149.34x10⁻⁹ m⁴ vs 2040's 48.16x10⁻⁹ m⁴,
+about 3.1x stiffer, at an estimated 135-165% of 2040's per-meter cost.
+
+Calculated deflection for 2040 under the heaviest module under consideration
+(~1.4lb/0.635kg, per [0011](0011-y-axis-dual-motor.md)'s future-headroom
+note) at midspan of an 800mm beam, using the standard simply-supported
+concentrated-load formula (δ = FL³/48EI): **~0.02mm**, or ~0.05mm padded
+generously for carriage hardware weight and the beam's own self-weight sag.
+That's roughly two orders of magnitude below laser kerf width (0.1-0.3mm)
+and well below plywood's own thickness variance — not something that would
+show up in cut quality.
+
+2040 has large margin at this load class. 2060's extra stiffness would only
+start to matter for multi-kilogram loads or much longer spans than this
+build uses, so the cost premium wouldn't buy anything practically useful
+here. Decision stands: **2040**.

@@ -48,8 +48,11 @@ sized DIY gantry around, unlike the K60.
 
 This module drives several downstream requirements for the machine design:
 
-- **Power supply**: needs at least 24V/6A (144W) just for the module, plus
-  headroom for stepper motors and controller electronics.
+- **Power supply**: needs at least 24V/6A (144W). Confirmed via the K40's
+  kit contents photo that this is **included** — ships with a 24V/8A power
+  adapter and matching driver-adapter input cable, no separate sourcing
+  needed. Motors/controller electronics are powered by a separate PSU, see
+  [0023](0023-power-supply-selection.md).
 - **Air assist**: the K40 has a built-in air assist nozzle, but needs an
   **external air pump/compressor** — not included, must be sourced separately
   (falls under the "off the shelf" component category).

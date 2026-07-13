@@ -32,8 +32,8 @@ going forward, replacing the Ktondic. Category: off-the-shelf component.
 ## Consequences
 
 - More airflow margin for cutting 1/2" Baltic birch than the Ktondic offered.
-- Need to confirm the pump's outlet fitting/hose barb size against the K40's
-  air assist port and existing tubing — may need an adapter if it differs
-  from the Ktondic's fitting.
+- Fitting size is a non-issue: silicone tubing is used throughout and stretches
+  over whatever barb size the pump has, so no adapter is needed regardless of
+  outlet size.
 - Still no compressor-style moisture/oil concerns — same simple hose/nozzle
   path from pump to module as before, no inline filter/dryer needed.

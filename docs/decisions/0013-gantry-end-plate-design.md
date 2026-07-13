@@ -6,9 +6,10 @@ Status: Accepted
 ## Context
 
 The gantry crossbeam (2040, per [0010](0010-extrusion-profile-2040.md)) needs
-to attach to the two X-axis MGN12 carriage blocks
+to attach to the two Y-axis MGN12 carriage blocks
 ([0008](0008-motion-system-mgn12-rails.md), [0014](0014-axis-naming-convention.md))
-at each end. Both mounting
+at each end — the carriages riding the two guide rails that the whole
+gantry travels along. Both mounting
 interfaces are flat faces, which allows a single flat laser-cut plate rather
 than a bent/welded bracket:
 
@@ -45,10 +46,16 @@ Category: laser cut ([0003](0003-parts-sourcing-constraint.md)).
 - Two of these plates needed per machine (one per side of the gantry).
 - All future laser-cut SVGs for this project include a 100mm x 10mm scale
   bar for import verification, per standing convention.
-- **Open issue**: the gantry beam (Y-axis, spans the fixed 800mm axis) must
-  be shorter than 800mm — it spans between the two carriages, which sit
-  inboard of the X-axis rails (mounted on the extrusion's inward-facing
-  wide face). Exact beam length = 800mm minus the X-rail extrusion width,
-  MGN12 rail/carriage offset, and this end plate's thickness, on both
-  sides. Not yet calculated — needs final rail offset and plate material
-  thickness before cutting the beam to length.
+- **Open issue**: the gantry beam spans the long/flexible axis (X, up to
+  1219mm) — it connects the two Y-axis guide rails, which are spaced apart
+  by this dimension. The beam must be shorter than that spacing — it spans
+  between the two carriages, which sit inboard of the Y-rails (mounted on
+  the extrusion's inward-facing wide face). Exact beam length = the chosen
+  X-axis spacing minus the Y-rail extrusion width, MGN12 rail/carriage
+  offset, and this end plate's thickness, on both sides. Not yet
+  calculated — needs final rail offset and plate material thickness before
+  cutting the beam to length.
+  Separately, the two **Y-axis guide rails themselves** are each 800mm long
+  (the fixed axis, [0007](0007-frame-footprint-constraints.md)) — that
+  figure is not affected by this clearance issue, since it's the guide
+  rails' own length, not the beam's span.

@@ -36,3 +36,11 @@ Frame and gantry rail lengths are set directly to **800mm x 1200mm**:
   geometry is designed.
 - This finalizes and supersedes the footprint estimate in
   [0007](0007-frame-footprint-constraints.md).
+
+## Note: mapping to axis naming
+
+Per [0014](0014-axis-naming-convention.md): the **800mm figure is the
+Y-axis guide rails' own length** (each of the two fixed rails the whole
+gantry travels along), and the **1200mm figure is the spacing between
+those two rails**, which the gantry beam spans — this is the X-axis
+(carriage travel distance along the beam).

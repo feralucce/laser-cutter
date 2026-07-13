@@ -1,7 +1,7 @@
 # 0004. Air assist: Ktondic pump
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0005](0005-air-assist-pump-update.md)
 
 ## Context
 

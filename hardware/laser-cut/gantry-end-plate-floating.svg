@@ -10,7 +10,7 @@
        Outer layer: solid backing + shared carriage mount holes, no cutouts. -->
   <!-- Units: mm. 1 SVG user unit = 1mm. Cut lines only (no fill) for laser import. -->
   <!-- Working dims: bracket leg ~19-20mm, M5 set screw -- verify against actual
-       hardware before cutting. Assumed material: 6mm ply/acrylic per layer. -->
+       hardware before cutting. Material: 5mm black acrylic per layer, per ADR 0029. -->
 
   <!-- INNER LAYER -->
   <g transform="translate(10,10)">

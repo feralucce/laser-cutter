@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="800" viewBox="0 0 1350 800" font-family="sans-serif">
+  <!-- Machine wiring diagram. Block/schematic style, not to scale.
+       Compiles: 0022 (controller), 0023 (PSU), 0024 (E-stop), 0025 (fusing),
+       0026 (pin mapping), 0030 (wire gauge), 0033 (limit switches).
+       Two independent 24V rails, never bridged (0023). -->
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#000" />
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill:none; stroke:#000; stroke-width:1.2; }
+    .subbox { fill:none; stroke:#666; stroke-width:0.8; }
+    .gapbox { fill:#fff3e0; stroke:#c25b00; stroke-width:1.6; stroke-dasharray:4,2; }
+    .wire { fill:none; stroke:#000; stroke-width:1; marker-end:url(#arrow); }
+    .railA { stroke:#1c6fd2; }
+    .railK { stroke:#d2521c; }
+    .estop { stroke:#c21c8f; }
+    .label { font-size:11px; }
+    .title { font-size:13px; font-weight:bold; }
+    .small { font-size:9px; fill:#333; }
+    .gap { font-size:9px; fill:#c25b00; font-weight:bold; }
+  </style>
+
+  <text x="20" y="24" class="title">DIY Laser Cutter — Wiring Diagram (reference, compiled from ADRs 0022-0030, 0033, 0037)</text>
+  <text x="20" y="40" class="small">Blue = main 24V rail (steppers/controller, Mean Well LRS-350-24). Orange = K40's own 24V/8A rail. Magenta = E-stop. Black = signal/logic.</text>
+
+  <!-- ===== POWER SOURCES ===== -->
+  <rect x="20" y="70" width="140" height="50" class="box" />
+  <text x="30" y="90" class="label">AC Mains</text>
+  <text x="30" y="105" class="small">wall power</text>
+
+  <rect x="20" y="160" width="160" height="70" class="box railA" />
+  <text x="30" y="180" class="label">Mean Well LRS-350-24</text>
+  <text x="30" y="195" class="small">24V, 14.6A max (0023)</text>
+  <text x="30" y="210" class="small">steppers + controller only</text>
+
+  <rect x="20" y="280" width="160" height="70" class="box railK" />
+  <text x="30" y="300" class="label">K40's own AC-DC adapter</text>
+  <text x="30" y="315" class="small">24V/8A, included with module (0023)</text>
+  <text x="30" y="330" class="small">independent rail — never bridged</text>
+
+  <line x1="90" y1="120" x2="90" y2="160" class="wire" />
+  <line x1="90" y1="120" x2="100" y2="280" class="wire" />
+
+  <!-- ===== MAIN RAIL FUSING (0025) ===== -->
+  <rect x="230" y="150" width="200" height="180" class="box railA" />
+  <text x="240" y="170" class="label">Main rail fuse block (0025)</text>
+  <text x="240" y="185" class="small">16 AWG feed from PSU (0030)</text>
+  <rect x="240" y="195" width="180" height="20" class="subbox" />
+  <text x="245" y="209" class="small">Main fuse: 10A</text>
+  <rect x="240" y="220" width="85" height="20" class="subbox" />
+  <text x="245" y="234" class="small">X1: 3A / 18AWG</text>
+  <rect x="335" y="220" width="85" height="20" class="subbox" />
+  <text x="340" y="234" class="small">X2: 3A / 18AWG</text>
+  <rect x="240" y="245" width="85" height="20" class="subbox" />
+  <text x="245" y="259" class="small">Y: 3A / 18AWG</text>
+  <rect x="335" y="245" width="85" height="20" class="subbox" />
+  <text x="340" y="259" class="small">Ctrl: 2A / 20AWG</text>
+  <text x="240" y="285" class="small">X1/X2/Y branches feed the</text>
+  <text x="240" y="298" class="small">stepper driver modules' 24V in</text>
+  <text x="240" y="311" class="small">(see gap, right). Ctrl feeds T41U5XBB.</text>
+
+  <line x1="180" y1="195" x2="230" y2="195" class="wire railA" />
+  <!-- Ctrl branch to controller 24V in -->
+  <path d="M 420,255 L 460,255 L 460,125 L 480,125" class="wire railA" />
+
+  <!-- ===== K40 RAIL FUSING + E-STOP RELAY (0024, 0025) ===== -->
+  <rect x="230" y="360" width="200" height="60" class="box railK" />
+  <text x="240" y="380" class="label">K40 rail fuse: 10A (0025)</text>
+  <text x="240" y="395" class="small">16 AWG, drag-chain rated (0030)</text>
+  <text x="240" y="408" class="small">between adapter and relay</text>
+
+  <line x1="180" y1="315" x2="230" y2="390" class="wire railK" />
+
+  <rect x="230" y="440" width="200" height="80" class="box railK" />
+  <text x="240" y="460" class="label">E-stop relay (0024)</text>
+  <text x="240" y="475" class="small">24VDC SPDT, &#8805;15A</text>
+  <text x="240" y="490" class="small">coil de-energized by E-stop</text>
+  <text x="240" y="505" class="small">pole 2 &#8594; cuts ALL K40 power</text>
+
+  <line x1="330" y1="420" x2="330" y2="440" class="wire railK" />
+  <line x1="330" y1="520" x2="330" y2="620" class="wire railK" />
+
+  <!-- ===== E-STOP SWITCH ===== -->
+  <rect x="20" y="440" width="160" height="100" class="box estop" />
+  <text x="30" y="460" class="label">E-stop switch</text>
+  <text x="30" y="475" class="small">22mm mushroom, 2NC,</text>
+  <text x="30" y="488" class="small">latching (0024)</text>
+  <text x="30" y="505" class="small">Pole 1 &#8594; Halt input</text>
+  <text x="30" y="518" class="small">Pole 2 &#8594; relay coil</text>
+  <text x="30" y="531" class="small">(K40 rail, above)</text>
+
+  <line x1="180" y1="470" x2="230" y2="470" class="wire estop" />
+  <line x1="100" y1="440" x2="480" y2="230" class="wire estop" />
+
+  <!-- ===== K40 MODULE ===== -->
+  <rect x="230" y="620" width="200" height="90" class="box railK" />
+  <text x="240" y="640" class="label">K40 laser module (0002)</text>
+  <text x="240" y="655" class="small">24V/8A main power in (from relay)</text>
+  <text x="240" y="670" class="small">TTL/PWM cable (2EDG-3.81):</text>
+  <text x="240" y="683" class="small">Yellow=PWM, Black=GND, Red=VCC</text>
+  <text x="240" y="696" class="small">(PWM/GND to T41U5XBB Spindle grp)</text>
+
+  <!-- ===== T41U5XBB CONTROLLER (0022, 0026) ===== -->
+  <rect x="480" y="80" width="230" height="560" class="box" stroke-width="1.6" />
+  <text x="490" y="100" class="title">T41U5XBB (grblHAL) — 0022, 0026</text>
+
+  <rect x="490" y="115" width="210" height="20" class="subbox railA" />
+  <text x="495" y="129" class="small">24V power in (main rail, fused, Ctrl branch)</text>
+
+  <rect x="490" y="145" width="210" height="20" class="subbox estop" />
+  <text x="495" y="159" class="small">Halt input &#8592; E-stop pole 1</text>
+
+  <rect x="490" y="170" width="210" height="20" class="subbox" />
+  <text x="495" y="184" class="small">Door input &#8592; jumper (no sensor)</text>
+
+  <rect x="490" y="200" width="210" height="20" class="subbox" />
+  <text x="495" y="214" class="small">X step/dir/en out (5V logic) / X limit in</text>
+  <rect x="490" y="225" width="210" height="20" class="subbox" />
+  <text x="495" y="239" class="small">A step/dir/en out / A limit in (X2, ganged)</text>
+  <rect x="490" y="250" width="210" height="20" class="subbox" />
+  <text x="495" y="264" class="small">Y step/dir/en out / Y limit in</text>
+  <rect x="490" y="275" width="210" height="20" class="subbox" />
+  <text x="495" y="289" class="small">Z, B: unpopulated (future headroom)</text>
+
+  <rect x="490" y="305" width="210" height="20" class="subbox railK" />
+  <text x="495" y="319" class="small">Spindle grp PWM/GND &#8594; K40 TTL</text>
+
+  <rect x="490" y="335" width="210" height="20" class="subbox" />
+  <text x="495" y="349" class="small">Feed/Hold, Cycle/Start, Probe: unused</text>
+
+  <rect x="490" y="365" width="210" height="20" class="subbox" />
+  <text x="495" y="379" class="small">Relay outputs (Flood/Mist/Aux): free</text>
+  <text x="495" y="392" class="small">(candidate: air-assist pump control)</text>
+
+  <!-- Controller logic signals -> driver modules (gap box) -->
+  <line x1="700" y1="210" x2="770" y2="140" class="wire" />
+  <line x1="700" y1="235" x2="770" y2="180" class="wire" />
+  <line x1="700" y1="260" x2="770" y2="220" class="wire" />
+  <!-- K40 signal -->
+  <line x1="700" y1="315" x2="850" y2="655" class="wire railK" />
+
+  <!-- ===== STEPPER DRIVER MODULES (0037) — gap resolved 2026-07-15 ===== -->
+  <rect x="760" y="90" width="240" height="220" class="box railA" />
+  <text x="770" y="108" class="label">3x STEPPERONLINE DM542T (0037)</text>
+  <text x="770" y="123" class="small">1.0-4.2A adj. (DIP), 20-50VDC</text>
+  <text x="770" y="136" class="small">P1: PUL+/-, DIR+/-, ENA+/- (opto,</text>
+  <text x="770" y="149" class="small">single-ended from T41U5XBB logic)</text>
+  <text x="770" y="162" class="small">P2: 24V in, A+/A-/B+/B- motor out</text>
+  <text x="770" y="179" class="small">Each takes: 24V power (fuse block,</text>
+  <text x="770" y="192" class="small">left) + logic signal (controller,</text>
+  <text x="770" y="205" class="small">left) &#8594; outputs to motor coils.</text>
+  <text x="770" y="222" class="small">3 needed: X1, X2(A), Y.</text>
+  <text x="770" y="239" class="small">Current DIP switches set at</text>
+  <text x="770" y="252" class="small">commissioning to match motor's</text>
+  <text x="770" y="265" class="small">2A/phase rating (0017).</text>
+  <text x="770" y="282" class="small">Larger than stepstick modules —</text>
+  <text x="770" y="295" class="small">needs its own enclosure space.</text>
+
+  <!-- Fuse block 24V branches -> driver gap box -->
+  <path d="M 325,220 L 325,100 L 760,100" class="wire railA" stroke-dasharray="3,2" />
+  <path d="M 380,220 L 780,220 L 780,220" class="wire railA" stroke-dasharray="3,2" />
+  <path d="M 285,245 L 285,160 L 760,160" class="wire railA" stroke-dasharray="3,2" />
+
+  <!-- Driver modules -> motors -->
+  <line x1="1000" y1="140" x2="1070" y2="120" class="wire" />
+  <line x1="1000" y1="180" x2="1070" y2="220" class="wire" />
+  <line x1="1000" y1="220" x2="1070" y2="320" class="wire" />
+
+  <!-- ===== STEPPER MOTORS (0017) ===== -->
+  <rect x="1070" y="90" width="200" height="50" class="box" />
+  <text x="1080" y="110" class="label">X1 motor (NEMA17)</text>
+  <text x="1080" y="125" class="small">fixed to frame (0015)</text>
+
+  <rect x="1070" y="190" width="200" height="50" class="box" />
+  <text x="1080" y="210" class="label">X2 motor (NEMA17)</text>
+  <text x="1080" y="225" class="small">ganged/auto-square (0027)</text>
+
+  <rect x="1070" y="290" width="200" height="50" class="box" />
+  <text x="1080" y="310" class="label">Y motor (NEMA17)</text>
+  <text x="1080" y="325" class="small">mounted on beam (0021)</text>
+
+  <!-- limit switches straight from controller, unrelated to drivers -->
+  <line x1="700" y1="215" x2="1070" y2="400" class="wire" stroke-dasharray="2,2" marker-end="none" />
+  <line x1="700" y1="240" x2="1070" y2="400" class="wire" stroke-dasharray="2,2" marker-end="none" />
+  <line x1="700" y1="265" x2="1070" y2="400" class="wire" stroke-dasharray="2,2" marker-end="none" />
+
+  <!-- ===== LIMIT SWITCHES (0033) ===== -->
+  <rect x="1070" y="380" width="200" height="50" class="box" />
+  <text x="1080" y="400" class="label">X, A, Y limit switches</text>
+  <text x="1080" y="415" class="small">KW12-3-style, NC-wired (0033)</text>
+
+  <!-- ===== K40 destination label ===== -->
+  <rect x="750" y="620" width="150" height="90" class="box railK" />
+  <text x="760" y="640" class="label">(same K40 module</text>
+  <text x="760" y="653" class="small">box, left — PWM/GND</text>
+  <text x="760" y="666" class="small">signal wire only, not</text>
+  <text x="760" y="679" class="small">power. Power comes</text>
+  <text x="760" y="692" class="small">from the relay above.)</text>
+
+  <text x="20" y="770" class="small">Notes: NC used throughout for control/limit inputs (broken wire = fault, not silent failure). $5/$14 invert masks and $8/$170/$347-349 auto-square tuning are commissioning-time settings (0027, 0033), not shown here.</text>
+  <text x="20" y="784" class="small">This diagram is now wireable end-to-end, controller through to every motor/switch/module.</text>
+</svg>

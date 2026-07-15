@@ -30,9 +30,14 @@ unit is in hand.
 
 Purchase **[Inside Hidden Corner Bracket, 90°, M5 set screws, for 20mm x
 20mm / 2020 / 20-series T-slot extrusion](https://www.amazon.com/Pack-Inside-Hidden-Corner-Bracket/dp/B06XZ3Z82M)**
-(20-pack — covers 4 needed for the gantry end plates
-[0016](0016-gantry-end-plate-rework.md) plus the main frame rectangle
-corners [0012](0012-corner-joints-and-feet.md), with spares).
+(20-pack).
+
+Quantity needed, updated for the gantry end cap redesign
+([0036](0036-gantry-end-cap-redesign.md)): **8** for the gantry (4 per end
+x 2 ends — both wide faces of the beam are now used at both ends, up from
+the original 4) + **4** for the main frame rectangle corners (1 per corner,
+[0012](0012-corner-joints-and-feet.md)'s default flush joint) = **12
+total**, still comfortably covered by the 20-pack with 8 spares.
 
 Category: off-the-shelf.
 
@@ -46,9 +51,9 @@ Category: off-the-shelf.
   in hand and measured with calipers. Cut the end plates only after that
   verification, or expect to re-cut if the slot/access-hole dimensions are
   off.
-- The 6mm slot-channel width in the existing end-plate SVGs
-  ([hardware/laser-cut/gantry-end-plate-fixed.svg](../../hardware/laser-cut/gantry-end-plate-fixed.svg),
-  [hardware/laser-cut/gantry-end-plate-floating.svg](../../hardware/laser-cut/gantry-end-plate-floating.svg))
-  is confirmed correct regardless (fixed by the extrusion standard, not the
-  bracket) — only the slot depth and access-hole position depend on the
-  actual bracket and remain unverified.
+- The 6mm slot-channel width in the current end-cap design
+  ([hardware/laser-cut/gantry-end-cap.svg](../../hardware/laser-cut/gantry-end-cap.svg),
+  [0036](0036-gantry-end-cap-redesign.md)) is confirmed correct regardless
+  (fixed by the extrusion standard, not the bracket) — only the slot depth
+  and access-hole position depend on the actual bracket and remain
+  unverified.

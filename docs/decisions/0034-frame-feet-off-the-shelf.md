@@ -42,17 +42,19 @@ spinning cutting tool or heavy vibration might need.
 
 ## Decision
 
-**Off-the-shelf M5-threaded adjustable leveling feet** for 20-series
-(2020/2040) V-slot extrusion — swivel pad base, threads into the
-extrusion's end bore or an M5 T-nut in the slot. No table screw-down; feet
-rest on the downdraft table's 2x4 top via weight + pad friction only.
+Two-part off-the-shelf combo, confirmed compatible (thread sizes verified
+against each other, not just assumed):
 
-Quantity: 4 (one per frame corner) plus spares — this is a generic,
-widely-stocked commodity part (unlike the corner bracket or K40 mount
-research elsewhere in this build), so any matching listing from a normal
-supplier (Amazon, AliExpress, MakerTechStore/OpenBuilds-adjacent sellers)
-works; no single SKU is load-bearing on this decision the way it was for
-[0028](0028-corner-bracket-hardware-selection.md)'s bracket.
+- **[heneng Caster Wheel Connector for 2020 Series Aluminum Extrusion](https://www.amazon.com/Connection-Connector-Aluminum-Extrusion-Thickness/dp/B0BW8SBLK8/)**
+  — 6-pack, aluminum alloy 6063, 50x18x24mm, 7.8mm thick. Mounts to the
+  extrusion's end bore via a screw through its 1/4" (6.35mm) through-hole;
+  provides an **M8 tapped hole** for the foot stud.
+- **[Helonge Swivel Feet Levelers, M8](https://www.amazon.com/Helonge-Levelers-Adjustable-Furniture-Workbench/dp/B08KXDFJ3M)**
+  — 6-pack, M8-threaded, swivel pad base, height-adjustable.
+
+Both are 6-packs, conveniently covering the 4 needed (one per frame
+corner) with 2 spares each, no quantity mismatch. No table screw-down;
+feet rest on the downdraft table's 2x4 top via weight + pad friction only.
 
 Category: off-the-shelf ([0003](0003-parts-sourcing-constraint.md)) —
 removes this part from the 3D-printed category entirely.
@@ -74,3 +76,7 @@ removes this part from the 3D-printed category entirely.
 - Feet placement still needs to respect the ~38mm-wide 2x4 top surface
   constraint noted in [0007](0007-frame-footprint-constraints.md) — a
   swivel-pad foot needs to actually land on that surface, not overhang it.
+- Two SKUs to order instead of one, but both confirmed to actually mate
+  (M8 tapped hole ↔ M8 foot thread) rather than assumed compatible —
+  avoids the risk of ordering a generic leveling foot whose thread doesn't
+  match a separately-sourced connector.

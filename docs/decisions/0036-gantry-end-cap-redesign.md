@@ -84,3 +84,15 @@ Design file: [hardware/laser-cut/gantry-end-cap.svg](../../hardware/laser-cut/ga
 - The straddle-zone span is a working estimate, not yet verified against
   physical assembly — same treatment as other "verify once hardware is in
   hand" items throughout this build.
+- 2026-07-14 correction: the first version of `gantry-end-cap.svg` had the
+  L-bracket slots at the wrong scale/orientation (10mm wide x 22mm tall,
+  side by side) and one slot positioned entirely past the extrusion's real
+  40mm-tall footprint (y=56-78 against an actual 8-48 span). Fixed by
+  adding a dashed reference rectangle showing the true 20x40mm extrusion
+  cross-section, and repositioning both slots (now 22mm wide x 10mm tall,
+  rotated to match the wide-face-vertical orientation) fully within that
+  reference. Slot dimensions remain a working estimate — redraw once the
+  actual corner bracket's leg dimensions are confirmed
+  ([0028](0028-corner-bracket-hardware-selection.md)), but they should now
+  at least be plausibly located on the real material rather than floating
+  in empty space.

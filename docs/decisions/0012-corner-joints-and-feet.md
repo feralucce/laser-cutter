@@ -1,7 +1,8 @@
 # 0012. Corner joints: end-cap connectors; feet: 3D printed PLA-CF
 
 Date: 2026-07-13
-Status: Accepted
+Status: Accepted (feet portion superseded by [0034](0034-frame-feet-off-the-shelf.md)
+— corner joints below still stand)
 
 ## Context
 

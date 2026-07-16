@@ -32,12 +32,14 @@ Purchase **[Inside Hidden Corner Bracket, 90°, M5 set screws, for 20mm x
 20mm / 2020 / 20-series T-slot extrusion](https://www.amazon.com/Pack-Inside-Hidden-Corner-Bracket/dp/B06XZ3Z82M)**
 (20-pack).
 
-Quantity needed, updated for the gantry end cap redesign
-([0036](0036-gantry-end-cap-redesign.md)): **8** for the gantry (4 per end
-x 2 ends — both wide faces of the beam are now used at both ends, up from
-the original 4) + **4** for the main frame rectangle corners (1 per corner,
-[0012](0012-corner-joints-and-feet.md)'s default flush joint) = **12
-total**, still comfortably covered by the 20-pack with 8 spares.
+Quantity needed, updated 2026-07-15: **8** for the gantry (4 per end x 2
+ends — both wide faces of the beam are now used at both ends, per the end
+cap redesign, [0036](0036-gantry-end-cap-redesign.md)) + **8** for the
+main frame rectangle corners (**2 per corner** — one bracket in each
+T-slot at every corner, not just one, for a stronger joint than
+[0012](0012-corner-joints-and-feet.md)'s original single-bracket-per-corner
+default) = **16 total**, still covered by the 20-pack, now with only 4
+spares.
 
 Category: off-the-shelf.
 

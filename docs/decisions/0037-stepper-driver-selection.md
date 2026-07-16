@@ -35,8 +35,9 @@ estimate):
 
 ## Decision
 
-**3x STEPPERONLINE DM542T** (1.0-4.2A, 20-50VDC digital stepper driver) —
-one per motor (X1, X2/A, Y, per [0011](0011-x-axis-dual-motor.md)/[0021](0021-y-axis-motor-system.md)).
+**3x [STEPPERONLINE DM542T](https://www.amazon.com/STEPPERONLINE-1-0-4-2A-20-50VDC-Micro-step-Resolutions/dp/B06Y5VPSFN)**
+(1.0-4.2A, 20-50VDC digital stepper driver) — one per motor (X1, X2/A, Y,
+per [0011](0011-x-axis-dual-motor.md)/[0021](0021-y-axis-motor-system.md)).
 
 Wiring: T41U5XBB's X/A/Y step/dir/enable outputs → each driver's PUL+/DIR+/ENA+
 (with the corresponding `-` pins tied to the controller's signal ground).

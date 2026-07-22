@@ -19,7 +19,8 @@ physical hardware).
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| MGN12 linear rail + MGN12H carriage block | 2x 1200mm rail (X-axis) + 1x 800mm rail (Y-axis, single rail on beam), 4x carriage blocks (2 on X, 2 on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 1200mm rail+block $31.63, 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) |
+| 2040 V-slot Mini V Gantry Plate kit (plate + 4 Delrin V-wheels + spacers/screws) | 2 (one per X-axis gantry side) | [Creality3D Parts](https://www.creality3dparts.com/product/2040-v-slot-openbuilds-v-gantry-plat-set-slide-pulley-aluminum-profiles-wheels/), $13.99 each ($27.98 total) | [0040](decisions/0040-x-axis-v-wheel-gantry.md) — **not yet redesigned**: gantry end cap's carriage-attachment zone still cut for MGN12H's bolt pattern, needs redrawing for this plate's hole pattern before build |
+| MGN12 linear rail + MGN12H carriage block | 1x 800mm rail (Y-axis, single rail on beam), 2x carriage blocks (both on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) |
 | STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase | 3 (2x X, 1x Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-Stepper-Bipolar-Connector-compatible/dp/B00PNEQKC0) | [0017](decisions/0017-stepper-motor-selection.md) |
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) |
 | BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) |
@@ -84,3 +85,4 @@ physical hardware).
 - K40 sliding-plate mounting hole spacing ([0032](decisions/0032-y-axis-laser-carriage.md))
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
+- Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started

@@ -64,38 +64,25 @@ wheel-holder plate count here.
 
 ## Decision
 
-**X-axis gantry legs**: 2x wheel-holder plate (1 per leg,
-[hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl)) + 8x
-assembled Delrin Mini V-Wheel (wheel + MR105ZZ bearing + 6mm eccentric
-spacer, 4 per plate).
+**Final sourcing (2026-07-22, same day)**: switched from the custom
+PLA-CF plate + separately-sourced wheels to the **pre-made solid-aluminum
+kit** identified as an alternative above — 3x **"1-Pack Assembled 2040 V
+Gantry Plate Kit"** — https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/
+— aluminum plate (black-treated), 87x88x3mm, **6 POM wheels pre-mounted**
+per plate, ~$18.99 each (confirmed at this price via WoodArtSupply
+carrying the identical item; verify live Amazon price before ordering).
+One plate per connection point: **2 for the X-axis gantry legs, 1 for the
+Y-axis carriage**. This replaces [hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl)
+as the sourced part (file kept in the repo for reference/history) and
+makes the separate Delrin Mini V-Wheel eBay purchase unnecessary — wheels
+now come bundled with each plate.
 
-**Y-axis carriage** ([0039](0039-y-axis-single-rail-dual-block.md)): 1x
-the same wheel-holder plate + 4x the same wheel, mounted alongside the
-existing rail/block bracket as anti-wiggle reinforcement.
+**Total plates**: 3. **Total wheels**: 18 (6 per plate x 3, all
+pre-mounted) — more than the 12 previously planned, since this product
+sells 6 wheels/plate rather than 4; extra wheels are just headroom, not
+a design requirement. **Total cost**: 3 x ~$18.99 = **~$56.97**.
 
-**Total plates**: 3 (2 for X, 1 for Y). **Total wheels**: 12, sourced as
-2x 10-packs — https://www.ebay.com/itm/404701554316 — $16.00 each, $32.00
-total, 8 spares.
-
-**Print settings**: all 3 plates printed in **PLA-CF**, **0.2mm layer
-height**, **2 walls**, **15% infill** — same material family as the other
-3D-printed brackets in this build ([0032](0032-y-axis-laser-carriage.md)),
-consistent settings across all of them.
-
-**Alternative sourcing considered (2026-07-22)**: a pre-made solid-aluminum
-version of essentially this same part exists off-the-shelf — "1-Pack
-Assembled 2040 V Gantry Plate Kit," 87x80.5x3mm, 6 POM wheels pre-mounted,
-~$18.99/plate ([Walmart](https://www.walmart.com/ip/1-Pack-Assembled-2040-V-Gantry-Plate-Kit-6pcs-V-Solid-POM-Wheels-Compatible-2040-4040-Series-V-Slot-Aluminum-Extrusion-Profiles-Linear-Rail-3D-Printe/15442272326),
-[WoodArtSupply, $18.99 confirmed](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine)).
-Not adopted yet — still using the custom PLA-CF plate — but flagged here
-as a real, confirmed-compatible fallback if the printed plate's rigidity
-proves insufficient once test-fitted. Research into printed-gantry-plate
-reliability (OpenBuilds community builds) found thickness, not material,
-is the deciding factor: 3mm-thick prints reportedly flexed, 6mm+ held up
-fine for actual wood-cutting use — this design's 7mm PLA-CF plate clears
-that bar on paper.
-
-Category: off-the-shelf wheels, user-designed plate
+Category: off-the-shelf, fully assembled
 ([0003](0003-parts-sourcing-constraint.md)).
 
 ## Consequences
@@ -109,12 +96,17 @@ Category: off-the-shelf wheels, user-designed plate
   gantry end cap ([hardware/laser-cut/gantry-end-cap.svg](../../hardware/laser-cut/gantry-end-cap.svg),
   [0036](0036-gantry-end-cap-redesign.md)) currently cuts its bottom
   "carriage attachment zone" for the MGN12H block's 20x20mm bolt pattern.
-  The custom plate has its own, different mounting hole pattern — the end
-  cap's carriage-attachment geometry needs to be redrawn to bolt to it
-  instead. This ADR records the sourcing decision only; the mechanical
-  redesign is a separate, not-yet-started task.
+  This aluminum plate has its own, fixed mounting hole pattern (6 holes at
+  7.2mm dia + 37 positioning holes at 5.1mm dia) — the end cap's
+  carriage-attachment geometry needs to be redrawn to bolt to it instead.
+  This ADR records the sourcing decision only; the mechanical redesign is
+  a separate, not-yet-started task.
 - Not yet decided: exactly how the Y-axis plate/wheel set physically
   attaches to the existing rail/block/K40-bracket stack
-  ([0039](0039-y-axis-single-rail-dual-block.md)) — quantity (1 plate, 4
-  wheels) is settled, the integration geometry isn't.
+  ([0039](0039-y-axis-single-rail-dual-block.md)) — quantity (1 plate) is
+  settled, the integration geometry isn't.
+- No more print-settings question for these 3 plates — they're bought
+  assembled, not printed. PLA-CF/0.2mm/2-wall/15%-infill settings still
+  apply to this build's other 3D-printed brackets (K40 carriage bracket,
+  [0032](0032-y-axis-laser-carriage.md)), just not to these plates anymore.
 - BOM updated to reflect this swap (Motion system section).

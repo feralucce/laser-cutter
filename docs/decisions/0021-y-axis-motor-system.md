@@ -6,12 +6,14 @@ Status: Accepted
 ## Context
 
 The Y-axis (800mm, [0014](0014-axis-naming-convention.md)) is mounted on
-the gantry beam itself, driving the laser carriage. At the time of this
-ADR that was a single MGN12 rail; [0038](0038-y-axis-dual-rail.md) later
-added a second rail for carriage stiffness, but both rails are passive
-support for one rigid carriage, not independently driven — no
-synchronization concern, so a single motor still suffices (vs. the
-X-axis's dual motors, [0011](0011-x-axis-dual-motor.md)).
+the gantry beam itself, driving the laser carriage: a single MGN12 rail,
+with two carriage blocks riding it ([0039](0039-y-axis-single-rail-dual-block.md),
+which explored and moved past a brief two-rail detour in
+[0038](0038-y-axis-dual-rail.md)) for cantilever-moment stiffness under
+the K40's offset load. Both blocks are passive support for one rigid
+carriage, not independently driven — no synchronization concern, so a
+single motor still suffices (vs. the X-axis's dual motors,
+[0011](0011-x-axis-dual-motor.md)).
 
 Same topology reasoning as X ([0015](0015-x-axis-motor-system.md)) applies:
 fixed motor + fixed idler at opposite ends of the beam, closed-loop belt,

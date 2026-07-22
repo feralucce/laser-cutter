@@ -4,15 +4,11 @@
        2 beam ends) -- all four are the same design, cut from this one file. -->
   <!-- Beam attachment zone (top): 2 L-bracket slots, STACKED VERTICALLY (not
        side-by-side) -- the beam is installed wide-face-vertical (ADR 0032),
-       so the wide face's T-slots are stacked one above the other in the
-       installed orientation, not side by side. Slots are this plate's own
-       facing wide face only -- the OTHER plate in the front/back pair uses
-       the beam's other wide face. Beam is now 2060 (ADR 0038): 3 T-slots
-       per 60mm face at 20mm spacing (10/30/50mm from the near edge); the
-       2 L-bracket slots use the two OUTER T-slots (40mm apart) rather than
-       an adjacent pair, matching the dual-rail design's own outer-slot
-       choice for max spread/rigidity. Plus 1 tapped-screw clearance hole
-       for the extrusion's end-bore mounting screw. No flared opening
+       so the wide face's 2 T-slots (20mm apart) are stacked one above the
+       other in the installed orientation, not side by side. Slots are this
+       plate's own facing wide face only -- the OTHER plate in the front/back
+       pair uses the beam's other wide face. Plus 1 tapped-screw clearance
+       hole for the extrusion's end-bore mounting screw. No flared opening
        needed -- both ends are now solid/precise since beam-length tolerance
        is absorbed at the frame's own corner joint instead (ADR 0035). -->
   <!-- Straddle zone (middle): extends down past the 1200mm frame rail's
@@ -25,34 +21,34 @@
        Material: 3mm black acrylic per layer, 2 layers laminated (ADR 0036,
        a deliberate exception to ADR 0029's general 5mm rule). -->
 
-  <!-- REFERENCE ONLY (not a cut line): the 2060 extrusion's actual
-       cross-section footprint (20mm wide x 60mm tall, wide-face-vertical,
-       ADR 0038 -- was 2040/20x40mm), centered on the plate width. Both
-       L-bracket slots must stay within this 60mm height -- real span is
-       y=8-68 in this group's local coordinates. Keep this reference rect
-       in the file (dashed, distinct color) until the final bracket
-       dimensions replace the working-estimate slots below. -->
+  <!-- REFERENCE ONLY (not a cut line): the 2040 extrusion's actual
+       cross-section footprint (20mm wide x 40mm tall, wide-face-vertical),
+       centered on the plate width. Both L-bracket slots must stay within
+       this 40mm height -- an earlier version of this file had the second
+       slot at y=56-78, entirely past the extrusion's real 8-48 span. Keep
+       this reference rect in the file (dashed, distinct color) until the
+       final bracket dimensions replace the working-estimate slots below. -->
 
   <!-- INNER LAYER -->
   <g transform="translate(10,10)">
     <text x="0" y="-3" font-family="sans-serif" font-size="5" fill="#000000">End cap - INNER layer (L-bracket slots)</text>
     <rect x="0" y="0" width="70" height="220" rx="3" ry="3" fill="none" stroke="#000000" stroke-width="0.1" />
-    <rect x="25" y="8" width="20" height="60" fill="none" stroke="#df6260" stroke-width="0.3" stroke-dasharray="2,1" />
+    <rect x="25" y="8" width="20" height="40" fill="none" stroke="#df6260" stroke-width="0.3" stroke-dasharray="2,1" />
     <!-- Tapped-screw clearance hole: extrusion end-bore mounting screw,
          in the gap between the two slots -->
-    <circle cx="35" cy="39" r="2.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="35" cy="29" r="2.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <!-- L-bracket slots: WORKING ESTIMATE, 22mm wide x 10mm tall (rotated
          from the previous version -- this is the T-slot-channel-length
          dimension running horizontally once the beam is wide-face-vertical),
          stacked vertically, both contained within the extrusion's real
-         8-68 height span, slot centers 40mm apart -- using the beam's two
-         OUTER T-slots (ADR 0038) rather than an adjacent pair. REDRAW once
-         actual bracket leg dimensions are confirmed (ADR 0028). -->
+         8-48 height span, slot centers 20mm apart matching the wide face's
+         T-slot spacing. REDRAW once actual bracket leg dimensions are
+         confirmed (ADR 0028). -->
     <rect x="24" y="14" width="22" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
-    <rect x="24" y="54" width="22" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
+    <rect x="24" y="34" width="22" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
     <!-- Set-screw access holes, mid-slot -->
     <circle cx="35" cy="19" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
-    <circle cx="35" cy="59" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="35" cy="39" r="2.5" fill="none" stroke="#000000" stroke-width="0.1" />
     <!-- Carriage mount holes: M3 clearance, 20x20mm pattern, fully inside
          the plate body with 15mm margin below the lowest holes -->
     <circle cx="25" cy="185" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
@@ -65,8 +61,8 @@
   <g transform="translate(110,10)">
     <text x="0" y="-3" font-family="sans-serif" font-size="5" fill="#000000">End cap - OUTER layer (solid backing)</text>
     <rect x="0" y="0" width="70" height="220" rx="3" ry="3" fill="none" stroke="#000000" stroke-width="0.1" />
-    <rect x="25" y="8" width="20" height="60" fill="none" stroke="#df6260" stroke-width="0.3" stroke-dasharray="2,1" />
-    <circle cx="35" cy="39" r="2.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <rect x="25" y="8" width="20" height="40" fill="none" stroke="#df6260" stroke-width="0.3" stroke-dasharray="2,1" />
+    <circle cx="35" cy="29" r="2.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="25" cy="185" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="45" cy="185" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
     <circle cx="25" cy="205" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />

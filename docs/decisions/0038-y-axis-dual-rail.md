@@ -1,10 +1,11 @@
 # 0038. Y-axis dual-rail carriage: beam upgraded to 2060, two MGN12 rails
 
 Date: 2026-07-15
-Status: Accepted (upgrades the **beam only** — [0010](0010-extrusion-profile-2040.md)'s
-2040 choice still stands for the rest of the frame; supersedes the
-beam-specific portions of [0032](0032-y-axis-laser-carriage.md) and
-[0036](0036-gantry-end-cap-redesign.md))
+Status: **Superseded by [0039](0039-y-axis-single-rail-dual-block.md)** —
+a real price check found this dual-rail/2060 approach costs more than an
+equally-effective single-rail/dual-block alternative. Kept here for
+history; the beam-widening rationale and moment-load analysis below are
+still valid engineering, just not the approach actually built.
 
 ## Context
 

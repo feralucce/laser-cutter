@@ -43,19 +43,42 @@ path — that part was evaluated separately and kept on its own merits —
 but it also picks up 4 of the wheels priced here, as reinforcement rather
 than replacement (see 0039's own update).
 
+**Reference photos (2026-07-22)**: the user provided photos of this exact
+plate design as a complete assembled unit — 4 wheels bolted through the
+grid holes, riding a 2040 extrusion, plus a second (2020-sized) plate from
+the same reference build shown just to illustrate the general concept
+(not part of this machine — nor is the DC gearmotor shown in one photo,
+unrelated to this build's NEMA17 steppers). This visually confirms the
+plate+wheel mounting mechanism assumed above.
+
+**Front/back plate pair, not a single plate**: each wheel location
+actually needs **two** of these plates — a front plate and a matching
+back plate — connected by standoffs on the wheel bolts, sandwiching the
+extrusion between them. The wheels sit spaced off the plate by whatever
+gap is needed to properly seat against the extrusion's faces (exact
+standoff length is a **VERIFY** item, set once the plate/wheel/extrusion
+stack is physically test-fitted). This is what actually gives the
+assembly positive retention against tipping — a single plate resting
+wheels against one face has nothing stopping it from lifting off under
+the K40's cantilever moment; a front+back pair captures the extrusion
+between two wheel sets the same way a rail block does.
+
 ## Decision
 
-**X-axis gantry legs**: 2x custom universal mounting plate
-([hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl), one
-per side) + 8x assembled Delrin Mini V-Wheel (wheel + MR105ZZ bearing +
-6mm eccentric spacer).
+**X-axis gantry legs**: 2x front plate + 2x back plate (4 total,
+[hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl), one
+front/back pair per side) + 8x assembled Delrin Mini V-Wheel (wheel +
+MR105ZZ bearing + 6mm eccentric spacer).
 
 **Y-axis carriage** ([0039](0039-y-axis-single-rail-dual-block.md)): 1x
-the same custom plate + 4x the same wheel, mounted alongside the existing
-rail/block bracket as anti-wiggle reinforcement.
+front plate + 1x back plate (2 total, same design) + 4x the same wheel,
+mounted alongside the existing rail/block bracket as anti-wiggle
+reinforcement.
 
-**Total wheels**: 12, sourced as 2x 10-packs —
-https://www.ebay.com/itm/404701554316 — $16.00 each, $32.00 total.
+**Total plates**: 6 (4 for X, 2 for Y). **Total wheels**: 12, sourced as
+2x 10-packs — https://www.ebay.com/itm/404701554316 — $16.00 each, $32.00
+total. Plus standoff hardware (spacers/threaded rod connecting each
+front/back pair) — length not yet determined, generic hardware once set.
 
 Category: off-the-shelf wheels, user-designed plate
 ([0003](0003-parts-sourcing-constraint.md)).

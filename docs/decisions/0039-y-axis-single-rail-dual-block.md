@@ -63,16 +63,19 @@ compromise substitute for it.
   L-bracket slots revert to their pre-0038 2040 (20x40mm) footprint and
   positions — this file only cares about the beam's cross-section, which
   is back to 2040.
-- **Wheel reinforcement (2026-07-22 addition)**: the carriage also mounts
-  **4 V-wheels** riding the beam's V-groove, on a custom universal plate
-  ([hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl), same
-  plate used for the X-axis gantry legs, [0040](0040-x-axis-v-wheel-gantry.md)) —
-  the same hybrid principle discussed for this axis: the MGN12 rail/blocks
-  set the precise travel path, the wheels are pure anti-wiggle
-  reinforcement against the K40's cantilever moment, not a load-bearing
-  replacement for the rail. Not yet designed how the plate integrates with
-  the existing rail-block spine/standoff bracket — deferred with the same
-  gantry-leg redesign work in 0040.
+- **Wheel reinforcement (2026-07-22 addition, updated same day)**: the
+  carriage also mounts **4 V-wheels** riding the beam, on a front+back
+  plate pair (2 plates total — [hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl),
+  same design used for the X-axis gantry legs, [0040](0040-x-axis-v-wheel-gantry.md)),
+  sandwiching the beam between two wheel sets rather than resting wheels
+  against a single face — same hybrid principle discussed for this axis:
+  the MGN12 rail/blocks set the precise travel path, the wheels are pure
+  anti-wiggle reinforcement against the K40's cantilever moment, not a
+  load-bearing replacement for the rail. Wheel standoff spacing off the
+  plate is a **VERIFY** item, set once test-fitted against the real
+  extrusion/wheel stack. Not yet designed how this plate pair integrates
+  with the existing rail-block spine/standoff bracket — deferred with the
+  same gantry-leg redesign work in 0040.
 
 Category: off-the-shelf extrusion + rail/block hardware
 ([0003](0003-parts-sourcing-constraint.md)).

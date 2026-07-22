@@ -75,7 +75,9 @@ compromise substitute for it.
   plate is a **VERIFY** item, set once test-fitted against the real
   extrusion/wheel stack. Not yet designed how this plate pair integrates
   with the existing rail-block spine/standoff bracket — deferred with the
-  same gantry-leg redesign work in 0040.
+  same gantry-leg redesign work in 0040. Print settings (PLA-CF, 0.2mm
+  layer, 2 walls, 15% infill) match the X-axis plates, per
+  [0040](0040-x-axis-v-wheel-gantry.md).
 
 Category: off-the-shelf extrusion + rail/block hardware
 ([0003](0003-parts-sourcing-constraint.md)).

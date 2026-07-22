@@ -80,6 +80,11 @@ reinforcement.
 total. Plus standoff hardware (spacers/threaded rod connecting each
 front/back pair) — length not yet determined, generic hardware once set.
 
+**Print settings**: all 6 plates printed in **PLA-CF**, **0.2mm layer
+height**, **2 walls**, **15% infill** — same material family as the other
+3D-printed brackets in this build ([0032](0032-y-axis-laser-carriage.md)),
+consistent settings across all of them.
+
 Category: off-the-shelf wheels, user-designed plate
 ([0003](0003-parts-sourcing-constraint.md)).
 

@@ -63,20 +63,23 @@ compromise substitute for it.
   L-bracket slots revert to their pre-0038 2040 (20x40mm) footprint and
   positions — this file only cares about the beam's cross-section, which
   is back to 2040.
-- **Wheel reinforcement (2026-07-22 addition, updated same day)**: the
-  carriage also mounts **4 V-wheels** riding the beam, on a front+back
-  plate pair (2 plates total — [hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl),
-  same design used for the X-axis gantry legs, [0040](0040-x-axis-v-wheel-gantry.md)),
-  sandwiching the beam between two wheel sets rather than resting wheels
-  against a single face — same hybrid principle discussed for this axis:
-  the MGN12 rail/blocks set the precise travel path, the wheels are pure
-  anti-wiggle reinforcement against the K40's cantilever moment, not a
-  load-bearing replacement for the rail. Wheel standoff spacing off the
-  plate is a **VERIFY** item, set once test-fitted against the real
-  extrusion/wheel stack. Not yet designed how this plate pair integrates
-  with the existing rail-block spine/standoff bracket — deferred with the
-  same gantry-leg redesign work in 0040. Print settings (PLA-CF, 0.2mm
-  layer, 2 walls, 15% infill) match the X-axis plates, per
+- **Wheel reinforcement (2026-07-22 addition, corrected same day)**: the
+  carriage also mounts **4 V-wheels** riding the beam, on **one**
+  wheel-holder plate ([hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl),
+  same design used for the X-axis gantry legs, [0040](0040-x-axis-v-wheel-gantry.md))
+  — same hybrid principle discussed for this axis: the MGN12 rail/blocks
+  set the precise travel path, the wheels are pure anti-wiggle
+  reinforcement against the K40's cantilever moment, not a load-bearing
+  replacement for the rail. (An earlier version of this note incorrectly
+  called for a front+back plate pair here — corrected: it's one plate,
+  same as each X-axis gantry leg.)
+  Separately, the **carriage's own body** (distinct from this wheel-holder
+  plate) may be built from two flat plates for structural rigidity — that
+  detail is still open, not yet designed, and not the same thing as the
+  wheel-holder plate count above. Not yet designed how the wheel-holder
+  plate integrates with the existing rail-block spine/standoff bracket —
+  deferred with the same gantry-leg redesign work in 0040. Print settings
+  (PLA-CF, 0.2mm layer, 2 walls, 15% infill) match the X-axis plates, per
   [0040](0040-x-axis-v-wheel-gantry.md).
 
 Category: off-the-shelf extrusion + rail/block hardware

@@ -51,39 +51,49 @@ the same reference build shown just to illustrate the general concept
 unrelated to this build's NEMA17 steppers). This visually confirms the
 plate+wheel mounting mechanism assumed above.
 
-**Front/back plate pair, not a single plate**: each wheel location
-actually needs **two** of these plates — a front plate and a matching
-back plate — connected by standoffs on the wheel bolts, sandwiching the
-extrusion between them. The wheels sit spaced off the plate by whatever
-gap is needed to properly seat against the extrusion's faces (exact
-standoff length is a **VERIFY** item, set once the plate/wheel/extrusion
-stack is physically test-fitted). This is what actually gives the
-assembly positive retention against tipping — a single plate resting
-wheels against one face has nothing stopping it from lifting off under
-the K40's cantilever moment; a front+back pair captures the extrusion
-between two wheel sets the same way a rail block does.
+**Correction (2026-07-22, same day)**: the "front+back plate pair" framing
+above was a misreading — there are **3 connection points total** (the 2
+X-axis gantry legs at the bottom, plus the 1 Y-axis carriage at the top),
+and **each gets exactly one wheel-holder plate**, not a pair. The earlier
+"back plate for stability" note referred to the Y-axis carriage's own
+body possibly being built from two flat plates (its structural
+construction), not a second wheel-holder plate duplicated at every
+connection point — that carriage-body detail is still open and tracked
+in [0039](0039-y-axis-single-rail-dual-block.md), separate from the
+wheel-holder plate count here.
 
 ## Decision
 
-**X-axis gantry legs**: 2x front plate + 2x back plate (4 total,
-[hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl), one
-front/back pair per side) + 8x assembled Delrin Mini V-Wheel (wheel +
-MR105ZZ bearing + 6mm eccentric spacer).
+**X-axis gantry legs**: 2x wheel-holder plate (1 per leg,
+[hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl)) + 8x
+assembled Delrin Mini V-Wheel (wheel + MR105ZZ bearing + 6mm eccentric
+spacer, 4 per plate).
 
 **Y-axis carriage** ([0039](0039-y-axis-single-rail-dual-block.md)): 1x
-front plate + 1x back plate (2 total, same design) + 4x the same wheel,
-mounted alongside the existing rail/block bracket as anti-wiggle
-reinforcement.
+the same wheel-holder plate + 4x the same wheel, mounted alongside the
+existing rail/block bracket as anti-wiggle reinforcement.
 
-**Total plates**: 6 (4 for X, 2 for Y). **Total wheels**: 12, sourced as
+**Total plates**: 3 (2 for X, 1 for Y). **Total wheels**: 12, sourced as
 2x 10-packs — https://www.ebay.com/itm/404701554316 — $16.00 each, $32.00
-total. Plus standoff hardware (spacers/threaded rod connecting each
-front/back pair) — length not yet determined, generic hardware once set.
+total, 8 spares.
 
-**Print settings**: all 6 plates printed in **PLA-CF**, **0.2mm layer
+**Print settings**: all 3 plates printed in **PLA-CF**, **0.2mm layer
 height**, **2 walls**, **15% infill** — same material family as the other
 3D-printed brackets in this build ([0032](0032-y-axis-laser-carriage.md)),
 consistent settings across all of them.
+
+**Alternative sourcing considered (2026-07-22)**: a pre-made solid-aluminum
+version of essentially this same part exists off-the-shelf — "1-Pack
+Assembled 2040 V Gantry Plate Kit," 87x80.5x3mm, 6 POM wheels pre-mounted,
+~$18.99/plate ([Walmart](https://www.walmart.com/ip/1-Pack-Assembled-2040-V-Gantry-Plate-Kit-6pcs-V-Solid-POM-Wheels-Compatible-2040-4040-Series-V-Slot-Aluminum-Extrusion-Profiles-Linear-Rail-3D-Printe/15442272326),
+[WoodArtSupply, $18.99 confirmed](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine)).
+Not adopted yet — still using the custom PLA-CF plate — but flagged here
+as a real, confirmed-compatible fallback if the printed plate's rigidity
+proves insufficient once test-fitted. Research into printed-gantry-plate
+reliability (OpenBuilds community builds) found thickness, not material,
+is the deciding factor: 3mm-thick prints reportedly flexed, 6mm+ held up
+fine for actual wood-cutting use — this design's 7mm PLA-CF plate clears
+that bar on paper.
 
 Category: off-the-shelf wheels, user-designed plate
 ([0003](0003-parts-sourcing-constraint.md)).
@@ -102,8 +112,7 @@ Category: off-the-shelf wheels, user-designed plate
   The custom plate has its own, different mounting hole pattern — the end
   cap's carriage-attachment geometry needs to be redrawn to bolt to it
   instead. This ADR records the sourcing decision only; the mechanical
-  redesign is a separate, not-yet-started task, waiting on the user's
-  planned reference photos of the plate as a complete assembled unit.
+  redesign is a separate, not-yet-started task.
 - Not yet decided: exactly how the Y-axis plate/wheel set physically
   attaches to the existing rail/block/K40-bracket stack
   ([0039](0039-y-axis-single-rail-dual-block.md)) — quantity (1 plate, 4

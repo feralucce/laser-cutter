@@ -24,7 +24,11 @@ instead of a fixed pre-made one, so it can also serve as the connection
 point for the Y-axis carriage per the user's plan to standardize on one
 plate design across both. Confirmed pricing: a 10-pack of assembled
 Delrin Mini V-Wheels (wheel + MR105ZZ bearing + 6mm eccentric spacer) runs
-$16.00 (eBay) — 8 needed (2 sides x 4 wheels), 2 spares included.
+$16.00 (eBay) — **12 needed in total**: 8 for the X-axis gantry legs (2
+sides x 4 wheels) plus 4 for the Y-axis carriage, which also gets a wheel
+set as anti-wiggle reinforcement alongside its rail
+([0039](0039-y-axis-single-rail-dual-block.md)) — 2x 10-pack covers this
+with 8 spares.
 
 This reopens the same precision/wear tradeoff [0008](0008-motion-system-mgn12-rails.md)
 originally weighed (V-wheels vs. MGN12), on the axis where it bites
@@ -33,17 +37,25 @@ beam + Y-rail + carriage + K40, [0011](0011-x-axis-dual-motor.md)).
 Accepted deliberately: the long-rail cost was judged to outweigh the
 wear-point concern for this build.
 
-The Y-axis carriage is unaffected — it keeps its single MGN12 rail with
-two carriage blocks ([0039](0039-y-axis-single-rail-dual-block.md)), which
-was evaluated separately and kept on its own merits.
+The Y-axis carriage keeps its single MGN12 rail with two carriage blocks
+([0039](0039-y-axis-single-rail-dual-block.md)) as its primary travel
+path — that part was evaluated separately and kept on its own merits —
+but it also picks up 4 of the wheels priced here, as reinforcement rather
+than replacement (see 0039's own update).
 
 ## Decision
 
 **X-axis gantry legs**: 2x custom universal mounting plate
 ([hardware/laser-cut/20x40.stl](../../hardware/laser-cut/20x40.stl), one
 per side) + 8x assembled Delrin Mini V-Wheel (wheel + MR105ZZ bearing +
-6mm eccentric spacer), sourced as a 10-pack —
-https://www.ebay.com/itm/404701554316 — $16.00.
+6mm eccentric spacer).
+
+**Y-axis carriage** ([0039](0039-y-axis-single-rail-dual-block.md)): 1x
+the same custom plate + 4x the same wheel, mounted alongside the existing
+rail/block bracket as anti-wiggle reinforcement.
+
+**Total wheels**: 12, sourced as 2x 10-packs —
+https://www.ebay.com/itm/404701554316 — $16.00 each, $32.00 total.
 
 Category: off-the-shelf wheels, user-designed plate
 ([0003](0003-parts-sourcing-constraint.md)).
@@ -64,9 +76,8 @@ Category: off-the-shelf wheels, user-designed plate
   instead. This ADR records the sourcing decision only; the mechanical
   redesign is a separate, not-yet-started task, waiting on the user's
   planned reference photos of the plate as a complete assembled unit.
-- Also not yet decided: how many of these plates the Y-axis carriage
-  needs, and how it attaches to the existing rail/block/K40-bracket stack
-  ([0039](0039-y-axis-single-rail-dual-block.md)) — the user's stated intent
-  is to standardize on this plate for both connection points, but that
-  design work hasn't started.
+- Not yet decided: exactly how the Y-axis plate/wheel set physically
+  attaches to the existing rail/block/K40-bracket stack
+  ([0039](0039-y-axis-single-rail-dual-block.md)) — quantity (1 plate, 4
+  wheels) is settled, the integration geometry isn't.
 - BOM updated to reflect this swap (Motion system section).

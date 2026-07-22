@@ -6,6 +6,11 @@ rationale, and any unresolved caveats (several items below are marked
 **verify** and should not be treated as final until confirmed against
 physical hardware).
 
+## Purchased / in hand
+
+- MGN12 linear rail + MGN12H carriage block (Y-axis) — bought 2026-07-22
+- STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase (all 3) — bought 2026-07-22
+
 ## Structural (frame)
 
 | Part | Qty | Source / link | ADR |

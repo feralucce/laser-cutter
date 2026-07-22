@@ -8,15 +8,20 @@
 // PARAMETERS MARKED "VERIFY" ARE WORKING ESTIMATES -- confirm against the
 // actual MGN12H block, K40 sliding plate, and beam/rail stack-up before
 // printing the final version. See ADR 0032's own caveats.
+//
+// Widened for the dual-rail Y-axis (ADR 0038): two MGN12H blocks, 40mm
+// apart, riding the beam's two outer T-slots (now 2060, not 2040) --
+// resolves the single-rail cantilever-moment concern under the K40's load.
 
 // ---- Plate ----
-plate_width       = 50;    // matches gantry end plate width, 0013/0016
+plate_width       = 80;    // widened for 2 block patterns, 0038
 plate_thickness   = 6;     // base wall thickness (PLA-CF)
 
 // ---- Block-mount zone (top) ----
 block_zone_height = 30;
 block_hole_dia    = 3.5;   // M3 clearance
 block_pattern     = 20;    // 20x20mm MGN12H pattern, 0013
+block_spacing     = 40;    // center-to-center between the 2 blocks, 0038
 
 // ---- Belt clamp holes (top, either side of block-mount zone) ----
 clamp_hole_dia    = 4.5;   // M4 clearance, 3DMAN clamp, 0020
@@ -41,11 +46,12 @@ anchor_hole_dia   = 3;
 total_height = block_zone_height + standoff_height + k40_zone_height;
 
 module block_mount_holes() {
-    for (dx = [-block_pattern/2, block_pattern/2])
-        for (dz = [-block_pattern/2, block_pattern/2])
-            translate([plate_width/2 + dx, -1, total_height - block_zone_height/2 + dz])
-                rotate([-90, 0, 0])
-                    cylinder(h = plate_thickness + 2, d = block_hole_dia, $fn = 24);
+    for (cx = [plate_width/2 - block_spacing/2, plate_width/2 + block_spacing/2])
+        for (dx = [-block_pattern/2, block_pattern/2])
+            for (dz = [-block_pattern/2, block_pattern/2])
+                translate([cx + dx, -1, total_height - block_zone_height/2 + dz])
+                    rotate([-90, 0, 0])
+                        cylinder(h = plate_thickness + 2, d = block_hole_dia, $fn = 24);
 }
 
 module belt_clamp_holes() {

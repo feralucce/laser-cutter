@@ -10,7 +10,8 @@ physical hardware).
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| 2040 V-slot aluminum extrusion, cut to length: 2x 1200mm (frame long sides, rails mount outside face), 2x 800mm (frame end pieces, mount outside the 1200mm pieces' ends), 1x 800mm (gantry beam) | 5 pieces | generic 2040 stock, any supplier | [0010](decisions/0010-extrusion-profile-2040.md), [0035](decisions/0035-frame-corner-topology-rework.md) |
+| 2040 V-slot aluminum extrusion, cut to length: 2x 1200mm (frame long sides, rails mount outside face), 2x 800mm (frame end pieces, mount outside the 1200mm pieces' ends) | 4 pieces | generic 2040 stock, any supplier | [0010](decisions/0010-extrusion-profile-2040.md), [0035](decisions/0035-frame-corner-topology-rework.md) |
+| 2060 V-slot aluminum extrusion, cut to length: 1x 800mm (gantry beam only — rest of frame stays 2040) | 1 piece | generic 2060 stock, any supplier | [0038](decisions/0038-y-axis-dual-rail.md) |
 | Inside Hidden Corner Bracket, 90°, M5, 20-series | 1x 20-pack (need 16: 8 gantry + 8 frame, 2 per corner) | [Amazon](https://www.amazon.com/Pack-Inside-Hidden-Corner-Bracket/dp/B06XZ3Z82M) | [0028](decisions/0028-corner-bracket-hardware-selection.md) — **verify** leg length/set-screw position against physical part before cutting end caps |
 | Caster wheel connector, 2020-series, M8 tapped | 1x 6-pack (need 4) | [Amazon](https://www.amazon.com/Connection-Connector-Aluminum-Extrusion-Thickness/dp/B0BW8SBLK8/) | [0034](decisions/0034-frame-feet-off-the-shelf.md) |
 | M8 swivel leveling feet | 1x 6-pack (need 4) | [Amazon](https://www.amazon.com/Helonge-Levelers-Adjustable-Furniture-Workbench/dp/B08KXDFJ3M) | [0034](decisions/0034-frame-feet-off-the-shelf.md) |
@@ -19,7 +20,7 @@ physical hardware).
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| MGN12 linear rail + MGN12H carriage block | 2x 1200mm rail (X-axis) + 1x 800mm rail (Y-axis, on beam), 3x carriage blocks | generic MGN12 supplier | [0008](decisions/0008-motion-system-mgn12-rails.md) |
+| MGN12 linear rail + MGN12H carriage block | 2x 1200mm rail (X-axis) + 2x 800mm rail (Y-axis, dual-rail on beam), 4x carriage blocks | generic MGN12 supplier | [0008](decisions/0008-motion-system-mgn12-rails.md), [0038](decisions/0038-y-axis-dual-rail.md) |
 | STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase | 3 (2x X, 1x Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-Stepper-Bipolar-Connector-compatible/dp/B00PNEQKC0) | [0017](decisions/0017-stepper-motor-selection.md) |
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) |
 | BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) |

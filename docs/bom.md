@@ -84,9 +84,8 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 
 ## 3D-printed parts (PLA-CF)
 
-| Part | Qty | Design file | ADR |
-|---|---|---|---|
-| Limit switch mount bracket | 3 | [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) | [0033](decisions/0033-limit-switch-selection.md) — **verify** switch mounting-hole spacing |
+No parts left in this category — the K40 carriage bracket and limit
+switch mounts have both moved to laser-cut acrylic (below).
 
 ~~Y-axis laser carriage bracket (K40 mount)~~ — no longer needed. The K40
 now bolts directly to the aluminum wheel-holder plate's own hole grid
@@ -98,6 +97,7 @@ is kept in the repo for reference but is not built.
 | Part | Qty | Material | Design file | ADR |
 |---|---|---|---|---|
 | Gantry end cap (2-layer laminate, front+back pair x 2 ends) | 8 pieces (4 plate-pairs x 2 layers) | 3mm black acrylic (exception to the 5mm default) | [hardware/laser-cut/gantry-end-cap.svg](../hardware/laser-cut/gantry-end-cap.svg) | [0036](decisions/0036-gantry-end-cap-redesign.md) — **verify** L-bracket slot dimensions and straddle-zone length against physical hardware |
+| Limit switch mount bracket | 3 | 5mm black acrylic (default) | not yet designed — [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) kept for reference only, needs redesign as a flat/joined acrylic part | [0033](decisions/0033-limit-switch-selection.md) — **not yet designed**: needs flat-pattern redesign (was a 3D-printed L-bracket), plus still-open switch hole-spacing verification |
 | (all other future laser-cut parts) | — | 5mm black acrylic (default) | — | [0029](decisions/0029-laser-cut-material-selection.md) |
 
 ## Deferred / not part of this BOM

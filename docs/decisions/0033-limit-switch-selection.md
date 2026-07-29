@@ -41,8 +41,21 @@ holes to absorb that uncertainty, same approach as the other two.
 with 7 spares, consistent with this build's usual spares-included
 purchasing pattern). Wired using each switch's **NC** contact.
 
-**Mounting**: PLA-CF printed L-bracket (one design, printed 3x), T-slot
-mounted:
+**Mounting (2026-07-22, material changed to black acrylic)**: originally
+a PLA-CF printed L-bracket; switched to laser-cut black acrylic to match
+the rest of the acrylic stock already being ordered
+([0029](0029-laser-cut-material-selection.md)). This is a real geometry
+change, not just a material swap: the current design is a single-piece
+3D-printed L-bracket (two perpendicular legs), which doesn't translate
+directly to a flat laser-cut part. Needs redesigning as either (a) two
+flat acrylic pieces joined at 90° via slot-and-tab joinery (glued or
+press-fit, same general idea as furniture-style laser-cut joints), or
+(b) a flattened single-piece mounting scheme that doesn't need a bent
+corner at all. **Not yet designed** — deferred the same way the switch's
+own hole spacing already was, since both are waiting on the actual
+switch being in hand to confirm dimensions before cutting. Original
+PLA-CF geometry below describes the mounting concept (T-slot leg + switch
+leg) that still needs re-expressing in acrylic-compatible form:
 
 - **Mounting leg**: flat against the 2020/2040 extrusion face, with a
   vertical slot (not a fixed hole) for an M5 bolt + T-nut — lets the
@@ -58,11 +71,12 @@ mounted:
 Mounting locations: X and A switches at the corresponding (same-side) end
 of each X guide rail on the fixed frame; Y switch at one end of the beam.
 
-Category: off-the-shelf (switches) + 3D printed PLA-CF (mount bracket,
-[0003](0003-parts-sourcing-constraint.md)).
+Category: off-the-shelf (switches) + laser-cut black acrylic (mount
+bracket, [0003](0003-parts-sourcing-constraint.md), [0029](0029-laser-cut-material-selection.md)).
 
-Parametric model: [hardware/3d-printed/limit-switch-mount.scad](../../hardware/3d-printed/limit-switch-mount.scad),
-exported to [limit-switch-mount.stl](../../hardware/3d-printed/limit-switch-mount.stl).
+Superseded parametric model (PLA-CF, no longer built): [hardware/3d-printed/limit-switch-mount.scad](../../hardware/3d-printed/limit-switch-mount.scad),
+kept for reference. No acrylic design file exists yet — pending switch
+dimensions.
 
 ## Consequences
 
@@ -76,7 +90,11 @@ exported to [limit-switch-mount.stl](../../hardware/3d-printed/limit-switch-moun
   wired and can be tested.
 - The switch mounting-hole spacing is a working estimate — if the actual
   purchased switch's holes don't match, the slots are generous enough to
-  likely still work, but worth a quick check before printing all 3.
+  likely still work, but worth a quick check before cutting all 3.
+- The acrylic redesign (flat 2-piece joined bracket, or a flattened
+  single-piece scheme) is real, not-yet-started work — the existing
+  PLA-CF model's dimensions/slot logic are a starting reference, not a
+  direct port.
 - Exact trigger position along each rail isn't fixed by this design (only
   the mechanism to adjust it) — that's a physical, at-the-bench adjustment
   during homing setup, not something to pre-calculate.

@@ -12,7 +12,7 @@ physical hardware).
 - STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase (all 3) — bought 2026-07-22
 - 2040 V-slot aluminum extrusion — bought 2026-07-22
 - DiGiYes GT2 20T idler pulley (toothless/smooth) — bought 2026-07-22
-- 1-Pack Assembled 2040 V Gantry Plate Kit — bought 2026-07-22 — **verify qty**: need 3 total (2 X-axis legs + 1 Y-axis carriage), confirm order covers all 3
+- 1-Pack Assembled 2040 V Gantry Plate Kit — all 3 confirmed in hand (2026-07-22)
 - 6mm GT2 timing belt — bought 2026-07-22
 - Socobeta NEMA17 motor mount bracket — bought 2026-07-22
 - Mean Well LRS-350-24 PSU — bought 2026-07-22
@@ -24,6 +24,9 @@ physical hardware).
 - Caster wheel connector, 2020-series, M8 tapped — bought 2026-07-22
 - Black acrylic sheet stock — bought 2026-07-22
 - STEPPERONLINE DM542T stepper driver — bought 2026-07-22
+- Silicone air tubing — already had on hand
+- Assorted M3/M5 screws, washers, T-nuts — already had, leftover from a previous build
+- Zip ties — already had
 
 **Ordering this evening**: LaserTree K40 laser module, grblHAL Teensy 4.1
 breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
@@ -78,13 +81,16 @@ spiral-wrapped bundle up to that instead of tensioning it along the frame
 |---|---|---|---|
 | LaserTree K40 laser module (40W+, ships with 24V/8A adapter + sliding plate) | 1 | [LaserTree](https://lasertree.com/products/laser-tree-k40-40w-optical-power-laser-module) | [0002](decisions/0002-laser-module-selection.md) |
 | AquaMiracle 1000GPH air pump (35W) | 1 | generic aquarium/hydroponic supplier | [0005](decisions/0005-air-assist-pump-update.md) |
-| Silicone air tubing, 4mm ID x 8mm OD | as needed | [Hohitto, 50m — Amazon](https://www.amazon.com/Hohitto-Approx-164ft-thickness-industrial-applications/dp/B0C5TQVMX1) | [0005](decisions/0005-air-assist-pump-update.md) |
+
+~~Silicone air tubing~~ — already had on hand.
 
 ## Fasteners & consumables (not separately tracked by ADR — generic hardware)
 
-- Assorted M3 and M5 socket-head/button-head screws, washers, T-nuts (2040/2020 standard)
-- M5 bolts for extrusion end-bore mounting (gantry end caps, corner joints)
-- Zip ties (cable management pass-throughs)
+All items below already had, leftover from a previous build:
+
+- ~~Assorted M3 and M5 socket-head/button-head screws, washers, T-nuts (2040/2020 standard)~~
+- ~~M5 bolts for extrusion end-bore mounting (gantry end caps, corner joints)~~
+- ~~Zip ties (cable management pass-throughs)~~
 
 ## 3D-printed parts (PLA-CF)
 

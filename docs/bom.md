@@ -32,19 +32,18 @@ physical hardware).
 - KW12-3-style SPDT microswitch (limit switches) — in hand (2026-07-29)
 - 16 AWG stranded silicone wire — in hand (2026-07-29)
 - 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
-- ATC/ATO fuse assortment, 1A-40A full range — added to order (2026-07-29), closes the gap the fuse block kit's own included set didn't cover (3A/2A)
-- LaserTree K40 laser module — in hand (2026-07-29)
+- ATC/ATO fuse assortment, 1A-40A full range — in hand (2026-07-29), closes the gap the fuse block kit's own included set didn't cover (3A/2A)
 - Switched power strip — already had on hand
-- 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — added to order (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
+- 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — in hand (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
 
 **No longer needed** (E-stop hardware removed 2026-07-29, [0024](decisions/0024-e-stop-wiring.md)):
 22mm mushroom E-stop switch (already in hand — surplus/return candidate
 rather than something to install) and the 24VDC SPDT relay (whether or
 not it was actually purchased, no longer needed either way).
 
-**Still ordering / to confirm**: grblHAL Teensy 4.1 breakout board
-(T41U5XBB), Teensy 4.1 (pre-configured for CNC) — check whether these
-also landed with the laser order.
+**Still ordering (last 3 items, 2026-07-29)**: LaserTree K40 laser
+module, grblHAL Teensy 4.1 breakout board (T41U5XBB), Teensy 4.1
+(pre-configured for CNC). Everything else in this BOM is in hand.
 
 ## Structural (frame)
 

@@ -32,6 +32,7 @@ physical hardware).
 - KW12-3-style SPDT microswitch (limit switches) — in hand (2026-07-29)
 - 16 AWG stranded silicone wire — in hand (2026-07-29)
 - 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
+- ATC/ATO fuse assortment, 1A-40A full range — added to order (2026-07-29), closes the gap the fuse block kit's own included set didn't cover (3A/2A)
 - LaserTree K40 laser module — in hand (2026-07-29)
 - Switched power strip — already had on hand
 - 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — added to order (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
@@ -80,9 +81,11 @@ purchased bolt-on-T-nut kit is no longer available; replaced with a
 | Teensy 4.1 (pre-configured for CNC) | 1 | [ProtoSupplies](https://protosupplies.com/product/teensy41-cnc/) | [0022](decisions/0022-controller-board-selection.md) |
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
 
-**Still need to confirm**: whether the purchased fuse block kit included a
-full assorted fuse set (10A/3A/2A per [0025](decisions/0025-24v-rail-fusing.md))
-— if not, buy an assorted ATC/ATO fuse pack separately.
+Fuse coverage confirmed (2026-07-29): the fuse block kit's included set
+(20A/15A/10A/7.5A/5A) didn't have the 3A/2A ratings this design needs for
+the stepper/controller branches — closed by adding a full-range
+ATC/ATO assortment pack (1A-40A), which covers every rating
+[0025](decisions/0025-24v-rail-fusing.md) calls for exactly as speced.
 
 ~~Elastic cord/spring + cable anchors~~ — not needed. User already owns a
 ceiling-suspended VR headset cable management system and will route the

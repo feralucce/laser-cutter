@@ -73,12 +73,25 @@ compromise substitute for it.
   K40's cantilever moment, not a load-bearing replacement for the rail.
   (Superseded the earlier custom PLA-CF plate + separately-sourced-wheels
   plan — see 0040's final sourcing decision.)
-  Separately, the **carriage's own body** (distinct from this wheel-holder
-  plate) may be built from two flat plates for structural rigidity — that
-  detail is still open, not yet designed, and not the same thing as the
-  wheel-holder plate above. Not yet designed how the wheel-holder plate
-  integrates with the existing rail-block spine/standoff bracket —
-  deferred with the same gantry-leg redesign work in 0040.
+
+  **Mounting geometry (2026-07-22, clarified)**: the MGN12 rail mounts on
+  the beam's wide (front) face, same as always. The aluminum wheel-holder
+  plate is **not** an independently-riding second carriage — it's rigidly
+  **bolted directly to the MGN12H rail block(s)**, so the rail block is
+  still what's actually gripping the rail; the plate just rides along
+  with it. The plate's 6 wheels contact the beam's **narrow face, above
+  and below** (the beam's top and bottom edges, perpendicular to the
+  rail-mounting face) — this is what gives the anti-tip capture: wheels
+  pressing from above and below can't lift off the way a single-face
+  contact could, the same principle discussed when this hybrid
+  rail+wheel idea first came up.
+
+  Still open: whether the K40 itself mounts via a separate acrylic
+  bracket bolted to this wheel-plate, or directly to the wheel-plate's
+  own hole grid with no separate bracket at all — both are being
+  considered, neither is decided yet. Either way, this replaces the
+  PLA-CF spine/standoff bracket's role of connecting to both rail blocks
+  — the wheel-plate does that connection now instead.
 
 Category: off-the-shelf extrusion + rail/block hardware
 ([0003](0003-parts-sourcing-constraint.md)).

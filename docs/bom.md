@@ -108,4 +108,4 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
 - Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
-- Y-axis carriage body construction (may be built from two flat plates, separate from the single wheel-holder plate) — not yet designed ([0039](decisions/0039-y-axis-single-rail-dual-block.md))
+- Y-axis carriage K40 mount: acrylic bracket bolted to the wheel-holder plate, vs. K40 mounted directly to the plate's own hole grid with no separate bracket — neither decided yet ([0039](decisions/0039-y-axis-single-rail-dual-block.md))

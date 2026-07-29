@@ -43,24 +43,36 @@ mount** instead: [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/m
 [Printables/](../../Printables/) in this repo. User already has PLA-CF
 filament on hand.
 
-Worth flagging plainly: this reopens the exact concern this ADR's own
-Context section raised against printing the idler mount in the first
-place — "constantly-tensioned anchor points where PLA-CF creep/flex would
-be a risk." That reasoning hasn't changed; the OpenBuilds kit just
-stopped being purchasable. Not a reason to block the switch, but worth
-watching for belt tension drift over time in a way the all-metal
-bolt-on-T-nut approach wouldn't have had.
+This reopens the concern this ADR's own Context section originally raised
+against printing the idler mount — "constantly-tensioned anchor points
+where PLA-CF creep/flex would be a risk" — but it's directly addressed:
+**printing solid (100% infill)**, not the typical partial-infill
+approach. Solid PLA-CF removes the creep/flex mechanism that concern was
+about (infill-cavity walls slowly deforming under sustained load); a
+solid print behaves much closer to a machined block than a typical
+lightweight 3D print. Accepted as resolved, not just deferred.
 
-**Not yet verified**: whether this print's pulley bore/mount geometry
-actually fits the already-purchased [DiGiYes GT2 20T idler pulley](https://www.amazon.com/gp/product/B0BSPC7D9S/).
-Tooth count isn't the concern here — idler pulleys are smooth/toothless by
-design (this build's own reasoning above, and presumably true of the
-original HyperCube idler this print was made for too), so the "T16" in
-the model's name is about GT2 belt-pitch compatibility generally, not a
-mismatched mating tooth count. What actually needs checking is the
-idler's physical bore diameter, outer diameter, and width against what
-this bracket's mount was sized for — same "verify against physical
-hardware" pattern used throughout this build's other parts.
+User will also modify the model file directly if the pulley mount
+geometry doesn't fit the DiGiYes idler once test-fit — treat the
+Printables download as a starting point, not a fixed, unmodifiable file.
+
+**Not yet verified**: whether the print's pulley bore/mount geometry
+fits the already-purchased [DiGiYes GT2 20T idler pulley](https://www.amazon.com/gp/product/B0BSPC7D9S/)
+as downloaded, before any modification. Tooth count isn't the concern —
+idler pulleys are smooth/toothless by design (this build's own reasoning
+above, and presumably true of the original HyperCube idler this print was
+made for too), so the "T16" in the model's name is about GT2 belt-pitch
+compatibility generally, not a mismatched mating tooth count. What
+actually needs checking is the idler's physical bore diameter, outer
+diameter, and width against what this bracket's mount was sized for —
+same "verify against physical hardware" pattern used throughout this
+build's other parts, with the fallback that it's a known-editable file
+if it doesn't.
+
+**Print settings**: PLA-CF, **100% (solid) infill** — deliberately
+different from this build's other printed parts, which use 15% infill
+([0040](0040-x-axis-v-wheel-gantry.md)); solid infill specifically to
+resolve the creep/flex concern for this constantly-tensioned part.
 
 Category: mostly off-the-shelf (idler pulley, motor mounts); idler mount
 bracket now 3D-printed PLA-CF instead of off-the-shelf hardware.

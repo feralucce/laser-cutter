@@ -50,11 +50,14 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) |
 | BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) |
 | DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 3 | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md) |
-| Idler mount hardware: M5 socket-head bolts + washers/spacers | 3 sets | generic hardware | [0018](decisions/0018-motor-and-idler-mounts.md) |
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
 | 3DMAN GT2 belt clamp, 9x40mm | 1x 10-pack (need 6: 4 X + 2 Y) | [Amazon](https://www.amazon.com/3Dman-Timing-Aluminum-Clamp-9X40mm/dp/B08XVVQW6G/) | [0020](decisions/0020-belt-clamp-selection.md) |
 | STEPPERONLINE DM542T stepper driver, 1.0-4.2A, 20-50VDC | 3 (X1, X2/A, Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-1-0-4-2A-20-50VDC-Micro-step-Resolutions/dp/B06Y5VPSFN) | [0037](decisions/0037-stepper-driver-selection.md) — current DIP switches set at commissioning |
 | KW12-3-style SPDT microswitch (limit switches) | 1x 10-pack (need 3: X, A, Y) | [BOJACK — Amazon](https://www.amazon.com/BOJACK-Switch-Momentary-Roller-250VAC/dp/B09NKYG5YQ) | [0033](decisions/0033-limit-switch-selection.md) — **verify** mounting-hole spacing against actual part |
+
+~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
+purchased bolt-on-T-nut kit is no longer available; replaced with a
+3D-printed PLA-CF idler mount instead (see 3D-printed parts, below).
 
 ## Electronics & power
 
@@ -94,8 +97,12 @@ All items below already had, leftover from a previous build:
 
 ## 3D-printed parts (PLA-CF)
 
-No parts left in this category — the K40 carriage bracket and limit
-switch mounts have both moved to laser-cut acrylic (below).
+| Part | Qty | Design file | ADR |
+|---|---|---|---|
+| Idler mount bracket | 3 (X1, X2, Y) | [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/model/56963-jesc-hypercube-xy-idler-t16-v20/files), downloaded to [Printables/](../Printables/) | [0018](decisions/0018-motor-and-idler-mounts.md) — **not yet verified**: fit against the already-purchased DiGiYes GT2 20T idler pulley (this print's own name references a 16-tooth pulley from its original application) |
+
+The K40 carriage bracket and limit switch mounts have both moved to
+laser-cut acrylic (below) — not printed.
 
 ~~Y-axis laser carriage bracket (K40 mount)~~ — no longer needed. The K40
 now bolts directly to the aluminum wheel-holder plate's own hole grid
@@ -123,3 +130,4 @@ is kept in the repo for reference but is not built.
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
 - Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
 - K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))
+- Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): fit against the DiGiYes GT2 20T idler pulley not yet confirmed — print references a 16-tooth pulley from its original application ([0018](decisions/0018-motor-and-idler-mounts.md))

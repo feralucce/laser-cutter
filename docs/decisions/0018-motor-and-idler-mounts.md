@@ -35,7 +35,32 @@ T-nut position before tightening, no dedicated bracket part needed.
   motor's shaft size for hardware consistency), sized for the 6mm GT2 belt
   ([0015](0015-x-axis-motor-system.md)).
 
-Category: all off-the-shelf components.
+**Update (2026-07-29)**: the bolt-on-T-nut hardware approach above assumed
+buying the OpenBuilds-style bolt+spacer+locknut kit for the idler mount —
+that kit is no longer available. Switching to a **3D-printed PLA-CF idler
+mount** instead: [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/model/56963-jesc-hypercube-xy-idler-t16-v20/files)
+(originally a HyperCube CoreXY 3D printer part), downloaded to
+[Printables/](../../Printables/) in this repo. User already has PLA-CF
+filament on hand.
+
+Worth flagging plainly: this reopens the exact concern this ADR's own
+Context section raised against printing the idler mount in the first
+place — "constantly-tensioned anchor points where PLA-CF creep/flex would
+be a risk." That reasoning hasn't changed; the OpenBuilds kit just
+stopped being purchasable. Not a reason to block the switch, but worth
+watching for belt tension drift over time in a way the all-metal
+bolt-on-T-nut approach wouldn't have had.
+
+**Not yet verified**: whether this print's pulley bore/mount geometry
+actually fits the already-purchased [DiGiYes GT2 20T idler pulley](https://www.amazon.com/gp/product/B0BSPC7D9S/)
+— the model's name references "T16" (a 16-tooth pulley reference from its
+original HyperCube application), which may assume different dimensions
+than our 20-tooth idler. Check fit before printing the final version,
+same "verify against physical hardware" pattern used throughout this
+build's other parts.
+
+Category: mostly off-the-shelf (idler pulley, motor mounts); idler mount
+bracket now 3D-printed PLA-CF instead of off-the-shelf hardware.
 
 ## Consequences
 

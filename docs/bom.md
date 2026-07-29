@@ -66,7 +66,11 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 | 22mm mushroom E-stop switch, 2NC, latching | 1 | [mxuteuk — Amazon](https://www.amazon.com/mxuteuk-Mushroom-Self-Locking-Emergency-Button/dp/B09TSTTXN3) | [0024](decisions/0024-e-stop-wiring.md) |
 | 24VDC SPDT relay, ≥15A, with socket | 1 | [Amazon](https://www.amazon.com/Enclosed-Power-Relay-24VDC-SPDT/dp/B007ULO6PW) | [0024](decisions/0024-e-stop-wiring.md) |
 | Spiral cable wrap sleeving | as needed | generic | [0031](decisions/0031-cable-management.md) |
-| Elastic cord/spring + cable anchors (tension support) | as needed | generic | [0031](decisions/0031-cable-management.md) |
+
+~~Elastic cord/spring + cable anchors~~ — not needed. User already owns a
+ceiling-suspended VR headset cable management system and will route the
+spiral-wrapped bundle up to that instead of tensioning it along the frame
+([0031](decisions/0031-cable-management.md)).
 
 ## Laser & air assist
 

@@ -1,7 +1,8 @@
 # 0031. Cable/tubing management: spiral wrap + tensioned support, no drag chain
 
 Date: 2026-07-14
-Status: Accepted
+Status: Accepted (tensioning mechanism superseded 2026-07-22 — see update
+below; spiral wrap and the no-drag-chain approach still stand)
 
 ## Context
 
@@ -36,29 +37,44 @@ For both the X-axis and Y-axis cable runs:
   carriage moves, without the bundle dragging, sagging into moving parts,
   or resisting motion the way a poorly-tensioned drag chain can.
 
-Category: off-the-shelf consumables (spiral wrap, elastic cord/spring,
-cable anchors) — no custom part needed for the wrap/tension mechanism
-itself.
+**Update (2026-07-22)**: the elastic-cord-along-the-frame tensioning
+mechanism above is superseded — the user already owns a **ceiling-suspended
+VR headset cable management system** (the actual real-world equivalent of
+the analogy this ADR was originally modeled on) and will route the
+spiral-wrapped bundle up to that instead of tensioning it along the frame.
+This removes the need for frame/beam/carriage-mounted elastic cord and
+anchor points entirely — slack management happens overhead, external to
+the machine, via hardware already on hand. Spiral wrap still bundles the
+wires/tubing at each moving joint the same as before; only the
+slack-take-up mechanism changes. The Y-carriage still likely needs a
+single simple clip/loop point where the bundle connects to the overhead
+minder's line — much lighter-weight than the original tensioned-anchor
+design, not separately tracked here.
+
+Category: off-the-shelf consumables (spiral wrap) — no custom part needed
+for the wrap itself; slack management is external (ceiling-mounted VR
+cable minder, already owned).
 
 ## Consequences
 
 - Removes the drag-chain design/routing problem entirely — no chain
   track, no chain link pitch/radius to size, no chain-mount brackets to
   design at either end.
-- Anchor points for the tension line and bundle need to exist on: the
-  fixed frame (X-level start), the gantry beam (X-level end / Y-level
-  start), and the Y-carriage (Y-level end) — the Y-carriage's anchor point
-  is being included directly in its own design ([0032](0032-y-axis-laser-carriage.md)).
-  The fixed-frame and beam-end anchor points aren't designed yet — small
-  follow-on, likely a simple printed or off-the-shelf cable-tie anchor,
-  not tracked further here.
+- **(Superseded 2026-07-22)** ~~Anchor points for the tension line and
+  bundle need to exist on: the fixed frame, the gantry beam, and the
+  Y-carriage~~ — no longer needed now that slack is managed by the
+  ceiling-mounted VR cable minder instead of a frame-tensioned line. Only
+  a single simple clip/loop point on the moving carriage (where the
+  bundle connects up to the overhead minder) remains, not a full anchor
+  system at three points.
 - Because there's no rigid track constraining bend radius, care is needed
   at assembly to keep the spiral-wrap bundle's actual bend radius
   comfortable at both ends of travel (especially the K40's power/PWM
   cable, which is less flexible than the air-assist tubing) — a
   commissioning-time check, not a design decision to pre-calculate here.
-- Tension needs to be light enough not to meaningfully load the stepper
-  motors (X and Y both) as they move the gantry/carriage against it, but
-  firm enough to keep the bundle from sagging into the belt or rail —
-  worth verifying/tuning once physically assembled, similar in spirit to
-  belt tensioning ([0018](0018-motor-and-idler-mounts.md)).
+  Still applies with the ceiling-suspended approach.
+- **(Superseded 2026-07-22)** ~~Tension needs to be light enough not to
+  meaningfully load the stepper motors... worth verifying/tuning once
+  physically assembled~~ — this tuning concern belongs to the VR cable
+  minder hardware itself now (already-owned, presumably already tuned for
+  its intended use), not something to design/verify here.

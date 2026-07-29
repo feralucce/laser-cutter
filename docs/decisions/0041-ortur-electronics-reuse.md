@@ -17,18 +17,22 @@ firmware-synced X motors ([0011](0011-x-axis-dual-motor.md)) to keep a
 1.1f board can't do that kind of ganged/auto-square axis at all.
 
 That assumption turns out to be wrong for this build. The Ortur LM2 S2,
-at this exact 800x1200mm frame size, already drives its long axis with
-**two NEMA17 motors mechanically coupled by a connecting drive shaft**,
-manually squared once and locked in place — not independently driven and
-firmware-synced. This is the "single motor + mechanical link" option
-[0011](0011-x-axis-dual-motor.md) originally considered and rejected in
-favor of firmware ganging; that rejection was based on X spanning 1200mm
-with a shaft/belt coupling being an unproven risk. It isn't unproven —
-the Ortur has been cutting with a 10W module at this exact frame size
-using exactly this mechanism. A K40-compatible adapter board exists that
-lets the Ortur's stock controller drive the K40 laser module in place of
-its own diode driver, closing the last gap (laser control) that seemed
-to require a new controller.
+at this exact 800x1200mm frame size, already drives its gantry/rail axis
+(800mm, per [0043](0043-adopt-ortur-axis-convention.md)) with a **single
+NEMA17 motor whose shaft is extended (via coupler + standoff) to reach
+across and drive both sides of the gantry from one continuous shaft** —
+manually squared once and locked in place. Squaring is inherent to the
+mechanism (both sides are physically the same rotating shaft, not two
+motors being kept in sync), not a firmware or electronic concern at all.
+This is close to, but not exactly, the "single motor + mechanical link"
+option [0011](0011-x-axis-dual-motor.md) originally considered and
+rejected in favor of firmware ganging; that rejection was based on a
+shaft/belt coupling across a long span being an unproven risk. It isn't
+unproven — the Ortur has been cutting with a 10W module at this exact
+frame size using exactly this mechanism. A K40-compatible adapter board
+exists that lets the Ortur's stock controller drive the K40 laser module
+in place of its own diode driver, closing the last gap (laser control)
+that seemed to require a new controller.
 
 Reusing the Ortur's controller, drivers, motors, wiring, and switches
 removes the entire custom-electronics scope this project had taken on
@@ -41,25 +45,30 @@ at this machine's actual size and load class, just with a lighter head.
 **Reuse from the existing Ortur LM2 S2 build, as-is:**
 - Controller board (stock, GRBL 1.1f firmware)
 - Stepper drivers (whatever the Ortur board integrates/uses)
-- Steppers: 2 motors + connecting drive shaft on the long (X, 1200mm)
-  axis; 1 motor on the short (Y, 800mm) axis — same axis roles as
-  [0014](0014-axis-naming-convention.md) already defined, just a
-  different physical drive mechanism on X
+- Steppers: **1 motor with an extended shaft (coupler + standoff) driving
+  both sides of the gantry** on the rail/gantry-travel axis (Y, 800mm,
+  per [0043](0043-adopt-ortur-axis-convention.md)); 1 separate motor on
+  the beam/carriage axis (X, 1200mm) — this replaces this build's earlier
+  assumption of 2 independently-driven motors on that axis
 - Wiring harness
 - Limit switches (X and Y homing switches)
 - Laser control: via a K40-compatible adapter board that translates the
   Ortur controller's laser-control output to what the K40 module expects
   — exact product/model not yet identified, needs sourcing
 
-**Squaring**: manual, one-time mechanical squaring of the X-axis via the
-connecting drive shaft, then locked (set screws / shaft collars) —
-replaces grblHAL's firmware auto-squaring entirely. No `$8`/`$170`/
-`$347-349` tuning, no ganged-axis firmware build.
+**Squaring**: inherent to the mechanism — one continuous shaft (coupler +
+standoff) turns both sides of the gantry together, so there's nothing to
+electronically keep in sync. Squaring is a one-time mechanical alignment
+at assembly (shaft/coupler position, locked with set screws), not a
+runtime or firmware concern. No `$8`/`$170`/`$347-349` tuning, no
+ganged-axis firmware build, and — unlike the originally-considered dual-
+motor approach — no possibility of the two sides drifting out of sync
+over time, since they're mechanically one shaft.
 
 **Superseded ADRs**, no longer applicable to this build:
-- [0011](0011-x-axis-dual-motor.md) — dual motors stays true in physical
-  count, but "independently driven, synced in firmware" is replaced by
-  mechanically coupled via shaft, manually squared once
+- [0011](0011-x-axis-dual-motor.md) — the "two independently-driven
+  motors, synced in firmware" approach doesn't apply at all; this axis
+  uses one motor and one continuous extended shaft instead
 - [0017](0017-stepper-motor-selection.md) — motors are reused from the
   Ortur, not purchased
 - [0022](0022-controller-board-selection.md) — controller is the Ortur's

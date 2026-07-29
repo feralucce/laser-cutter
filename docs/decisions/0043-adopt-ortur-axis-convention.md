@@ -6,9 +6,9 @@ Status: Accepted (supersedes [0014](0014-axis-naming-convention.md))
 ## Context
 
 [0014](0014-axis-naming-convention.md) deliberately chose the *opposite*
-of Ortur's own axis naming: X = the long 1200mm axis (dual motors, whole
-gantry travel), Y = the short 800mm axis (beam-mounted carriage). That
-made sense when this was a from-scratch custom build with its own
+of Ortur's own axis naming: X = the long 1200mm axis (whole gantry
+travel), Y = the short 800mm axis (beam-mounted carriage). That made
+sense when this was a from-scratch custom build with its own
 controller/firmware being configured from zero.
 
 It no longer makes sense now that the controller, drivers, motors,
@@ -41,11 +41,11 @@ axis** (custom-elongated beam, carriage travel).
 Adopt Ortur's own convention, matching this specific machine's actual
 extended geometry:
 
-- **Y-axis = the short axis (800mm).** Two guide rails, dual NEMA17
-  motors mechanically coupled by a connecting drive shaft
-  ([0041](0041-ortur-electronics-reuse.md)), whole gantry (beam +
-  carriage) travels along these — this is the axis reached via Ortur's
-  stock Y-extension kit.
+- **Y-axis = the short axis (800mm).** Two guide rails, one NEMA17 motor
+  with an extended shaft (coupler + standoff) driving both sides from a
+  single continuous shaft ([0041](0041-ortur-electronics-reuse.md)),
+  whole gantry (beam + carriage) travels along these — this is the axis
+  reached via Ortur's stock Y-extension kit.
 - **X-axis = the long axis (1200mm).** Single MGN12 rail on the gantry
   beam itself (custom-elongated beyond stock), single NEMA17 motor,
   laser carriage (holding the K40) travels the full 1200mm along this
@@ -62,12 +62,13 @@ this one — [0008](0008-motion-system-mgn12-rails.md),
 [0038](0038-y-axis-dual-rail.md), [0039](0039-y-axis-single-rail-dual-block.md),
 [0040](0040-x-axis-v-wheel-gantry.md), [0041](0041-ortur-electronics-reuse.md),
 [0042](0042-captured-belt-drive.md) — uses the **old, now-reversed**
-convention throughout their text (X = long/dual-motor axis, Y = short/
-carriage axis). None of those files are being rewritten to swap their
-letters; when reading any of them for physical/mechanical facts, **swap
-X and Y mentally**. Only the physical facts (which member has 2 motors,
-which is 1200mm, which one carries the K40) are still authoritative in
-those files — their letter labels are not, as of this ADR.
+convention throughout their text (X = long/whole-gantry-travel axis, Y =
+short/carriage axis). None of those files are being rewritten to swap
+their letters; when reading any of them for physical/mechanical facts,
+**swap X and Y mentally**. Only the physical facts (which member is
+shaft-driven, which is 1200mm, which one carries the K40) are still
+authoritative in those files — their letter labels are not, as of this
+ADR.
 
 Going forward, all new ADRs, hardware files, and BOM entries use Ortur's
 convention (Y = short/dual-motor/rail axis, X = long/single-motor/

@@ -48,7 +48,7 @@ Physical wiring assignment for this machine:
 | Y stepper + Y limit | Y motor | single motor, [0021](0021-y-axis-motor-system.md) |
 | Z stepper + Z limit | **unpopulated** | reserved for a future Z-axis/focus motor, per [0022](0022-controller-board-selection.md)'s 5-axis headroom note |
 | B stepper + B limit | **unpopulated** | reserved for a future rotary attachment |
-| Halt (control input) | E-stop switch, pole 1 | per [0024](0024-e-stop-wiring.md) |
+| Halt (control input) | **unpopulated** | E-stop hardware removed 2026-07-29 ([0024](0024-e-stop-wiring.md)) — the board's own manual recommends not leaving this disabled/unwired, but no physical Halt button exists in this design; the switched power strip is the emergency stop instead |
 | Door (control input) | jumper (no Safety Door sensor) | per [0024](0024-e-stop-wiring.md)'s follow-on note |
 | Feed/Hold, Cycle/Start | **unpopulated** | no pendant/control panel decided yet |
 | Probe | **unpopulated** | no touch probe on a laser |

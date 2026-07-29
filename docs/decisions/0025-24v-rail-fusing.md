@@ -13,8 +13,10 @@ Two independent 24V DC rails exist on this machine ([0023](0023-power-supply-sel
   T41U5XBB controller board ([0022](0022-controller-board-selection.md)).
   Calculated worst-case load ~154W (~6.4A), well under the supply's rating.
 - **K40 rail** (the module's own dedicated 24V/8A adapter, unrelated to
-  the main rail): powers the laser diode driver, gated through the E-stop
-  relay ([0024](0024-e-stop-wiring.md)).
+  the main rail): powers the laser diode driver. Originally gated through
+  an E-stop relay; that hardware was removed 2026-07-29
+  ([0024](0024-e-stop-wiring.md)) — this rail now runs adapter-to-module
+  directly, with only the fuse below in line, no relay.
 
 Neither rail has had its branch wiring protected yet — flagged as
 follow-on work in both 0023 and 0024. General DC-CNC wiring practice:

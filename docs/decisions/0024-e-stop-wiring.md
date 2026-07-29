@@ -1,7 +1,43 @@
 # 0024. E-stop wiring: dual-channel (grblHAL Halt input + K40 relay power cutoff)
 
 Date: 2026-07-14
-Status: Accepted
+Status: **Superseded 2026-07-29** — no dedicated E-stop hardware. The
+mushroom switch and relay described below are cut entirely; the whole
+machine (steppers/controller PSU and the K40's adapter both) plugs into
+one switched power strip, and that strip's switch is the emergency
+shutoff. Kept below for history/rationale.
+
+## Update (2026-07-29): removed, no replacement hardware
+
+User's call: skip the dedicated E-stop switch and relay entirely. Power
+for the whole machine — the Mean Well 24V rail (steppers/controller) and
+the K40's own 24V/8A adapter — runs through a single switched power
+strip; flipping that strip's switch cuts all power at once.
+
+Flagged once, for the record: this trades away two things the dual-channel
+design below specifically provided — (1) a big, one-handed, panic-reflex
+button vs. having to locate and reach a strip switch, and (2) two
+*independent* stop paths (a fast software Halt to the controller, and a
+guaranteed hardware power cut to the laser) vs. one switch that kills
+everything — motors mid-motion, controller, and laser — at once,
+abruptly. Not blocking the change; the user made the call deliberately.
+
+**What this removes from the BOM**: the 22mm mushroom E-stop switch and
+the 24VDC SPDT relay are no longer needed (already in hand — consider
+this hardware surplus/return candidates, not junk). The K40 rail's fuse
+between the adapter and the module ([0025](0025-24v-rail-fusing.md))
+still applies for overcurrent protection — it's just no longer gated by
+a relay, straight adapter-to-module with a fuse in line.
+
+**Still relies on grblHAL's own software Halt** if you want a controlled
+stop short of pulling the plug — but there's no longer a dedicated
+physical Halt button; that'd have to come from something else (a
+keyboard/pendant stop command, or none at all) if wanted later. Not
+designed here.
+
+---
+
+**Original decision below, superseded but kept for context:**
 
 ## Context
 

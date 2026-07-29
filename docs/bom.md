@@ -31,11 +31,13 @@ physical hardware).
 - Spiral cable wrap sleeving — in hand (2026-07-29)
 - KW12-3-style SPDT microswitch (limit switches) — in hand (2026-07-29)
 - 16 AWG stranded silicone wire — in hand (2026-07-29)
-- 6-Way ATC/ATO blade fuse block — in hand (2026-07-29) — **verify qty**: design calls for 2 (main rail + K40 rail), confirm you have both
+- 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
 - 22mm mushroom E-stop switch — in hand (2026-07-29)
+- LaserTree K40 laser module — in hand (2026-07-29)
 
-**Ordering this evening**: LaserTree K40 laser module, grblHAL Teensy 4.1
-breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
+**Still ordering / to confirm**: grblHAL Teensy 4.1 breakout board
+(T41U5XBB), Teensy 4.1 (pre-configured for CNC) — check whether these
+also landed with the laser order.
 
 ## Structural (frame)
 
@@ -86,7 +88,6 @@ spiral-wrapped bundle up to that instead of tensioning it along the frame
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| LaserTree K40 laser module (40W+, ships with 24V/8A adapter + sliding plate) | 1 | [LaserTree](https://lasertree.com/products/laser-tree-k40-40w-optical-power-laser-module) | [0002](decisions/0002-laser-module-selection.md) |
 | AquaMiracle 1000GPH air pump (35W) | 1 | generic aquarium/hydroponic supplier | [0005](decisions/0005-air-assist-pump-update.md) |
 
 ~~Silicone air tubing~~ — already had on hand.

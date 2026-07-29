@@ -1,7 +1,7 @@
 # 0014. Axis naming and gantry topology: X = 1200mm guide rails, Y = 800mm beam
 
 Date: 2026-07-13
-Status: Accepted (topology changed 2026-07-13 — see note below; supersedes all
+Status: Superseded by [0043](0043-adopt-ortur-axis-convention.md) (topology changed 2026-07-13 — see note below; supersedes all
 earlier versions of this ADR)
 
 ## Context

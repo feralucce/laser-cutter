@@ -86,12 +86,24 @@ compromise substitute for it.
   contact could, the same principle discussed when this hybrid
   rail+wheel idea first came up.
 
-  Still open: whether the K40 itself mounts via a separate acrylic
-  bracket bolted to this wheel-plate, or directly to the wheel-plate's
-  own hole grid with no separate bracket at all — both are being
-  considered, neither is decided yet. Either way, this replaces the
-  PLA-CF spine/standoff bracket's role of connecting to both rail blocks
-  — the wheel-plate does that connection now instead.
+  **Finalized (2026-07-22)**: simplest option chosen — the K40 bolts
+  **directly to the wheel-holder plate's own hole grid**, no separate
+  bracket at all (not acrylic, not the old PLA-CF spine/standoff design).
+  This fully supersedes [hardware/3d-printed/y-carriage-k40-bracket.scad](../../hardware/3d-printed/y-carriage-k40-bracket.scad)
+  for the Y-axis carriage — that file is no longer built, kept in the
+  repo for reference only. The wheel-plate itself is now the entire
+  carriage body: it connects to both MGN12H rail blocks, carries the
+  anti-tip wheels, and mounts the K40, all on one part.
+
+  **Real open risk, not yet resolved**: the wheel-plate's hole grid is
+  **fixed** (6 mounting holes + 37 positioning holes, wherever the
+  manufacturer put them) — unlike a custom bracket, there's no guarantee
+  the K40's actual sliding-plate hole spacing ([0032](0032-y-axis-laser-carriage.md)'s
+  own still-unverified estimate) lines up with two of those existing
+  holes at the right spacing. Likely fix if it doesn't: drill new holes
+  into the aluminum plate to match the K40 once it's physically in hand
+  — straightforward on aluminum, but a real step, not an assumption that
+  the stock holes will happen to work as-is.
 
 Category: off-the-shelf extrusion + rail/block hardware
 ([0003](0003-parts-sourcing-constraint.md)).

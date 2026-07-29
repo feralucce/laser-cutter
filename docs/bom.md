@@ -86,8 +86,12 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 
 | Part | Qty | Design file | ADR |
 |---|---|---|---|
-| Y-axis laser carriage bracket (K40 mount) | 2 (one per X-carriage side) | [hardware/3d-printed/y-carriage-k40-bracket.scad](../hardware/3d-printed/y-carriage-k40-bracket.scad) | [0032](decisions/0032-y-axis-laser-carriage.md) — **verify** K40 slot dimensions and standoff height against physical hardware before printing final version |
 | Limit switch mount bracket | 3 | [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) | [0033](decisions/0033-limit-switch-selection.md) — **verify** switch mounting-hole spacing |
+
+~~Y-axis laser carriage bracket (K40 mount)~~ — no longer needed. The K40
+now bolts directly to the aluminum wheel-holder plate's own hole grid
+([0039](decisions/0039-y-axis-single-rail-dual-block.md)); [hardware/3d-printed/y-carriage-k40-bracket.scad](../hardware/3d-printed/y-carriage-k40-bracket.scad)
+is kept in the repo for reference but is not built.
 
 ## Laser-cut parts (black acrylic)
 
@@ -108,4 +112,4 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
 - Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
-- Y-axis carriage K40 mount: acrylic bracket bolted to the wheel-holder plate, vs. K40 mounted directly to the plate's own hole grid with no separate bracket — neither decided yet ([0039](decisions/0039-y-axis-single-rail-dual-block.md))
+- K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))

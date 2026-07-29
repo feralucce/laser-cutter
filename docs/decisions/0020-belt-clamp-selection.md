@@ -1,7 +1,7 @@
 # 0020. Belt clamp selection and mounting
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0042](0042-captured-belt-drive.md)
 
 ## Context
 

@@ -68,17 +68,21 @@ this BOM is in hand.
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| 1-Pack Assembled 2040 V Gantry Plate Kit (aluminum plate, black-treated, 87x88x3mm, 6 POM wheels pre-mounted) | 3: one per connection point — 2 for X-axis gantry legs (one per leg), 1 for the Y-axis carriage | [Amazon](https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/), ~$18.99 each (confirmed via [WoodArtSupply](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine) carrying the identical item), ~$56.97 total | [0040](decisions/0040-x-axis-v-wheel-gantry.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — replaces the custom PLA-CF plate + separate wheel-kit plan; **not yet redesigned**: gantry end cap's carriage-attachment zone still cut for MGN12H's bolt pattern, needs redrawing to bolt to this plate's fixed hole pattern instead |
+| 1-Pack Assembled 2040 V Gantry Plate Kit (aluminum plate, black-treated, 87x88x3mm, 6 POM wheels pre-mounted) | 3: one per connection point — 2 for X-axis gantry legs (one per leg), 1 for the Y-axis carriage | [Amazon](https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/), ~$18.99 each (confirmed via [WoodArtSupply](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine) carrying the identical item), ~$56.97 total | [0040](decisions/0040-x-axis-v-wheel-gantry.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — replaces the custom PLA-CF plate + separate wheel-kit plan; **not yet redesigned**: needs redrawing for both the aluminum plate's fixed bolt pattern and a captured-belt channel under each wheel ([0042](decisions/0042-captured-belt-drive.md)) |
 | MGN12 linear rail + MGN12H carriage block | 1x 800mm rail (Y-axis, single rail on beam), 2x carriage blocks (both on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — rail still provides the primary precise travel path; wheels above are reinforcement only, not a replacement |
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) — mounts the Ortur's reused motors ([0041](decisions/0041-ortur-electronics-reuse.md)) on the new frame |
-| BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) |
-| DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 3 | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md) |
+| BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) — **open**: compatibility with captured-belt routing not yet checked, [0042](decisions/0042-captured-belt-drive.md); Ortur's own pulley is the fallback |
+| DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 3 | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md) — same captured-belt compatibility caveat as the drive pulley above |
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
-| 3DMAN GT2 belt clamp, 9x40mm | 1x 10-pack (need 6: 4 X + 2 Y) | [Amazon](https://www.amazon.com/3Dman-Timing-Aluminum-Clamp-9X40mm/dp/B08XVVQW6G/) | [0020](decisions/0020-belt-clamp-selection.md) |
 
 **Motors and drivers**: reused from the existing Ortur LM2 S2 build, not
 purchased — 2 NEMA17 + connecting drive shaft on X, 1 NEMA17 on Y, driven
 by the Ortur's own onboard drivers ([0041](decisions/0041-ortur-electronics-reuse.md)).
+
+**Belt routing**: captured belt drive (belt runs under each gantry/carriage
+wheel, over the drive pulley) — [0042](decisions/0042-captured-belt-drive.md),
+not the open-loop clamped-both-ends style. The 3DMAN belt clamps bought
+for that earlier approach are not part of this design.
 
 ~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
 purchased bolt-on-T-nut kit is no longer available; replaced with a

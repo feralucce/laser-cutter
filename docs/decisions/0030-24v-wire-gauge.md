@@ -41,13 +41,18 @@ push toward one size heavier than the minimum:
 
 ## Decision
 
-All wiring stranded copper, sized as follows:
+**Simplified to a single gauge for the whole machine (2026-07-22)**: originally
+specified per-branch (16/18/20 AWG below), but standardizing on **16 AWG for
+every branch** to make this a single purchase instead of three separate
+spools — 16 AWG already clears the highest branch fuse (10A) with margin, so
+running it on the lower-current 3A/2A branches too is just extra headroom,
+not undersized wire anywhere.
 
 | Branch | Fuse ([0025](0025-24v-rail-fusing.md)) | Wire gauge |
 |---|---|---|
 | Main rail: PSU output → fuse block | 10A main | **16 AWG** |
-| X1 / X2 / Y stepper branches (each) | 3A | **18 AWG** |
-| Controller board branch | 2A | **20 AWG** |
+| X1 / X2 / Y stepper branches (each) | 3A | **16 AWG** (was 18 AWG) |
+| Controller board branch | 2A | **16 AWG** (was 20 AWG) |
 | K40 rail: adapter → E-stop relay → module | 10A | **16 AWG**, drag-chain-rated stranded |
 
 Category: off-the-shelf wire/consumables, no BOM-defining product link
@@ -56,8 +61,13 @@ needed (standard hookup wire).
 ## Consequences
 
 - Every branch's wire ampacity now clears its fuse rating with comfortable
-  margin (roughly 1.5-2x headroom at chassis-wiring ratings), rather than
-  sitting at the bare minimum.
+  margin (roughly 1.5-2x headroom at chassis-wiring ratings on the 10A
+  branches; substantially more on the 3A/2A branches now that they're also
+  16 AWG), rather than sitting at the bare minimum.
+- One spool size to buy instead of three — simpler purchasing, at the cost
+  of slightly bulkier/stiffer wire than strictly necessary on the low-current
+  stepper/controller branches. Not a functional downside, just a minor
+  routing/bulk tradeoff accepted for purchasing simplicity.
 - The K40 branch specifically should be sourced as flexible stranded wire
   rated for continuous flexing (e.g. drag-chain/robotic cable, not generic
   stranded hookup wire) given it moves with the gantry — this is a sourcing

@@ -27,6 +27,12 @@ physical hardware).
 - Silicone air tubing — already had on hand
 - Assorted M3/M5 screws, washers, T-nuts — already had, leftover from a previous build
 - Zip ties — already had
+- Cable clips — in hand (2026-07-29)
+- Spiral cable wrap sleeving — in hand (2026-07-29)
+- KW12-3-style SPDT microswitch (limit switches) — in hand (2026-07-29)
+- 16 AWG stranded silicone wire — in hand (2026-07-29)
+- 6-Way ATC/ATO blade fuse block — in hand (2026-07-29) — **verify qty**: design calls for 2 (main rail + K40 rail), confirm you have both
+- 22mm mushroom E-stop switch — in hand (2026-07-29)
 
 **Ordering this evening**: LaserTree K40 laser module, grblHAL Teensy 4.1
 breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
@@ -53,7 +59,6 @@ breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
 | 3DMAN GT2 belt clamp, 9x40mm | 1x 10-pack (need 6: 4 X + 2 Y) | [Amazon](https://www.amazon.com/3Dman-Timing-Aluminum-Clamp-9X40mm/dp/B08XVVQW6G/) | [0020](decisions/0020-belt-clamp-selection.md) |
 | STEPPERONLINE DM542T stepper driver, 1.0-4.2A, 20-50VDC | 3 (X1, X2/A, Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-1-0-4-2A-20-50VDC-Micro-step-Resolutions/dp/B06Y5VPSFN) | [0037](decisions/0037-stepper-driver-selection.md) — current DIP switches set at commissioning |
-| KW12-3-style SPDT microswitch (limit switches) | 1x 10-pack (need 3: X, A, Y) | [BOJACK — Amazon](https://www.amazon.com/BOJACK-Switch-Momentary-Roller-250VAC/dp/B09NKYG5YQ) | [0033](decisions/0033-limit-switch-selection.md) — **verify** mounting-hole spacing against actual part |
 
 ~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
 purchased bolt-on-T-nut kit is no longer available; replaced with a
@@ -66,12 +71,11 @@ purchased bolt-on-T-nut kit is no longer available; replaced with a
 | grblHAL Teensy 4.1 breakout board (T41U5XBB) | 1 | [Brookwood Design](https://brookwood-design-77.myshopify.com/products/t41u5xbb-board-kit) | [0022](decisions/0022-controller-board-selection.md) |
 | Teensy 4.1 (pre-configured for CNC) | 1 | [ProtoSupplies](https://protosupplies.com/product/teensy41-cnc/) | [0022](decisions/0022-controller-board-selection.md) |
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
-| 6-Way ATC/ATO blade fuse block, with fuses + LED indicator | 2 (one per rail — main rail + K40 rail) | [Amazon](https://www.amazon.com/Negative-Connections-Indicator-Standard-Terminals/dp/B08FQQ292L) | [0025](decisions/0025-24v-rail-fusing.md) |
-| Blade fuses: 10A (main + K40 branch), 3A x3 (X1/X2/Y), 2A (controller) | 1 main 10A + 3x 3A + 1x 2A + 1x 10A (K40) = 6 fuses | usually included in the fuse block kit above; buy an assorted pack separately if not | [0025](decisions/0025-24v-rail-fusing.md) |
-| 16 AWG stranded silicone wire, red + black | 1+ spool pair (by length, per actual run lengths) | [BNTECHGO — Amazon](https://www.amazon.com/BNTECHGO-Gauge-Silicone-Wire-Temperature/dp/B01KCPKRHS) | [0030](decisions/0030-24v-wire-gauge.md) — **simplified to one gauge for the whole machine** (was 16/18/20 AWG split by branch), single purchase instead of three spools; 16 AWG clears every branch's fuse rating with margin |
-| 22mm mushroom E-stop switch, 2NC, latching | 1 | [mxuteuk — Amazon](https://www.amazon.com/mxuteuk-Mushroom-Self-Locking-Emergency-Button/dp/B09TSTTXN3) | [0024](decisions/0024-e-stop-wiring.md) |
 | 24VDC SPDT relay, ≥15A, with socket | 1 | [Amazon](https://www.amazon.com/Enclosed-Power-Relay-24VDC-SPDT/dp/B007ULO6PW) | [0024](decisions/0024-e-stop-wiring.md) |
-| Spiral cable wrap sleeving | as needed | generic | [0031](decisions/0031-cable-management.md) |
+
+**Still need to confirm**: whether the purchased fuse block kit included a
+full assorted fuse set (10A/3A/2A per [0025](decisions/0025-24v-rail-fusing.md))
+— if not, buy an assorted ATC/ATO fuse pack separately.
 
 ~~Elastic cord/spring + cable anchors~~ — not needed. User already owns a
 ceiling-suspended VR headset cable management system and will route the

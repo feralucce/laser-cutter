@@ -52,12 +52,15 @@ watching for belt tension drift over time in a way the all-metal
 bolt-on-T-nut approach wouldn't have had.
 
 **Not yet verified**: whether this print's pulley bore/mount geometry
-actually fits the already-purchased [DiGiYes GT2 20T idler pulley](https://www.amazon.com/gp/product/B0BSPC7D9S/)
-— the model's name references "T16" (a 16-tooth pulley reference from its
-original HyperCube application), which may assume different dimensions
-than our 20-tooth idler. Check fit before printing the final version,
-same "verify against physical hardware" pattern used throughout this
-build's other parts.
+actually fits the already-purchased [DiGiYes GT2 20T idler pulley](https://www.amazon.com/gp/product/B0BSPC7D9S/).
+Tooth count isn't the concern here — idler pulleys are smooth/toothless by
+design (this build's own reasoning above, and presumably true of the
+original HyperCube idler this print was made for too), so the "T16" in
+the model's name is about GT2 belt-pitch compatibility generally, not a
+mismatched mating tooth count. What actually needs checking is the
+idler's physical bore diameter, outer diameter, and width against what
+this bracket's mount was sized for — same "verify against physical
+hardware" pattern used throughout this build's other parts.
 
 Category: mostly off-the-shelf (idler pulley, motor mounts); idler mount
 bracket now 3D-printed PLA-CF instead of off-the-shelf hardware.

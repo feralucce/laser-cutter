@@ -99,7 +99,7 @@ All items below already had, leftover from a previous build:
 
 | Part | Qty | Design file | ADR |
 |---|---|---|---|
-| Idler mount bracket | 3 (X1, X2, Y) | [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/model/56963-jesc-hypercube-xy-idler-t16-v20/files), downloaded to [Printables/](../Printables/) | [0018](decisions/0018-motor-and-idler-mounts.md) — **not yet verified**: fit against the already-purchased DiGiYes GT2 20T idler pulley (this print's own name references a 16-tooth pulley from its original application) |
+| Idler mount bracket | 3 (X1, X2, Y) | [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/model/56963-jesc-hypercube-xy-idler-t16-v20/files), downloaded to [Printables/](../Printables/) | [0018](decisions/0018-motor-and-idler-mounts.md) — **not yet verified**: bore/OD/width fit against the already-purchased DiGiYes GT2 20T idler pulley (both idlers are toothless, so this isn't a tooth-count mismatch question) |
 
 The K40 carriage bracket and limit switch mounts have both moved to
 laser-cut acrylic (below) — not printed.
@@ -130,4 +130,4 @@ is kept in the repo for reference but is not built.
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
 - Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
 - K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))
-- Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): fit against the DiGiYes GT2 20T idler pulley not yet confirmed — print references a 16-tooth pulley from its original application ([0018](decisions/0018-motor-and-idler-mounts.md))
+- Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): bore/OD/width fit against the DiGiYes GT2 20T idler pulley not yet confirmed (both toothless, so it's a dimension check, not a tooth-count mismatch) ([0018](decisions/0018-motor-and-idler-mounts.md))

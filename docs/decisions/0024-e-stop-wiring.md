@@ -1,39 +1,51 @@
-# 0024. E-stop wiring: dual-channel (grblHAL Halt input + K40 relay power cutoff)
+# 0024. E-stop wiring: AC-side panic-paddle switch (was: DC dual-channel relay design)
 
 Date: 2026-07-14
-Status: **Superseded 2026-07-29** — no dedicated E-stop hardware. The
-mushroom switch and relay described below are cut entirely; the whole
-machine (steppers/controller PSU and the K40's adapter both) plugs into
-one switched power strip, and that strip's switch is the emergency
-shutoff. Kept below for history/rationale.
+Status: **Superseded 2026-07-29** — the DC-side mushroom switch + relay
+design below is cut entirely, replaced with an AC-side panic-paddle
+safety switch ahead of the whole machine. Kept below for history/rationale.
 
-## Update (2026-07-29): removed, no replacement hardware
+## Update (2026-07-29): AC-side panic-paddle switch, no DC relay
 
-User's call: skip the dedicated E-stop switch and relay entirely. Power
+User's call: skip the DC-side E-stop switch/relay pair entirely. Power
 for the whole machine — the Mean Well 24V rail (steppers/controller) and
-the K40's own 24V/8A adapter — runs through a single switched power
-strip; flipping that strip's switch cuts all power at once.
+the K40's own 24V/8A adapter — both run off one already-owned power
+strip. Added to that: a **110-120V AC panic-paddle safety switch**
+(marketed for table saws/milling machines — large red stop-sign paddle,
+on/off, mains-rated) wired ahead of the strip, so hitting the paddle cuts
+mains power to the entire setup at once.
 
-Flagged once, for the record: this trades away two things the dual-channel
-design below specifically provided — (1) a big, one-handed, panic-reflex
-button vs. having to locate and reach a strip switch, and (2) two
-*independent* stop paths (a fast software Halt to the controller, and a
-guaranteed hardware power cut to the laser) vs. one switch that kills
-everything — motors mid-motion, controller, and laser — at once,
-abruptly. Not blocking the change; the user made the call deliberately.
+This actually restores most of what the original design provided,
+just via a different mechanism:
+- **Panic-reflex speed**: a large paddle switch is exactly the
+  "hit-it-without-looking" ergonomics a mushroom button gives — this
+  wasn't a downgrade after all, just moved from the DC side to the AC
+  side.
+- **Hardware-guaranteed cutoff**: an AC-side mains switch ahead of *both*
+  the steppers/controller PSU and the K40's adapter is arguably a more
+  complete guarantee than the original design, which only hard-cut the
+  K40's rail — this cuts everything, including the controller itself,
+  independent of firmware state.
+
+**What's still genuinely different from the original dual-channel
+design**: no separate *software* Halt signal to the controller — the
+original design gave grblHAL a fast, controlled stop (steppers decelerate
+via firmware) as one channel, with the hardware relay as a second,
+independent guarantee. This paddle switch is now the only channel: it's
+an abrupt full power cut, not a graceful stop, and there's no longer a
+distinct low-level Halt input wired at all ([0026](0026-t41u5xbb-pin-mapping.md)).
+For a hobby laser (vs. a machine where uncontrolled motor stop is itself
+a hazard), this is a reasonable tradeoff — noted once, not a blocker.
 
 **What this removes from the BOM**: the 22mm mushroom E-stop switch and
-the 24VDC SPDT relay are no longer needed (already in hand — consider
-this hardware surplus/return candidates, not junk). The K40 rail's fuse
-between the adapter and the module ([0025](0025-24v-rail-fusing.md))
-still applies for overcurrent protection — it's just no longer gated by
-a relay, straight adapter-to-module with a fuse in line.
+the 24VDC SPDT relay are no longer needed (switch already in hand —
+consider it a surplus/return candidate). The K40 rail's fuse between the
+adapter and the module ([0025](0025-24v-rail-fusing.md)) still applies
+for overcurrent protection — it's just no longer gated by a relay,
+straight adapter-to-module with a fuse in line.
 
-**Still relies on grblHAL's own software Halt** if you want a controlled
-stop short of pulling the plug — but there's no longer a dedicated
-physical Halt button; that'd have to come from something else (a
-keyboard/pendant stop command, or none at all) if wanted later. Not
-designed here.
+**What's added to the BOM**: the AC panic-paddle switch itself, wired
+ahead of the already-owned power strip.
 
 ---
 

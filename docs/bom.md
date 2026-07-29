@@ -33,6 +33,8 @@ physical hardware).
 - 16 AWG stranded silicone wire — in hand (2026-07-29)
 - 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
 - LaserTree K40 laser module — in hand (2026-07-29)
+- Switched power strip — already had on hand
+- 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — added to order (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
 
 **No longer needed** (E-stop hardware removed 2026-07-29, [0024](decisions/0024-e-stop-wiring.md)):
 22mm mushroom E-stop switch (already in hand — surplus/return candidate
@@ -77,7 +79,6 @@ purchased bolt-on-T-nut kit is no longer available; replaced with a
 | grblHAL Teensy 4.1 breakout board (T41U5XBB) | 1 | [Brookwood Design](https://brookwood-design-77.myshopify.com/products/t41u5xbb-board-kit) | [0022](decisions/0022-controller-board-selection.md) |
 | Teensy 4.1 (pre-configured for CNC) | 1 | [ProtoSupplies](https://protosupplies.com/product/teensy41-cnc/) | [0022](decisions/0022-controller-board-selection.md) |
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
-| Switched power strip (rated for the PSU + K40 adapter's combined draw) | 1 | generic — this is now the machine's sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md) | [0024](decisions/0024-e-stop-wiring.md) |
 
 **Still need to confirm**: whether the purchased fuse block kit included a
 full assorted fuse set (10A/3A/2A per [0025](decisions/0025-24v-rail-fusing.md))

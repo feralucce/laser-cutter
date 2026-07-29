@@ -1,7 +1,7 @@
 # 0027. grblHAL auto-squaring configuration for the ganged X-axis
 
 Date: 2026-07-14
-Status: Accepted
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md)
 
 ## Context
 

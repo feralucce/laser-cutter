@@ -1,7 +1,7 @@
 # 0037. Stepper driver modules: STEPPERONLINE DM542T
 
 Date: 2026-07-15
-Status: Accepted
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md)
 
 ## Context
 

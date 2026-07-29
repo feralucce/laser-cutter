@@ -1,7 +1,7 @@
 # 0022. Controller board: grblHAL Teensy 4.1 T41U5XBB
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md)
 
 ## Context
 

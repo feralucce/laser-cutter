@@ -1,7 +1,7 @@
 # 0026. T41U5XBB pin/header mapping
 
 Date: 2026-07-14
-Status: Accepted
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md)
 
 ## Context
 

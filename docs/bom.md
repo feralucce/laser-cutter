@@ -6,10 +6,17 @@ rationale, and any unresolved caveats (several items below are marked
 **verify** and should not be treated as final until confirmed against
 physical hardware).
 
+**2026-07-29: pivoted to reusing the Ortur LM2 S2's own controller,
+drivers, motors, wiring, and limit switches** instead of a new grblHAL
+controller build ([0041](decisions/0041-ortur-electronics-reuse.md)).
+The controller board, stepper drivers, and steppers below are no longer
+being purchased — see "No longer needed" below. The full original
+custom-controller BOM is preserved on the `custom-controller-fallback`
+git branch.
+
 ## Purchased / in hand
 
 - MGN12 linear rail + MGN12H carriage block (Y-axis) — bought 2026-07-22
-- STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase (all 3) — bought 2026-07-22
 - 2040 V-slot aluminum extrusion — bought 2026-07-22
 - DiGiYes GT2 20T idler pulley (toothless/smooth) — bought 2026-07-22
 - 1-Pack Assembled 2040 V Gantry Plate Kit — all 3 confirmed in hand (2026-07-22)
@@ -23,27 +30,30 @@ physical hardware).
 - M8 swivel leveling feet — bought 2026-07-22
 - Caster wheel connector, 2020-series, M8 tapped — bought 2026-07-22
 - Black acrylic sheet stock — bought 2026-07-22
-- STEPPERONLINE DM542T stepper driver — bought 2026-07-22
 - Silicone air tubing — already had on hand
 - Assorted M3/M5 screws, washers, T-nuts — already had, leftover from a previous build
 - Zip ties — already had
 - Cable clips — in hand (2026-07-29)
 - Spiral cable wrap sleeving — in hand (2026-07-29)
-- KW12-3-style SPDT microswitch (limit switches) — in hand (2026-07-29)
-- 16 AWG stranded silicone wire — in hand (2026-07-29)
 - 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
 - ATC/ATO fuse assortment, 1A-40A full range — in hand (2026-07-29), closes the gap the fuse block kit's own included set didn't cover (3A/2A)
 - Switched power strip — already had on hand
 - 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — in hand (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
 
-**No longer needed** (E-stop hardware removed 2026-07-29, [0024](decisions/0024-e-stop-wiring.md)):
-22mm mushroom E-stop switch (already in hand — surplus/return candidate
-rather than something to install) and the 24VDC SPDT relay (whether or
-not it was actually purchased, no longer needed either way).
+**Not part of this design** ([0041](decisions/0041-ortur-electronics-reuse.md), 2026-07-29
+electronics-reuse pivot): grblHAL T41U5XBB breakout board, Teensy 4.1,
+STEPPERONLINE NEMA17 steppers, STEPPERONLINE DM542T drivers, 16 AWG
+stranded silicone wire, KW12-3-style SPDT microswitches — this design
+reuses the Ortur LM2 S2's own controller, drivers, motors, wiring, and
+limit switches instead. (Also **no longer needed**, from the earlier
+2026-07-29 E-stop rework, [0024](decisions/0024-e-stop-wiring.md)): 22mm
+mushroom E-stop switch, 24VDC SPDT relay.
 
-**Still ordering (last 3 items, 2026-07-29)**: LaserTree K40 laser
-module, grblHAL Teensy 4.1 breakout board (T41U5XBB), Teensy 4.1
-(pre-configured for CNC). Everything else in this BOM is in hand.
+**Still ordering (2026-07-29)**: LaserTree K40 laser module, plus a
+K40-compatible adapter board that lets the Ortur's stock controller drive
+the K40 module — specific product not yet identified
+([0041](decisions/0041-ortur-electronics-reuse.md)). Everything else in
+this BOM is in hand.
 
 ## Structural (frame)
 
@@ -60,13 +70,15 @@ module, grblHAL Teensy 4.1 breakout board (T41U5XBB), Teensy 4.1
 |---|---|---|---|
 | 1-Pack Assembled 2040 V Gantry Plate Kit (aluminum plate, black-treated, 87x88x3mm, 6 POM wheels pre-mounted) | 3: one per connection point — 2 for X-axis gantry legs (one per leg), 1 for the Y-axis carriage | [Amazon](https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/), ~$18.99 each (confirmed via [WoodArtSupply](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine) carrying the identical item), ~$56.97 total | [0040](decisions/0040-x-axis-v-wheel-gantry.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — replaces the custom PLA-CF plate + separate wheel-kit plan; **not yet redesigned**: gantry end cap's carriage-attachment zone still cut for MGN12H's bolt pattern, needs redrawing to bolt to this plate's fixed hole pattern instead |
 | MGN12 linear rail + MGN12H carriage block | 1x 800mm rail (Y-axis, single rail on beam), 2x carriage blocks (both on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — rail still provides the primary precise travel path; wheels above are reinforcement only, not a replacement |
-| STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase | 3 (2x X, 1x Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-Stepper-Bipolar-Connector-compatible/dp/B00PNEQKC0) | [0017](decisions/0017-stepper-motor-selection.md) |
-| Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) |
+| Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 3) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) — mounts the Ortur's reused motors ([0041](decisions/0041-ortur-electronics-reuse.md)) on the new frame |
 | BEMONOC GT2 20T drive pulley, 5mm bore | 3 | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md) |
 | DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 3 | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md) |
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
 | 3DMAN GT2 belt clamp, 9x40mm | 1x 10-pack (need 6: 4 X + 2 Y) | [Amazon](https://www.amazon.com/3Dman-Timing-Aluminum-Clamp-9X40mm/dp/B08XVVQW6G/) | [0020](decisions/0020-belt-clamp-selection.md) |
-| STEPPERONLINE DM542T stepper driver, 1.0-4.2A, 20-50VDC | 3 (X1, X2/A, Y) | [Amazon](https://www.amazon.com/STEPPERONLINE-1-0-4-2A-20-50VDC-Micro-step-Resolutions/dp/B06Y5VPSFN) | [0037](decisions/0037-stepper-driver-selection.md) — current DIP switches set at commissioning |
+
+**Motors and drivers**: reused from the existing Ortur LM2 S2 build, not
+purchased — 2 NEMA17 + connecting drive shaft on X, 1 NEMA17 on Y, driven
+by the Ortur's own onboard drivers ([0041](decisions/0041-ortur-electronics-reuse.md)).
 
 ~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
 purchased bolt-on-T-nut kit is no longer available; replaced with a
@@ -76,15 +88,23 @@ purchased bolt-on-T-nut kit is no longer available; replaced with a
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| grblHAL Teensy 4.1 breakout board (T41U5XBB) | 1 | [Brookwood Design](https://brookwood-design-77.myshopify.com/products/t41u5xbb-board-kit) | [0022](decisions/0022-controller-board-selection.md) |
-| Teensy 4.1 (pre-configured for CNC) | 1 | [ProtoSupplies](https://protosupplies.com/product/teensy41-cnc/) | [0022](decisions/0022-controller-board-selection.md) |
+| K40-compatible adapter board (lets the Ortur's stock controller drive the K40 module) | 1 | not yet identified | [0041](decisions/0041-ortur-electronics-reuse.md) — **open**: specific product not yet sourced |
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
 
+**Controller, drivers, wiring harness, and limit switches**: reused from
+the existing Ortur LM2 S2 build ([0041](decisions/0041-ortur-electronics-reuse.md)),
+not purchased.
+
 Fuse coverage confirmed (2026-07-29): the fuse block kit's included set
-(20A/15A/10A/7.5A/5A) didn't have the 3A/2A ratings this design needs for
-the stepper/controller branches — closed by adding a full-range
-ATC/ATO assortment pack (1A-40A), which covers every rating
-[0025](decisions/0025-24v-rail-fusing.md) calls for exactly as speced.
+(20A/15A/10A/7.5A/5A) didn't have the 3A/2A ratings this design needs —
+closed by adding a full-range ATC/ATO assortment pack (1A-40A), which
+covers every rating [0025](decisions/0025-24v-rail-fusing.md) calls for
+exactly as speced. **Note**: [0025](decisions/0025-24v-rail-fusing.md)'s
+per-branch fusing plan was written for the new stepper/controller wiring
+this project was originally building — now that motors/controller/wiring
+are reused from the Ortur ([0041](decisions/0041-ortur-electronics-reuse.md)),
+that harness has its own existing fusing; the fuse block's role narrows to
+the K40 rail only. Not yet re-checked against the actual reused harness.
 
 ~~Elastic cord/spring + cable anchors~~ — not needed. User already owns a
 ceiling-suspended VR headset cable management system and will route the
@@ -126,7 +146,7 @@ is kept in the repo for reference but is not built.
 | Part | Qty | Material | Design file | ADR |
 |---|---|---|---|---|
 | Gantry end cap (2-layer laminate, front+back pair x 2 ends) | 8 pieces (4 plate-pairs x 2 layers) | 3mm black acrylic (exception to the 5mm default) | [hardware/laser-cut/gantry-end-cap.svg](../hardware/laser-cut/gantry-end-cap.svg) | [0036](decisions/0036-gantry-end-cap-redesign.md) — **verify** L-bracket slot dimensions and straddle-zone length against physical hardware |
-| Limit switch mount bracket | 3 | 5mm black acrylic (default) | not yet designed — [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) kept for reference only, needs redesign as a flat/joined acrylic part | [0033](decisions/0033-limit-switch-selection.md) — **not yet designed**: needs flat-pattern redesign (was a 3D-printed L-bracket), plus still-open switch hole-spacing verification |
+| Limit switch mount bracket | 2 (X and Y — the Ortur's own X switches, per [0041](decisions/0041-ortur-electronics-reuse.md), reused as-is) | 5mm black acrylic (default) | not yet designed — [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) kept for reference only, needs redesign as a flat/joined acrylic part | [0033](decisions/0033-limit-switch-selection.md) — **not yet designed**: needs flat-pattern redesign (was a 3D-printed L-bracket) for the new 2040 frame; switch part and hole spacing are now a known/reused quantity (Ortur's own switches, [0041](decisions/0041-ortur-electronics-reuse.md)) rather than an estimate |
 | (all other future laser-cut parts) | — | 5mm black acrylic (default) | — | [0029](decisions/0029-laser-cut-material-selection.md) |
 
 ## Deferred / not part of this BOM

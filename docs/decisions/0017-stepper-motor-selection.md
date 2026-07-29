@@ -1,7 +1,7 @@
 # 0017. Stepper motor: STEPPERONLINE NEMA17, 59Ncm
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md)
 
 ## Context
 

@@ -1,7 +1,7 @@
 # 0011. X-axis: dual independently-driven steppers, synced in firmware
 
 Date: 2026-07-13
-Status: Accepted (topology finalized 2026-07-13, see [0014](0014-axis-naming-convention.md))
+Status: Superseded by [0041](0041-ortur-electronics-reuse.md) (topology finalized 2026-07-13, see [0014](0014-axis-naming-convention.md))
 
 ## Context
 

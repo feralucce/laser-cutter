@@ -10,6 +10,23 @@ physical hardware).
 
 - MGN12 linear rail + MGN12H carriage block (Y-axis) — bought 2026-07-22
 - STEPPERONLINE NEMA17 stepper, 59Ncm, 2A/phase (all 3) — bought 2026-07-22
+- 2040 V-slot aluminum extrusion — bought 2026-07-22
+- DiGiYes GT2 20T idler pulley (toothless/smooth) — bought 2026-07-22
+- 1-Pack Assembled 2040 V Gantry Plate Kit — bought 2026-07-22 — **verify qty**: need 3 total (2 X-axis legs + 1 Y-axis carriage), confirm order covers all 3
+- 6mm GT2 timing belt — bought 2026-07-22
+- Socobeta NEMA17 motor mount bracket — bought 2026-07-22
+- Mean Well LRS-350-24 PSU — bought 2026-07-22
+- 3DMAN GT2 belt clamp, 9x40mm — bought 2026-07-22
+- BEMONOC GT2 20T drive pulley (toothed) — bought 2026-07-22
+- Inside Hidden Corner Bracket, 90°, M5, 20-series — bought 2026-07-22
+- AquaMiracle air pump — bought 2026-07-22
+- M8 swivel leveling feet — bought 2026-07-22
+- Caster wheel connector, 2020-series, M8 tapped — bought 2026-07-22
+- Black acrylic sheet stock — bought 2026-07-22
+- STEPPERONLINE DM542T stepper driver — bought 2026-07-22
+
+**Ordering this evening**: LaserTree K40 laser module, grblHAL Teensy 4.1
+breakout board (T41U5XBB), Teensy 4.1 (pre-configured for CNC).
 
 ## Structural (frame)
 

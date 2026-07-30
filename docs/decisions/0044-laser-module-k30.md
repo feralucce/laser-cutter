@@ -1,7 +1,7 @@
 # 0044. Laser module: switch to LaserTree K30 (30W optical)
 
 Date: 2026-07-29
-Status: Accepted (supersedes [0002](0002-laser-module-selection.md))
+Status: Superseded by [0045](0045-revert-to-k40.md) (supersedes [0002](0002-laser-module-selection.md))
 
 ## Context
 

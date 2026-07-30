@@ -1,7 +1,7 @@
 # 0002. Laser module: LaserTree K40 (40W+ optical)
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0044](0044-laser-module-k30.md)
 
 ## Context
 

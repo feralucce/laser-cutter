@@ -35,7 +35,7 @@ git branch.
 - Zip ties — already had
 - Cable clips — in hand (2026-07-29)
 - Spiral cable wrap sleeving — in hand (2026-07-29)
-- 6-Way ATC/ATO blade fuse block (both, main rail + K40 rail) — in hand (2026-07-29)
+- 6-Way ATC/ATO blade fuse block (both, main rail + laser module rail) — in hand (2026-07-29)
 - ATC/ATO fuse assortment, 1A-40A full range — in hand (2026-07-29), closes the gap the fuse block kit's own included set didn't cover (3A/2A)
 - Switched power strip — already had on hand
 - 110-120V AC panic-paddle safety switch (table saw/milling machine style, large red stop-sign paddle) — in hand (2026-07-29), wired ahead of the power strip as the sole emergency shutoff, [0024](decisions/0024-e-stop-wiring.md)
@@ -49,9 +49,10 @@ limit switches instead. (Also **no longer needed**, from the earlier
 2026-07-29 E-stop rework, [0024](decisions/0024-e-stop-wiring.md)): 22mm
 mushroom E-stop switch, 24VDC SPDT relay.
 
-**Still ordering (2026-07-29)**: LaserTree K40 laser module, plus a
-K40-compatible adapter board that lets the Ortur's stock controller drive
-the K40 module — specific product not yet identified
+**Still ordering (2026-07-29)**: LaserTree K30 laser module (switched from
+K40, [0044](decisions/0044-laser-module-k30.md)), plus a K30-compatible
+adapter board that lets the Ortur's stock controller drive the module —
+specific product not yet identified
 ([0041](decisions/0041-ortur-electronics-reuse.md)). Everything else in
 this BOM is in hand.
 
@@ -95,7 +96,7 @@ purchased bolt-on-T-nut kit is no longer available; replaced with a
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| K40-compatible adapter board (lets the Ortur's stock controller drive the K40 module) | 1 | not yet identified | [0041](decisions/0041-ortur-electronics-reuse.md) — **open**: specific product not yet sourced |
+| K30-compatible adapter board (lets the Ortur's stock controller drive the laser module) | 1 | not yet identified | [0041](decisions/0041-ortur-electronics-reuse.md), [0044](decisions/0044-laser-module-k30.md) — **open**: specific product not yet sourced |
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
 
 **Controller, drivers, wiring harness, and limit switches**: reused from
@@ -111,7 +112,8 @@ per-branch fusing plan was written for the new stepper/controller wiring
 this project was originally building — now that motors/controller/wiring
 are reused from the Ortur ([0041](decisions/0041-ortur-electronics-reuse.md)),
 that harness has its own existing fusing; the fuse block's role narrows to
-the K40 rail only. Not yet re-checked against the actual reused harness.
+the laser module's rail only. Not yet re-checked against the actual
+reused harness.
 
 ~~Elastic cord/spring + cable anchors~~ — not needed. User already owns a
 ceiling-suspended VR headset cable management system and will route the
@@ -164,9 +166,9 @@ is kept in the repo for reference but is not built.
 ## Known open verification items (do not treat these dimensions as final)
 
 - Corner bracket leg length / set-screw position ([0028](decisions/0028-corner-bracket-hardware-selection.md))
-- K40 sliding-plate mounting hole spacing ([0032](decisions/0032-y-axis-laser-carriage.md))
+- Laser module (K30, [0044](decisions/0044-laser-module-k30.md)) sliding-plate mounting hole spacing — not yet confirmed the K30 shares the K40's mounting interface described in [0032](decisions/0032-y-axis-laser-carriage.md)
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
 - Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
 - Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
-- K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))
+- Laser module direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for any laser module), may need new holes drilled once the K30's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md), [0044](decisions/0044-laser-module-k30.md))
 - Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): bore/OD/width fit against the DiGiYes GT2 20T idler pulley not yet confirmed (both toothless, so it's a dimension check, not a tooth-count mismatch) ([0018](decisions/0018-motor-and-idler-mounts.md))

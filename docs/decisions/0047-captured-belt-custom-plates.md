@@ -41,20 +41,28 @@ Two further changes from that reference:
 ## Decision
 
 **Design file**: [hardware/laser-cut/y-gantry-plate.svg](../../hardware/laser-cut/y-gantry-plate.svg)
-— two variants (motor side, bearing side), 80mm x 165mm, 5mm black
-acrylic (working assumption, not yet confirmed against load).
+— **authored directly by the user in Inkscape** (my earlier programmatic
+draft was replaced outright, not merged), two variants (motor side,
+bearing side).
 
-Hole layout (both variants share everything except the center mount):
-- **2040 mount**: 2x M5 clearance, 20mm apart on centerline (top)
-- **Center mount**: NEMA17 (4x M3 on 31x31mm square + 22mm shaft-
-  clearance bore) on the motor plate; single 16.2mm bore for a 625ZZ
-  bearing on the far-end plate
-- **Top wheels**: 2x, 5.2mm, flanking the shaft/motor position (10, 70)
-- **Bottom wheels**: 3x, 7.2mm (eccentric-nut clearance), at (10, 40, 70)
-  — X positions match the top wheels' edges plus the reference's
-  original centerline position
-- **L-brackets**: 4x, 5.2mm M5 clearance, 6mm inset from each edge (2
-  upper, 2 lower)
+**Attachment to the 2040 beam: 6 points per plate**:
+- **2 tapped directly into the extrusion's end grain** (threaded holes,
+  not T-slot) — positioned near the shaft/motor bore
+- **4 through slotted holes for 20-series corner L-brackets** (the ones
+  seated in the extrusion's V-slot, see the "FOR 20 SERIES ALUMINUM
+  PROFILE RAIL" hardware from earlier conversation) — **slotted, not
+  round**, specifically because no reliable dimensional reference exists
+  for that hardware to place a fixed hole accurately; slots absorb the
+  uncertainty, same philosophy as this project's other not-yet-verified
+  parts (idler mount, corner brackets)
+
+Other hole layout (both variants share everything except the center
+mount) matches the reference plates and my earlier draft's data — 2 top
+wheels, 3 bottom wheels (wide/eccentric-nut style), NEMA17 or 625ZZ
+bearing at center. The outer boundary is a plain rectangle (~87.26mm x
+~160.75mm), not the organic shield shape from the reference STLs — the
+user deliberately simplified it, matching the same call I'd made
+independently in the draft this supersedes.
 
 **Superseded**: [0046](0046-shaft-driven-open-belt.md) (open belt loop,
 2 pulleys) — captured-belt routing from [0042](0042-captured-belt-drive.md)
@@ -71,14 +79,11 @@ to the Y-axis the way 0046 had them wired up.
   its own motor/pulley/belt-clamp setup unaffected by this ADR.
 - Wheels and wheel-bolts are reused from the purchased aluminum V-wheel
   plate kit (0040) — its own plate is not used, only its wheel hardware.
-- **Not yet confirmed**: 5mm acrylic thickness is a default assumption
-  (project standard, 0029), not verified against the actual load these
-  plates carry (motor/bearing + shaft + wheels + belt tension). The
-  reference 3D-printed plates were 8mm; worth a real check before
-  committing to a full cut.
-- **Not yet confirmed**: bottom wheel X-alignment (10, 40, 70) was
-  inferred from the reference's top-wheel/centerline positions, not
-  directly specified — flagged for the user to confirm.
+- **Not yet confirmed**: acrylic thickness isn't specified in the SVG
+  itself (project default is 5mm, 0029; reference 3D-printed plates were
+  8mm) — worth a real check before committing to a full cut.
+- Bottom wheel X-alignment is resolved — the user's own file confirms
+  the layout, no longer an open question.
 - 3D-printed versions of both the gantry plate and the far-end bearing
   bracket are superseded and kept only for reference/coordinate history,
   not built.

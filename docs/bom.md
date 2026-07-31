@@ -167,7 +167,7 @@ is kept in the repo for reference but is not built.
 
 | Part | Qty | Material | Design file | ADR |
 |---|---|---|---|---|
-| Gantry end cap (2-layer laminate, front+back pair x 2 ends) | 8 pieces (4 plate-pairs x 2 layers) | 3mm black acrylic (exception to the 5mm default) | [hardware/laser-cut/gantry-end-cap.svg](../hardware/laser-cut/gantry-end-cap.svg) | [0036](decisions/0036-gantry-end-cap-redesign.md) — **verify** L-bracket slot dimensions and straddle-zone length against physical hardware |
+~~Gantry end cap (2-layer laminate)~~ — superseded by the Y-axis gantry plate below, which does the same job ([0047](decisions/0047-captured-belt-custom-plates.md)); `gantry-end-cap.svg` kept for reference only, not built.
 | Limit switch mount bracket | 2 (X and Y — the Ortur's own X switches, per [0041](decisions/0041-ortur-electronics-reuse.md), reused as-is) | 5mm black acrylic (default) | not yet designed — [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) kept for reference only, needs redesign as a flat/joined acrylic part | [0033](decisions/0033-limit-switch-selection.md) — **not yet designed**: needs flat-pattern redesign (was a 3D-printed L-bracket) for the new 2040 frame; switch part and hole spacing are now a known/reused quantity (Ortur's own switches, [0041](decisions/0041-ortur-electronics-reuse.md)) rather than an estimate |
 | Y-axis gantry plate (motor side + bearing side) | 2 (1 each) | 5mm black acrylic (working assumption, reference plate was 8mm) | [hardware/laser-cut/y-gantry-plate.svg](../hardware/laser-cut/y-gantry-plate.svg) | [0047](decisions/0047-captured-belt-custom-plates.md) — **verify** 5mm thickness holds up under load, and confirm bottom-wheel X-alignment (10/40/70) is correct |
 | (all other future laser-cut parts) | — | 5mm black acrylic (default) | — | [0029](decisions/0029-laser-cut-material-selection.md) |
@@ -182,7 +182,6 @@ is kept in the repo for reference but is not built.
 - Corner bracket leg length / set-screw position ([0028](decisions/0028-corner-bracket-hardware-selection.md))
 - K40 sliding-plate mounting hole spacing ([0032](decisions/0032-y-axis-laser-carriage.md))
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
-- Gantry end cap L-bracket slot dimensions and straddle-zone length ([0036](decisions/0036-gantry-end-cap-redesign.md))
-- Gantry end cap carriage-attachment zone: still cut for MGN12H's 20x20mm pattern, needs redesigning for the V-wheel gantry plate's own bolt pattern ([0040](decisions/0040-x-axis-v-wheel-gantry.md)) — sourcing decided, mechanical redesign not started
+- ~~Gantry end cap L-bracket slot dimensions~~ — moot, superseded by the Y-axis gantry plate ([0047](decisions/0047-captured-belt-custom-plates.md))
 - K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))
 - Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): bore/OD/width fit against the DiGiYes GT2 20T idler pulley not yet confirmed (both toothless, so it's a dimension check, not a tooth-count mismatch) ([0018](decisions/0018-motor-and-idler-mounts.md))

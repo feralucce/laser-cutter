@@ -1,7 +1,7 @@
 # 0036. Gantry end cap redesign: flat straddle plate, both ends identical
 
 Date: 2026-07-14
-Status: Accepted (supersedes [0016](0016-gantry-end-plate-rework.md) entirely)
+Status: Superseded by [0047](0047-captured-belt-custom-plates.md) (supersedes [0016](0016-gantry-end-plate-rework.md) entirely)
 
 ## Context
 

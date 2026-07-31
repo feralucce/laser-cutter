@@ -3,6 +3,12 @@
 Date: 2026-07-29
 Status: Accepted (supersedes [0046](0046-shaft-driven-open-belt.md); reinstates the captured-belt approach from [0042](0042-captured-belt-drive.md))
 
+**Also supersedes**: [0036](0036-gantry-end-cap-redesign.md) — this Y
+gantry plate design *is* the gantry end cap, doing the same job
+(terminating the beam, mounting to the gantry plates); it isn't a
+separate part alongside `gantry-end-cap.svg`. That file and this ADR's
+carriage-attachment-zone open item are both closed out by this design.
+
 ## Context
 
 [0046](0046-shaft-driven-open-belt.md) moved away from captured-belt

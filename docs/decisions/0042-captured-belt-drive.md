@@ -1,7 +1,7 @@
 # 0042. Belt routing: captured belt drive (Ortur style), not clamped-both-ends
 
 Date: 2026-07-29
-Status: Accepted (supersedes [0020](0020-belt-clamp-selection.md); modifies
+Status: Superseded by [0046](0046-shaft-driven-open-belt.md) (supersedes [0020](0020-belt-clamp-selection.md); modifies
 [0018](0018-motor-and-idler-mounts.md), [0019](0019-drive-pulley-selection.md),
 [0040](0040-x-axis-v-wheel-gantry.md))
 

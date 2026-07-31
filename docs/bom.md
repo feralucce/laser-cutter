@@ -66,6 +66,7 @@ Everything else in this BOM is in hand.
 | Inside Hidden Corner Bracket, 90°, M5, 20-series | 1x 20-pack (need 16: 8 gantry + 8 frame, 2 per corner) | [Amazon](https://www.amazon.com/Pack-Inside-Hidden-Corner-Bracket/dp/B06XZ3Z82M) | [0028](decisions/0028-corner-bracket-hardware-selection.md) — **verify** leg length/set-screw position against physical part before cutting end caps |
 | Caster wheel connector, 2020-series, M8 tapped | 1x 6-pack (need 4) | [Amazon](https://www.amazon.com/Connection-Connector-Aluminum-Extrusion-Thickness/dp/B0BW8SBLK8/) | [0034](decisions/0034-frame-feet-off-the-shelf.md) |
 | M8 swivel leveling feet | 1x 6-pack (need 4) | [Amazon](https://www.amazon.com/Helonge-Levelers-Adjustable-Furniture-Workbench/dp/B08KXDFJ3M) | [0034](decisions/0034-frame-feet-off-the-shelf.md) |
+| 20-series V-slot corner bracket (26mm leg, 25mm leg, M5, seats in the extrusion's own V-slot channel) | 30-pack w/ 60 screws (need 8: 4 per Y-gantry plate x 2 plates) | generic 20-series supplier | [0047](decisions/0047-captured-belt-custom-plates.md) — **still needs sourcing**, not yet ordered |
 
 ## Motion system
 
@@ -74,8 +75,8 @@ Everything else in this BOM is in hand.
 | 1-Pack Assembled 2040 V Gantry Plate Kit (aluminum plate, black-treated, 87x88x3mm, 6 POM wheels pre-mounted) | 3: one per connection point — 2 for X-axis gantry legs (one per leg), 1 for the Y-axis carriage | [Amazon](https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/), ~$18.99 each (confirmed via [WoodArtSupply](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine) carrying the identical item), ~$56.97 total | [0040](decisions/0040-x-axis-v-wheel-gantry.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — replaces the custom PLA-CF plate + separate wheel-kit plan; **not yet redesigned**: needs redrawing for the aluminum plate's fixed bolt pattern (technical drawing now in hand: 87x88mm, R3 corners, 6x Ø7.2mm wheel-mount holes + 37x Ø5.1mm general mounting holes) |
 | MGN12 linear rail + MGN12H carriage block | 1x 800mm rail (Y-axis, single rail on beam), 2x carriage blocks (both on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — rail still provides the primary precise travel path; wheels above are reinforcement only, not a replacement |
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 2: 1 Y shaft motor, 1 X carriage motor) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) — mounts the Ortur's 2 reused motors ([0041](decisions/0041-ortur-electronics-reuse.md), [0043](decisions/0043-adopt-ortur-axis-convention.md)) on the new frame; the standoff supporting the Y shaft's far end is a separate, not-yet-designed part |
-| BEMONOC GT2 20T drive pulley, 5mm bore | 3 (2 on the Y shaft's ends, 1 on the X motor) | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md), [0046](decisions/0046-shaft-driven-open-belt.md) |
-| DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 3 (2 for Y's open belt loops, 1 for X) | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md), [0046](decisions/0046-shaft-driven-open-belt.md) |
+| BEMONOC GT2 20T drive pulley, 5mm bore | 1 (X motor only — Y is captured-belt, no drive pulley) | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md), [0047](decisions/0047-captured-belt-custom-plates.md) — 2 spare from the original 3-pack |
+| DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 1 (X only) | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md), [0047](decisions/0047-captured-belt-custom-plates.md) — 2 spare from the original 3-pack |
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
 
 **Motors and drivers**: reused from the existing Ortur LM2 S2 build, not
@@ -85,17 +86,21 @@ rail axis), 1 NEMA17 on X (1200mm, beam/carriage axis), driven by the
 Ortur's own onboard drivers ([0041](decisions/0041-ortur-electronics-reuse.md),
 [0043](decisions/0043-adopt-ortur-axis-convention.md)).
 
-**Belt routing**: open belt loop per side, driven by a pulley at each end
-of the Y shaft, clamped to each gantry-leg carriage with the already-
-purchased 3DMAN clamps ([0046](decisions/0046-shaft-driven-open-belt.md)) —
-not the captured-under-wheel routing briefly considered in
-[0042](decisions/0042-captured-belt-drive.md).
+**Belt routing (Y-axis)**: captured belt drive — belt runs under the
+gantry's wheels and over a pulley mounted between the top two wheels,
+per [0047](decisions/0047-captured-belt-custom-plates.md). 3DMAN belt
+clamps are not used on Y (X keeps its own open-loop clamp setup,
+unaffected).
 
-**New open design task**: a motor-mount plate (holds the reused NEMA17
-next to one gantry-leg's carriage) and a shaft-support/standoff mount
-(supports the shaft's far end at the other gantry-leg's carriage) — both
-need designing from scratch, attaching to the purchased aluminum V-wheel
-plates ([0046](decisions/0046-shaft-driven-open-belt.md)).
+**Y-axis gantry plates**: custom-designed, laser-cut 5mm black acrylic —
+[hardware/laser-cut/y-gantry-plate.svg](../hardware/laser-cut/y-gantry-plate.svg)
+([0047](decisions/0047-captured-belt-custom-plates.md)). Reuses the
+wheels/wheel-bolts from the purchased aluminum V-wheel plate kit (0040)
+— that kit's own plate is not used, only its wheel hardware. Two
+variants (motor side, bearing side, the latter holding a 625ZZ bearing
+for the shaft's far end) plus 4 M5 holes per plate for the 20-series
+corner L-brackets (already need sourcing — see below) that seat in the
+2040 beam's V-slot for rigidity.
 
 ~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
 purchased bolt-on-T-nut kit is no longer available; replaced with a
@@ -164,6 +169,7 @@ is kept in the repo for reference but is not built.
 |---|---|---|---|---|
 | Gantry end cap (2-layer laminate, front+back pair x 2 ends) | 8 pieces (4 plate-pairs x 2 layers) | 3mm black acrylic (exception to the 5mm default) | [hardware/laser-cut/gantry-end-cap.svg](../hardware/laser-cut/gantry-end-cap.svg) | [0036](decisions/0036-gantry-end-cap-redesign.md) — **verify** L-bracket slot dimensions and straddle-zone length against physical hardware |
 | Limit switch mount bracket | 2 (X and Y — the Ortur's own X switches, per [0041](decisions/0041-ortur-electronics-reuse.md), reused as-is) | 5mm black acrylic (default) | not yet designed — [hardware/3d-printed/limit-switch-mount.scad](../hardware/3d-printed/limit-switch-mount.scad) kept for reference only, needs redesign as a flat/joined acrylic part | [0033](decisions/0033-limit-switch-selection.md) — **not yet designed**: needs flat-pattern redesign (was a 3D-printed L-bracket) for the new 2040 frame; switch part and hole spacing are now a known/reused quantity (Ortur's own switches, [0041](decisions/0041-ortur-electronics-reuse.md)) rather than an estimate |
+| Y-axis gantry plate (motor side + bearing side) | 2 (1 each) | 5mm black acrylic (working assumption, reference plate was 8mm) | [hardware/laser-cut/y-gantry-plate.svg](../hardware/laser-cut/y-gantry-plate.svg) | [0047](decisions/0047-captured-belt-custom-plates.md) — **verify** 5mm thickness holds up under load, and confirm bottom-wheel X-alignment (10/40/70) is correct |
 | (all other future laser-cut parts) | — | 5mm black acrylic (default) | — | [0029](decisions/0029-laser-cut-material-selection.md) |
 
 ## Deferred / not part of this BOM

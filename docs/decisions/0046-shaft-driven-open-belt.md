@@ -1,7 +1,7 @@
 # 0046. Belt drive: shaft-driven open belt loops (both sides), not captured-under-wheel
 
 Date: 2026-07-29
-Status: Accepted (supersedes [0042](0042-captured-belt-drive.md); reinstates [0020](0020-belt-clamp-selection.md))
+Status: Superseded by [0047](0047-captured-belt-custom-plates.md) (supersedes [0042](0042-captured-belt-drive.md); reinstates [0020](0020-belt-clamp-selection.md))
 
 ## Context
 

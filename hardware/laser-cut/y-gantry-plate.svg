@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280mm" height="200mm" viewBox="0 0 280 200">
+  <!-- Y-axis gantry plate, laser cut, black acrylic. Captured belt drive
+       (0046 reverted back to captured-belt per 2026-07-29 conversation).
+       Reuses wheel/wheel-bolt hardware from the purchased aluminum
+       V-wheel plate kit (0040) -wheel hole diameters match that kit's
+       own spec (7.2mm) where eccentric tension-adjustment is needed.
+
+       Hole layout derived from Printables/yplateleft.stl and
+       yplateright.stl (measured via automated STL hole detection):
+       - 2040 mount: 2x, 5.2mm, 20mm apart on centerline (matches this
+         project's standard T-slot spacing)
+       - NEMA17 (motor variant): 4x M3 clearance on 31x31mm square,
+         around a 22mm shaft-clearance bore
+       - Bearing (bearing variant): single 16.2mm bore for a 625ZZ,
+         matches shaft-far-end-bearing-mount.scad's own bore sizing
+       - Top wheels: 2x, 5.2mm, flanking the shaft/motor position
+         (matches reference plates exactly)
+       - Bottom wheels: 3x, 7.2mm (wide, eccentric tension-nut
+         clearance -reference plate only had 1 bottom wheel; this
+         design uses 3 for extra load support, all given the same
+         eccentric-clearance hole style since all 3 now bear load).
+         X positions match the top wheels' edges (10, 70) plus the
+         reference's original centerline position (40) -NOT YET
+         CONFIRMED this is the intended alignment, flagged in
+         conversation.
+       - L-brackets: 4x, 5.2mm M5 clearance, 6mm inset from each edge
+         -matches the purchased 20-series corner bracket's own
+         hole-to-bend spacing exactly. These brackets seat in the 2040
+         beam's V-slot and bolt to this plate for squareness/rigidity,
+         not a flat face-mount.
+
+       Material: 5mm black acrylic (project default, 0029) -working
+       assumption, not yet confirmed against the reference plate's
+       original 8mm 3D-printed thickness. Revisit if 5mm proves too
+       thin once wheel/shaft loads are test-fit.
+
+       Units: mm. 1 SVG user unit = 1mm. Cut lines only, no fill. -->
+
+  <!-- MOTOR VARIANT -->
+  <g transform="translate(10,10)">
+    <text x="0" y="-3" font-family="sans-serif" font-size="5" fill="#000000">Y gantry plate - MOTOR side</text>
+    <rect x="0" y="0" width="80" height="165" rx="3" ry="3" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- 2040 mount, 2x M5 clearance, 20mm apart -->
+    <circle cx="40" cy="20" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="40" cy="40" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- NEMA17: 22mm shaft-clearance bore + 4x M3 on 31x31mm square -->
+    <circle cx="40" cy="82.23" r="11" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="24.5" cy="66.73" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="55.5" cy="66.73" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="24.5" cy="97.73" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="55.5" cy="97.73" r="1.75" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- Top wheels, 2x, flanking the shaft -->
+    <circle cx="10" cy="97.73" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="70" cy="97.73" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- L-brackets, upper pair -->
+    <circle cx="6" cy="65" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="74" cy="65" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- L-brackets, lower pair -->
+    <circle cx="6" cy="125" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="74" cy="125" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- Bottom wheels, 3x, wide/eccentric-clearance style -->
+    <circle cx="10" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="40" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="70" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+  </g>
+
+  <!-- BEARING VARIANT -->
+  <g transform="translate(110,10)">
+    <text x="0" y="-3" font-family="sans-serif" font-size="5" fill="#000000">Y gantry plate - BEARING side</text>
+    <rect x="0" y="0" width="80" height="165" rx="3" ry="3" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- 2040 mount -->
+    <circle cx="40" cy="20" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="40" cy="40" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- 625ZZ bearing bore, 16.2mm -->
+    <circle cx="40" cy="82.23" r="8.1" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- Top wheels -->
+    <circle cx="10" cy="97.73" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="70" cy="97.73" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- L-brackets -->
+    <circle cx="6" cy="65" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="74" cy="65" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="6" cy="125" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="74" cy="125" r="2.6" fill="none" stroke="#000000" stroke-width="0.1" />
+
+    <!-- Bottom wheels -->
+    <circle cx="10" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="40" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+    <circle cx="70" cy="145" r="3.6" fill="none" stroke="#000000" stroke-width="0.1" />
+  </g>
+
+  <!-- Scale bar for import verification: 100mm x 10mm -->
+  <rect x="10" y="185" width="100" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
+  <text x="10" y="199" font-family="sans-serif" font-size="5" fill="#000000">100mm x 10mm scale bar</text>
+</svg>

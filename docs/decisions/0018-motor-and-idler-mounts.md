@@ -1,7 +1,7 @@
 # 0018. Motor mount and idler mount hardware
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0048](0048-captured-belt-both-axes-no-idler.md) (idler pulley/mount no longer needed; motor mount still applies where reused motors attach)
 
 ## Context
 

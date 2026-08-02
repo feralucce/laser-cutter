@@ -1,7 +1,7 @@
 # 0019. Drive pulley (motor gear) selection
 
 Date: 2026-07-13
-Status: Accepted
+Status: Superseded by [0048](0048-captured-belt-both-axes-no-idler.md) (captured-belt drive pulley now mounts between the wheels directly on both axes)
 
 ## Context
 

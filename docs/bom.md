@@ -75,8 +75,6 @@ Everything else in this BOM is in hand.
 | 1-Pack Assembled 2040 V Gantry Plate Kit (aluminum plate, black-treated, 87x88x3mm, 6 POM wheels pre-mounted) | 3: one per connection point — 2 for X-axis gantry legs (one per leg), 1 for the Y-axis carriage | [Amazon](https://www.amazon.com/Assembled-Kit-Compatible-Aluminum-Extrusion/dp/B0B99WTBSY/), ~$18.99 each (confirmed via [WoodArtSupply](https://woodartsupply.com/products/1-pack-assembled-2040-v-gantry-plate-kit-with-6pcs-v-solid-pom-wheels-only-compatible-with-2040-4040-series-v-slot-aluminum-extrusion-profiles-linear-rail-3d-printer-cnc-machine) carrying the identical item), ~$56.97 total | [0040](decisions/0040-x-axis-v-wheel-gantry.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — replaces the custom PLA-CF plate + separate wheel-kit plan; **not yet redesigned**: needs redrawing for the aluminum plate's fixed bolt pattern (technical drawing now in hand: 87x88mm, R3 corners, 6x Ø7.2mm wheel-mount holes + 37x Ø5.1mm general mounting holes) |
 | MGN12 linear rail + MGN12H carriage block | 1x 800mm rail (Y-axis, single rail on beam), 2x carriage blocks (both on the one Y rail) | generic MGN12 supplier — confirmed pricing at [LiMo Bearing](https://limobearing.com/mgn12c-mgn12h-mini-linear-sliding-rail): 800mm rail+block $21.07, spare slider $5.71 | [0008](decisions/0008-motion-system-mgn12-rails.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md) — rail still provides the primary precise travel path; wheels above are reinforcement only, not a replacement |
 | Socobeta NEMA17 motor mount bracket | 1x 5-pack (need 2: 1 Y shaft motor, 1 X carriage motor) | [Amazon](https://www.amazon.com/Socobeta-Stepper-Mounting-Bracket-Aluminum/dp/B0FPMDHTHD) | [0018](decisions/0018-motor-and-idler-mounts.md) — mounts the Ortur's 2 reused motors ([0041](decisions/0041-ortur-electronics-reuse.md), [0043](decisions/0043-adopt-ortur-axis-convention.md)) on the new frame; the standoff supporting the Y shaft's far end is a separate, not-yet-designed part |
-| BEMONOC GT2 20T drive pulley, 5mm bore | 1 (X motor only — Y is captured-belt, no drive pulley) | [Amazon](https://www.amazon.com/BEMONOC-Timing-Pulley-Teeth-Printer/dp/B014ID115W) | [0019](decisions/0019-drive-pulley-selection.md), [0047](decisions/0047-captured-belt-custom-plates.md) — 2 spare from the original 3-pack |
-| DiGiYes GT2 20T idler pulley (smooth), 5mm bore | 1 (X only) | [Amazon](https://www.amazon.com/gp/product/B0BSPC7D9S/) | [0018](decisions/0018-motor-and-idler-mounts.md), [0047](decisions/0047-captured-belt-custom-plates.md) — 2 spare from the original 3-pack |
 | 6mm GT2 timing belt, closed loop | 2x ~1200mm loop (X) + 1x ~800mm loop (Y) | generic GT2 6mm stock | [0015](decisions/0015-x-axis-motor-system.md) |
 
 **Motors and drivers**: reused from the existing Ortur LM2 S2 build, not
@@ -86,11 +84,14 @@ rail axis), 1 NEMA17 on X (1200mm, beam/carriage axis), driven by the
 Ortur's own onboard drivers ([0041](decisions/0041-ortur-electronics-reuse.md),
 [0043](decisions/0043-adopt-ortur-axis-convention.md)).
 
-**Belt routing (Y-axis)**: captured belt drive — belt runs under the
+**Belt routing (both axes)**: captured belt drive — belt runs under the
 gantry's wheels and over a pulley mounted between the top two wheels,
-per [0047](decisions/0047-captured-belt-custom-plates.md). 3DMAN belt
-clamps are not used on Y (X keeps its own open-loop clamp setup,
-unaffected).
+per [0048](decisions/0048-captured-belt-both-axes-no-idler.md) (extends
+[0047](decisions/0047-captured-belt-custom-plates.md) from Y to X). No
+idler pulley needed on either axis — the DiGiYes idler pulley and BEMONOC
+drive pulley purchased for the original open-loop design are not part of
+this design. Belt ends are anchored by the GT2 fixing clamp (see
+3D-printed parts, below), not the 3DMAN clamps.
 
 **Y-axis gantry plates**: custom-designed, laser-cut 5mm black acrylic —
 [hardware/laser-cut/y-gantry-plate.svg](../hardware/laser-cut/y-gantry-plate.svg)
@@ -101,10 +102,6 @@ variants (motor side, bearing side, the latter holding a 625ZZ bearing
 for the shaft's far end) plus 4 M5 holes per plate for the 20-series
 corner L-brackets (already need sourcing — see below) that seat in the
 2040 beam's V-slot for rigidity.
-
-~~Idler mount hardware: M5 socket-head bolts + washers/spacers~~ — the
-purchased bolt-on-T-nut kit is no longer available; replaced with a
-3D-printed PLA-CF idler mount instead (see 3D-printed parts, below).
 
 ## Electronics & power
 
@@ -151,17 +148,17 @@ All items below already had, leftover from a previous build:
 
 ## 3D-printed parts (PLA-CF)
 
+**The GT2 fixing clamp is the only 3D-printed part in this build.**
+Everything else that was ever planned as printed (idler mount, K40
+carriage bracket, limit switch mount, shaft-far-end bearing mount, Y
+gantry plate draft) has been eliminated or moved to laser-cut acrylic —
+`hardware/3d-printed/` has been cleaned out of those superseded drafts
+entirely (not just marked unused; git history preserves them if ever
+needed).
+
 | Part | Qty | Design file | ADR |
 |---|---|---|---|
-| Idler mount bracket | 3 (X1, X2, Y) | [JeSc HyperCube XY Idler T16 v2.0](https://www.printables.com/model/56963-jesc-hypercube-xy-idler-t16-v20/files), downloaded to [Printables/](../Printables/) | [0018](decisions/0018-motor-and-idler-mounts.md) — **not yet verified**: bore/OD/width fit against the already-purchased DiGiYes GT2 20T idler pulley (both idlers are toothless, so this isn't a tooth-count mismatch question) |
-
-The K40 carriage bracket and limit switch mounts have both moved to
-laser-cut acrylic (below) — not printed.
-
-~~Y-axis laser carriage bracket (K40 mount)~~ — no longer needed. The K40
-now bolts directly to the aluminum wheel-holder plate's own hole grid
-([0039](decisions/0039-y-axis-single-rail-dual-block.md)); [hardware/3d-printed/y-carriage-k40-bracket.scad](../hardware/3d-printed/y-carriage-k40-bracket.scad)
-is kept in the repo for reference but is not built.
+| GT2 fixing clamp | 8 | [hardware/3d-printed/gt2-fixing-clamp.stl](../hardware/3d-printed/gt2-fixing-clamp.stl) (source: user-downloaded model, "gt2-belt-clamp-techguy") | [0048](decisions/0048-captured-belt-both-axes-no-idler.md) — anchors the captured belt's ends on both axes. Print solid (100% infill), same creep-resistance rationale as this project's other tensioned printed parts |
 
 ## Laser-cut parts (black acrylic)
 
@@ -184,4 +181,4 @@ is kept in the repo for reference but is not built.
 - Limit switch mounting-hole spacing ([0033](decisions/0033-limit-switch-selection.md))
 - ~~Gantry end cap L-bracket slot dimensions~~ — moot, superseded by the Y-axis gantry plate ([0047](decisions/0047-captured-belt-custom-plates.md))
 - K40 direct-mount to the wheel-holder plate: the plate's hole grid is fixed (not custom-drilled for the K40), may need new holes drilled once the K40's actual sliding-plate hole spacing is confirmed against physical hardware ([0032](decisions/0032-y-axis-laser-carriage.md), [0039](decisions/0039-y-axis-single-rail-dual-block.md))
-- Idler mount bracket (JeSc HyperCube XY Idler T16 v2.0, printed): bore/OD/width fit against the DiGiYes GT2 20T idler pulley not yet confirmed (both toothless, so it's a dimension check, not a tooth-count mismatch) ([0018](decisions/0018-motor-and-idler-mounts.md))
+- ~~Idler mount bracket bore/OD/width fit~~ — moot, idler pulleys eliminated entirely ([0048](decisions/0048-captured-belt-both-axes-no-idler.md))

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130mm" height="60mm" viewBox="0 0 130 60">
+  <!-- Direct 1:1 boundary trace of gt2beltholder.stl, source:
+       Downloads/Gt2 belt hoder - 6465304/files/gt2beltholder.stl
+       - extracted programmatically from the raw mesh (same
+       method as the other reference traces in this repo).
+       Z-axis flipped for display so +Z (physical top per STL
+       up convention) renders at the top of this drawing.
+
+       Genuinely flat: 2.5mm thick uniform plate, profile lies
+       in the X-Z plane (not X-Y like the other traced parts) -
+       this part is a small vertical GT2 belt end-clamp, not a
+       flat-on-the-bed plate.
+
+       Body: 10mm wide x 20mm tall, rounded ends (5mm radius).
+       Belt slot (top): 7mm wide x 2.5mm tall, rounded corners,
+       centered ~4.84mm below the top edge on the centerline -
+       the belt passes through here and gets pinched/clamped.
+       Mounting hole (bottom): octagonal/near-circular, ~5.4mm
+       across, centered ~5.6mm from the bottom edge on the
+       centerline - for a screw into the carriage.
+
+       Units: mm. 1 SVG unit = 1mm. Cut lines only, no fill. -->
+  <path d="M 20.00,24.00 L 20.00,6.00 L 19.87,5.50 L 19.50,5.13 L 19.00,5.00 L 11.00,5.00 L 10.50,5.13 L 10.13,5.50 L 10.00,6.00 L 10.00,24.00 L 10.13,24.50 L 10.50,24.87 L 11.00,25.00 L 19.00,25.00 L 19.50,24.87 L 19.87,24.50 L 20.00,24.00 Z" fill="none" stroke="#000000" stroke-width="0.15" />
+  <path d="M 13.81,16.92 L 15.00,16.65 L 16.19,16.92 L 17.15,17.68 L 17.68,18.79 L 17.68,20.01 L 17.15,21.11 L 16.19,21.87 L 15.00,22.15 L 13.81,21.87 L 12.85,21.11 L 12.32,20.01 L 12.32,18.79 L 12.85,17.68 L 13.81,16.92 Z" fill="none" stroke="#000000" stroke-width="0.15" />
+  <path d="M 18.00,11.09 L 18.25,11.02 L 18.43,10.84 L 18.50,10.59 L 18.50,9.09 L 18.43,8.84 L 18.25,8.66 L 18.00,8.59 L 12.00,8.59 L 11.75,8.66 L 11.57,8.84 L 11.50,9.09 L 11.50,10.59 L 11.57,10.84 L 11.75,11.02 L 12.00,11.09 L 18.00,11.09 Z" fill="none" stroke="#000000" stroke-width="0.15" />
+  <!-- Scale bar for import verification: 100mm x 10mm -->
+  <rect x="15" y="45" width="100" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
+  <text x="15" y="59" font-family="sans-serif" font-size="4" fill="#000000">100mm x 10mm scale bar</text>
+</svg>

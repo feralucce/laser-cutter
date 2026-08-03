@@ -25,28 +25,30 @@ limit switch correctly once the gantry is assembled.
 
 ## Decision
 
-3D-printed L-bracket, [hardware/3d-printed/olmp-board-mount.scad](../../hardware/3d-printed/olmp-board-mount.scad):
+3D-printed part, [hardware/3d-printed/olmp-board-mount.scad](../../hardware/3d-printed/olmp-board-mount.scad),
+a **direct translation of the reference sketch's three views, not a
+reinterpretation**:
 
-- **Wall** (vertical face): 24 x 35 x 4mm, 2x M3 clearance holes
-  (3.4mm) 15.5mm apart, centered — matches the FRONT-layer hole
-  markup exactly. Board's own bolts pass through into this wall (same
-  scheme as the laser-cut version, no separate board-side hardware).
-- **Base** (horizontal foot): 34 x 24 x 5mm, with a slide slot for a
-  T-nut/M5 bolt — stadium shape, 5.5mm wide, ~26.8mm total length
-  (21.3mm straight + rounded ends), matching the TOP-layer slot
-  markup. Slot's long axis is the slide-adjustment direction along the
-  extrusion.
-- **Corner gusset**: small triangular brace behind the wall (away from
-  the board's mounting face), sized to clear both M3 holes, added for
-  rigidity since this wall takes the switch-actuation impact.
-- Wall thickness upsized to 4mm from the sketch's acrylic-scale
-  ~2.4mm — PLA needs more material here than a laser-cut sheet would,
-  given repeated mechanical impact from switch actuation.
-- **Real assumption, not yet verified**: no clearance pocket for the
-  board's connectors (on the reverse side per the user) — the design
-  assumes the board's own bolts provide enough standoff. If the
-  connector housings foul the wall in a test fit, this needs a
-  pocket/recess added on the inner face.
+- **Body**: the FRONT layer's exact outline (flat bottom edge, short
+  left edge, one long curved sweep up to the narrow top-right strip
+  that carries the board holes) extruded straight through by the TOP
+  layer's depth (25.849mm). One solid piece, no separate wall/base
+  split, no added ribs — printed **solid PLA-CF**, which is its own
+  reinforcement, so no gusset.
+- **M3 board holes**: exact FRONT-layer circle positions, 15.5mm
+  apart, 3.2mm diameter as drawn, running the full depth.
+- **M5 slide slot**: exact TOP-layer stadium position/size (5.34mm
+  wide, 26.6mm long), cut straight through vertically so a bolt
+  dropped in from the top is reachable — a blind pocket was tried
+  first and rejected, since at the slot's (u,d) position the body is
+  already ~34mm tall, deep enough to trap the bolt with no way to
+  tighten it from above.
+- **Two real assumptions, not yet verified**: (1) the TOP-layer
+  rectangle (25.849mm) and the SIDE-layer's matching rectangle
+  (28.373mm) disagree by ~2.5mm on depth — used the TOP value since
+  the slot's own position is defined relative to it; (2) no clearance
+  cut for the board's connectors (reverse side, per the user) — the
+  board's own bolts are assumed to give enough standoff.
 
 ## Consequences
 

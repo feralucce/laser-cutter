@@ -34,10 +34,16 @@ three views:
   top-right strip that carries the board holes), as a thin **2.5mm**
   plate (matches the SIDE layer's rect8, drawn 2.424mm) — not a solid
   extrusion. Printed solid PLA-CF, no added ribs/gusset needed.
-- **Horizontal foot**: a plain rectangle spanning the wall's full
-  40.08mm width, thin **2.5mm** plate (SIDE layer's rect9, drawn
-  2.432mm) at the wall's base, extending 28.373mm in depth (rect9's
-  drawn length) — a real L cross-section, not a solid wedge.
+  **Narrowed to 29.55mm** (was 40.08mm, matching the foot) per a
+  follow-up edit to the FRONT layer — left edge held in place so it
+  still aligns with the foot's left edge; the wall intentionally no
+  longer spans the foot's full width. Holes moved left with it (still
+  15.5mm apart, same height).
+- **Horizontal foot**: a plain rectangle, **40.08mm wide** (unchanged,
+  wider than the wall — intentional, per the same edit), thin
+  **2.5mm** plate (SIDE layer's rect9, drawn 2.432mm) at the wall's
+  base, extending 28.373mm in depth (rect9's drawn length) — a real L
+  cross-section, not a solid wedge. Left-aligned with the wall.
 - **M3 board holes**: exact FRONT-layer circle positions, 15.5mm
   apart, 3.2mm diameter as drawn, through the wall only.
 - **M5 slide slot**: exact TOP-layer stadium position/size (5.34mm

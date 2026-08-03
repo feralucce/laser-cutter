@@ -16,21 +16,24 @@ $fn = 64;
 
 // --- exact FRONT profile outline (wall's own front-facing silhouette),
 // traced from the SVG path/bezier curves, as (u, -w) pairs ready for
-// linear_extrude + rotate([-90,0,0]) (see wall() below) ---
+// linear_extrude + rotate([-90,0,0]) (see wall() below). Updated per
+// the user's edit: front narrowed to 29.55mm (was 40.08mm), left edge
+// held in place so it still aligns with the foot's left edge - the
+// wall no longer spans the foot's full width, intentionally. ---
 front_profile = [
-    [26.506,-35.0], [30.48,-35.019], [33.825,-35.024], [36.499,-35.02],
-    [38.46,-35.012], [39.668,-35.004], [40.08,-0.0], [0.08,-0.0],
+    [26.506,-35.0], [29.7,-35.019], [31.095,-35.024], [31.234,-35.02],
+    [30.661,-35.012], [29.919,-35.004], [29.551,-0.0], [0.08,-0.0],
     [0.074,-0.119], [0.061,-0.459], [0.044,-0.993], [0.025,-1.697],
     [0.01,-2.543], [0.0,-3.506], [0.0,-4.56], [0.36,-8.401],
     [1.259,-11.394], [2.646,-14.562], [4.459,-17.807], [6.631,-21.034],
     [9.099,-24.145], [11.798,-27.045], [14.664,-29.638], [17.632,-31.826],
     [20.638,-33.513], [23.617,-34.603], [26.506,-35.0],
 ];
-front_width = 40.08;
+foot_width = 40.08; // unchanged - the TOP layer wasn't touched
 
 // --- M3 board holes, exact FRONT-layer circle positions (u, w) ---
-hole_u = 36.843;
-hole_w = [11.816, 27.316];   // 15.5mm apart, as drawn
+hole_u = 26.314;             // moved left with the narrowed front
+hole_w = [11.816, 27.316];   // unchanged - 15.5mm apart, as drawn
 hole_dia = 3.2;              // as drawn (2x1.6mm radius)
 
 // --- SIDE-layer L cross-section thicknesses ---
@@ -62,7 +65,7 @@ module wall() {
 module foot() {
     difference() {
         translate([0, 0, -foot_t])
-            cube([front_width, foot_d, foot_t + 0.01]); // +0.01 overlap into the wall for a clean union
+            cube([foot_width, foot_d, foot_t + 0.01]); // +0.01 overlap into the wall for a clean union
 
         translate([slot_u, slot_d, -foot_t - 1])
             hull() {

@@ -46,9 +46,12 @@ three views:
   cross-section, not a solid wedge. Left-aligned with the wall.
 - **M3 board holes**: exact FRONT-layer circle positions, 15.5mm
   apart, 3.2mm diameter as drawn, through the wall only.
-- **M5 slide slot**: exact TOP-layer stadium position/size (5.34mm
-  wide, 26.6mm long), through the foot only, long axis parallel to
-  the front wall (along the width axis).
+- **M5 slide slot**: TOP-layer stadium size (5.34mm wide, 26.6mm
+  long), through the foot only, long axis parallel to the front wall
+  (along the width axis). **Depth position centered** in the foot
+  (14.19mm from both the wall and the back edge) rather than the
+  TOP layer's off-center position (10.86mm from the near edge) — so
+  there's equal clearance for the bolt head on either side.
 - **Real assumption, not yet verified**: no clearance cut for the
   board's connectors (reverse side, per the user) — the board's own
   bolts are assumed to give enough standoff.

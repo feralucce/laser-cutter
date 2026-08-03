@@ -44,7 +44,10 @@ foot_d = 28.373; // foot depth/length (D), rect9's drawn length
 // --- TOP-layer M5 slide slot, long axis along U (parallel to the
 // front wall) ---
 slot_u        = 21.016;  // slot center, distance from the shared left edge
-slot_d        = 10.857;  // slot center, distance from TOP's near edge
+slot_d        = foot_d / 2;  // centered front-to-back in the foot (was
+                              // 10.857, off-center per the TOP layer) so
+                              // there's equal clearance for the bolt head
+                              // on both sides
 slot_len      = 26.625;  // full stadium length (u axis)
 slot_width    = 5.34;    // as drawn (~5.5mm stated)
 slot_straight = slot_len - slot_width;

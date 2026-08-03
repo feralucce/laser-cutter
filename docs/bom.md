@@ -148,17 +148,17 @@ All items below already had, leftover from a previous build:
 
 ## 3D-printed parts (PLA-CF)
 
-**The GT2 fixing clamp is the only 3D-printed part in this build.**
-Everything else that was ever planned as printed (idler mount, K40
-carriage bracket, limit switch mount, shaft-far-end bearing mount, Y
-gantry plate draft) has been eliminated or moved to laser-cut acrylic —
-`hardware/3d-printed/` has been cleaned out of those superseded drafts
-entirely (not just marked unused; git history preserves them if ever
-needed).
+Everything that was ever planned as printed other than the two parts
+below (idler mount, K40 carriage bracket, limit switch mount,
+shaft-far-end bearing mount, Y gantry plate draft) has been eliminated
+or moved to laser-cut acrylic — `hardware/3d-printed/` has been kept
+clear of those superseded drafts (not just marked unused; git history
+preserves them if ever needed).
 
 | Part | Qty | Design file | ADR |
 |---|---|---|---|
 | GT2 fixing clamp | 8 | [hardware/3d-printed/gt2-fixing-clamp.stl](../hardware/3d-printed/gt2-fixing-clamp.stl) (source: user-downloaded model, "gt2-belt-clamp-techguy") | [0048](decisions/0048-captured-belt-both-axes-no-idler.md) — anchors the captured belt's ends on both axes. Print solid (100% infill), same creep-resistance rationale as this project's other tensioned printed parts |
+| OLMP-V1.2C board mount | 1 | [hardware/3d-printed/olmp-board-mount.scad](../hardware/3d-printed/olmp-board-mount.scad) | [0049](decisions/0049-olmp-board-mount-3d-printed.md) — **interim only**, printed because no laser is running yet; the laser-cut acrylic version (below) is still the long-term part. Not yet test-fit against the physical board |
 
 ## Laser-cut parts (black acrylic)
 

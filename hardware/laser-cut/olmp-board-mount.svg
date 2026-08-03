@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130mm" height="70mm" viewBox="0 0 130 70">
+  <!-- OLMP-V1.2C board mount, laser cut, 5mm black acrylic
+       (project default, 0029). Board measured directly by user:
+       20mm x 20mm square, 2x M3 bolts (2.8mm measured) 15.5mm
+       center-to-center, board bolts THROUGH into this plate
+       (no separate board-side holes - the board's own 2 bolts
+       are the mounting posts).
+
+       Plate: 40mm x 30mm, board holes centered in the upper
+       portion, 2x slotted holes at the bottom for T-slot
+       mounting to 2020/2040 extrusion (slotted for position
+       adjustment, matching this project's usual approach for
+       not-yet-finalized mounting locations).
+
+       Units: mm. 1 SVG unit = 1mm. Cut lines only, no fill. -->
+  <g transform="translate(15,10)">
+    <rect x="0" y="0" width="40" height="30" rx="3" ry="3" fill="none" stroke="#000000" stroke-width="0.15" />
+    <!-- board mount holes, M3 clearance (3.2mm), 15.5mm apart, centered -->
+    <circle cx="12.25" cy="10" r="1.6" fill="none" stroke="#000000" stroke-width="0.15" />
+    <circle cx="27.75" cy="10" r="1.6" fill="none" stroke="#000000" stroke-width="0.15" />
+    <!-- T-slot mounting slots, M5 clearance, 20mm apart (standard T-slot spacing) -->
+    <rect x="8.25" y="22.5" width="8" height="5" rx="2.5" fill="none" stroke="#000000" stroke-width="0.15" />
+    <rect x="23.75" y="22.5" width="8" height="5" rx="2.5" fill="none" stroke="#000000" stroke-width="0.15" />
+  </g>
+  <!-- Scale bar for import verification: 100mm x 10mm -->
+  <rect x="15" y="55" width="100" height="10" fill="none" stroke="#000000" stroke-width="0.1" />
+  <text x="15" y="69" font-family="sans-serif" font-size="5" fill="#000000">100mm x 10mm scale bar</text>
+</svg>

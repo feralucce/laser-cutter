@@ -34,7 +34,7 @@ here needs more context.
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | Purchased spare, not in the live power path. Swap in if the K40's PSU fails. |
 | LaserTree K40 laser module | Fires via direct wiring, **not** through its bundled adapter board — see wiring below. |
 | K40's bundled adapter board | **Not used.** Powered the module but never passed PWM through (isolated by testing both its power modes); kept as a spare part only, not part of the working signal path. |
-| Direct-wire laser harness (custom) | The LU2-10A's own original cable — cut at the laser end and re-terminated to fit the K40's screw terminals. **The LU2-10A is no longer wired up** (this cable was moved, not duplicated); not a purchasable part — see pin map below to rebuild it. |
+| Direct-wire laser harness (custom) | The LU2-10A's own original cable — cut at the laser end and re-terminated to fit the K40's screw terminals. **The LU2-10A is no longer wired up**, but the original connector that was cut off is saved, so the LU2-10A can be restored by re-terminating it back on. Not a purchasable part — see pin map below to rebuild it. |
 | 6-Way ATC/ATO fuse block + assortment | In hand — see [Electronics & power](#electronics--power) below for fusing notes |
 | 110-120V AC panic-paddle E-stop switch | Wired ahead of the switched power strip, sole emergency shutoff ([0024](decisions/0024-e-stop-wiring.md)) |
 
@@ -50,11 +50,12 @@ see [Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg](../Reference/d8804
   `X_LIMIT`, `Y_LIMIT`, `YB2`, `YA2`, `FAN`, or `5V`) — **not** the pin
   labeled `FIRE`, which is a flame-sensor input, not ground
 
-To rebuild the harness: this connector was the LU2-10A's own cable
-(the LU2-10A currently has nothing plugged into it as a result), so
-there's no spare copy sitting around — a **new harness would need to be
-made from scratch** if this one fails: an Ortur-side connector matching
-the mainboard's laser-output socket, wired to the three pins above,
+To rebuild the harness: this cable was the LU2-10A's own — its original
+laser-end connector was cut off but **saved**, so the LU2-10A can be
+restored by re-terminating that connector back on. If a fresh harness
+is ever needed for a *different* module (not the LU2-10A), it'd need
+to be made from scratch: an Ortur-side connector matching the
+mainboard's laser-output socket, wired to the three pins above,
 terminated at the laser end to fit whatever module's screw terminals.
 
 ## Purchased / in hand

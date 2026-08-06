@@ -34,13 +34,12 @@ here needs more context.
 | Mean Well LRS-350-24 PSU (24V, 14.6A) | Purchased spare, not in the live power path. Swap in if the K40's PSU fails. |
 | LaserTree K40 laser module | Fires via direct wiring, **not** through its bundled adapter board — see wiring below. |
 | K40's bundled adapter board | **Not used.** Powered the module but never passed PWM through (isolated by testing both its power modes); kept as a spare part only, not part of the working signal path. |
-| Direct-wire laser harness (custom) | Spare Ortur-to-laser-output harness, cut at the laser end, spliced to the K40's screw terminals. Not a purchasable part — see pin map below to rebuild it. |
+| Direct-wire laser harness (custom) | The LU2-10A's own original cable — cut at the laser end and re-terminated to fit the K40's screw terminals. **The LU2-10A is no longer wired up** (this cable was moved, not duplicated); not a purchasable part — see pin map below to rebuild it. |
 | 6-Way ATC/ATO fuse block + assortment | In hand — see [Electronics & power](#electronics--power) below for fusing notes |
 | 110-120V AC panic-paddle E-stop switch | Wired ahead of the switched power strip, sole emergency shutoff ([0024](decisions/0024-e-stop-wiring.md)) |
 
-**Ortur mainboard laser-output pin map** (from the board's own silkscreen,
-verified against the working LU2-10A harness — see
-[Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg](../Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg)):
+**Ortur mainboard laser-output pin map** (from the board's own silkscreen —
+see [Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg](../Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg)):
 
 - `LA_PWM` — PWM signal (fluctuating-duty-cycle pin; reads as a DC
   average on a multimeter, not a visibly moving value — ~0V at 0% power,
@@ -51,10 +50,12 @@ verified against the working LU2-10A harness — see
   `X_LIMIT`, `Y_LIMIT`, `YB2`, `YA2`, `FAN`, or `5V`) — **not** the pin
   labeled `FIRE`, which is a flame-sensor input, not ground
 
-To rebuild the harness: take a spare Ortur laser-output connector, cut
-the far end, wire those three to the K40's screw terminals by function
-(not by wire color/position — verify with a continuity check against the
-working LU2-10A harness first).
+To rebuild the harness: this connector was the LU2-10A's own cable
+(the LU2-10A currently has nothing plugged into it as a result), so
+there's no spare copy sitting around — a **new harness would need to be
+made from scratch** if this one fails: an Ortur-side connector matching
+the mainboard's laser-output socket, wired to the three pins above,
+terminated at the laser end to fit whatever module's screw terminals.
 
 ## Purchased / in hand
 
@@ -99,8 +100,9 @@ not part of the final wiring path** — it powered up but never passed a
 PWM signal to the module (adapter fault, isolated by testing both its
 internal/external power modes with the same result). Fixed by direct-wiring: LA_PWM,
 LA_PWR (24V), and a GND pin from the Ortur mainboard's own laser-output
-header, spliced from a sacrificed spare Ortur-to-laser harness straight to
-the K40's screw terminals, bypassing the adapter entirely. See the
+header, using the LU2-10A's own original cable — cut and re-terminated to
+fit the K40's screw terminals (the LU2-10A now has nothing plugged into
+it), bypassing the adapter entirely. See the
 [control system quick-reference](#control-system-quick-reference-if-the-controller-fails)
 below for the exact pin map.
 

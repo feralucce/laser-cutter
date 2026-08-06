@@ -6,6 +6,12 @@ rationale, and any unresolved caveats (several items below are marked
 **verify** and should not be treated as final until confirmed against
 physical hardware).
 
+**2026-08-06: machine built and running.** See
+[Control system quick-reference](#control-system-quick-reference-if-the-controller-fails)
+below for a short, standalone spares list scoped to just the
+controller/power/laser-firing chain — the part most likely to need
+emergency replacement, separate from the full BOM below.
+
 **2026-07-29: pivoted to reusing the Ortur LM2 S2's own controller,
 drivers, motors, wiring, and limit switches** instead of a new grblHAL
 controller build ([0041](decisions/0041-ortur-electronics-reuse.md)).
@@ -13,6 +19,42 @@ The controller board, stepper drivers, and steppers below are no longer
 being purchased — see "No longer needed" below. The full original
 custom-controller BOM is preserved on the `custom-controller-fallback`
 git branch.
+
+## Control system quick-reference (if the controller fails)
+
+Standalone list, scoped to just what's needed to get power, motion, and
+laser-firing working again — not the frame/motion mechanicals. Pulled
+from the full BOM below; check there and the linked ADRs if anything
+here needs more context.
+
+| Part | Notes |
+|---|---|
+| Ortur LM2 S2 mainboard (silkscreened `OLM-ESP-PRO_V1.2`) | Reused from the original Ortur, **not purchased new — no sourcing link on record.** If this board dies, a replacement isn't yet identified; check Ortur's own parts/support channel first, or an equivalent GRBL-based board (would need re-verifying pin mapping against the notes below). This is the one real gap in this list. |
+| K40's bundled 24V/8A PSU | Sole power supply for the **entire machine** (controller + motors + laser) — not the Mean Well. Feeds the Ortur mainboard's 24V input. |
+| Mean Well LRS-350-24 PSU (24V, 14.6A) | Purchased spare, not in the live power path. Swap in if the K40's PSU fails. |
+| LaserTree K40 laser module | Fires via direct wiring, **not** through its bundled adapter board — see wiring below. |
+| K40's bundled adapter board | **Not used.** Powered the module but never passed PWM through (isolated by testing both its power modes); kept as a spare part only, not part of the working signal path. |
+| Direct-wire laser harness (custom) | Spare Ortur-to-laser-output harness, cut at the laser end, spliced to the K40's screw terminals. Not a purchasable part — see pin map below to rebuild it. |
+| 6-Way ATC/ATO fuse block + assortment | In hand — see [Electronics & power](#electronics--power) below for fusing notes |
+| 110-120V AC panic-paddle E-stop switch | Wired ahead of the switched power strip, sole emergency shutoff ([0024](decisions/0024-e-stop-wiring.md)) |
+
+**Ortur mainboard laser-output pin map** (from the board's own silkscreen,
+verified against the working LU2-10A harness — see
+[Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg](../Reference/d8804ccb4a881b6d5972ff01df58020ced912551.jpeg)):
+
+- `LA_PWM` — PWM signal (fluctuating-duty-cycle pin; reads as a DC
+  average on a multimeter, not a visibly moving value — ~0V at 0% power,
+  ~5V at 100%)
+- `LA_PWR` — 24V, broken out on two adjacent pins (silkscreened `YA1`/
+  `YB1`, repurposed since this build only uses one Y motor)
+- Any silkscreened `GND` pin on the same header block (paired with
+  `X_LIMIT`, `Y_LIMIT`, `YB2`, `YA2`, `FAN`, or `5V`) — **not** the pin
+  labeled `FIRE`, which is a flame-sensor input, not ground
+
+To rebuild the harness: take a spare Ortur laser-output connector, cut
+the far end, wire those three to the K40's screw terminals by function
+(not by wire color/position — verify with a continuity check against the
+working LU2-10A harness first).
 
 ## Purchased / in hand
 
@@ -49,13 +91,26 @@ limit switches instead. (Also **no longer needed**, from the earlier
 2026-07-29 E-stop rework, [0024](decisions/0024-e-stop-wiring.md)): 22mm
 mushroom E-stop switch, 24VDC SPDT relay.
 
-**Ordered, not yet in hand (2026-07-29)**: LaserTree K40 laser module —
-briefly switched to the K30 ([0044](decisions/0044-laser-module-k30.md)),
-reverted back to K40 ([0045](decisions/0045-revert-to-k40.md)) for the
-power headroom (can dial down, can't exceed a module's capacity) before
-ordering. Still needed: a K40-compatible adapter board that lets the
-Ortur's stock controller drive the module — specific product not yet
-identified ([0041](decisions/0041-ortur-electronics-reuse.md)).
+**LaserTree K40 laser module — in hand and firing (2026-08-06).** Briefly
+switched to the K30 ([0044](decisions/0044-laser-module-k30.md)), reverted
+back to K40 ([0045](decisions/0045-revert-to-k40.md)) for the power
+headroom before ordering. **The K40's bundled LaserTree adapter board is
+not part of the final wiring path** — it powered up but never passed a
+PWM signal to the module (adapter fault, isolated by testing both its
+internal/external power modes with the same result). Fixed by direct-wiring: LA_PWM,
+LA_PWR (24V), and a GND pin from the Ortur mainboard's own laser-output
+header, spliced from a sacrificed spare Ortur-to-laser harness straight to
+the K40's screw terminals, bypassing the adapter entirely. See the
+[control system quick-reference](#control-system-quick-reference-if-the-controller-fails)
+below for the exact pin map.
+
+**Power supply: running off the K40's bundled 24V/8A PSU, not the Mean
+Well LRS-350-24.** The K40's own supply now powers the entire
+machine — controller, motors, and laser — through the Ortur mainboard's
+24V input. The Mean Well LRS-350-24 (below, purchased 2026-07-22) is not
+in the live power path; keep it as a spare/backup rather than a required
+part.
+
 Everything else in this BOM is in hand.
 
 ## Structural (frame)
@@ -107,8 +162,16 @@ corner L-brackets (already need sourcing — see below) that seat in the
 
 | Part | Qty | Source / link | ADR |
 |---|---|---|---|
-| K40-compatible adapter board (lets the Ortur's stock controller drive the K40 module) | 1 | not yet identified | [0041](decisions/0041-ortur-electronics-reuse.md), [0045](decisions/0045-revert-to-k40.md) — **open**: specific product not yet sourced |
-| Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) |
+| LaserTree K40 laser module | 1 | LaserTree | [0041](decisions/0041-ortur-electronics-reuse.md), [0045](decisions/0045-revert-to-k40.md) — in hand and firing (2026-08-06); its bundled adapter board is **not used** (see below) |
+| Mean Well LRS-350-24 PSU (24V, 14.6A) | 1 | generic Mean Well supplier | [0023](decisions/0023-power-supply-selection.md) — purchased but **not in the live power path**; the K40's bundled 24V/8A PSU runs the whole machine instead. Kept as a spare |
+
+**K40 adapter board**: bundled with the K40, ultimately **not part of the
+working wiring** — it powered the module (fan, temp indicator, marker
+laser all worked) but never passed a PWM signal through, in either its
+internal or external power mode. Bypassed by wiring the Ortur mainboard's
+own laser-output pins (`LA_PWM`, `LA_PWR`, a `GND` pin) directly to the
+K40's screw terminals via a spliced spare harness. See
+[control system quick-reference](#control-system-quick-reference-if-the-controller-fails).
 
 **Controller, drivers, wiring harness, and limit switches**: reused from
 the existing Ortur LM2 S2 build ([0041](decisions/0041-ortur-electronics-reuse.md)),
